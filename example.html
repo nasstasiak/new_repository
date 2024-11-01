@@ -113,7 +113,7 @@
         </nav>
     </header>
     <main class="row">
-        <div class="col-lg-1"></div>
+        <div class="col-lg-1 left-column"></div>
         <div class="col-lg-10 feed">
             <section>
                 <div class="row mt-3 mb-3 name-for-events">
@@ -141,7 +141,7 @@
                     <div class="col-lg-1"></div>
                 </div>
                 <div class="row mt-3 mb-3 events">
-                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1 left-column"></div>
                     <div class="col-lg-10">
                         <div class="card">
                             <div class="row event">
@@ -182,27 +182,111 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="row event">
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo" >
+                                    <img src="static/finopolis_preview.jpg" alt="" class="preview-photo">
+                                    <div class="type-substrate">
+                                        <div class="event-type online">online</div>
+                                    </div>
+                                    <div class="button-substrate">
+                                        <button class="btn btn-remove_app"> Отмена регистрации</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
+                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
+                                            <p class="preview-date">8 января 2025 г.</p>
+                                            <p class="preview-time">11:00-16:00</p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker">
+                                            <label for="speaker" class="preview-speaker">Спикер:</label>
+                                            Лобанова Стефания Данииловна
+                                        </div>
+                                    </div>
+                                    <div class="event-preview-description">
+                                        <label for="" class="preview-about">О мероприятии:</label> 
+                                        <p class="preview-description">
+                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. 
+                                            Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
+                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a> 
+                                        </p>
+                                    </div>
+                                    <div class="preview-event-id">
+                                        <label for="event-id" class="event-id">id: </label>
+                                        <div class="e-id">0003</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="row event">
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo" >
+                                    <img src="static/finopolis_preview.jpg" alt="" class="preview-photo">
+                                    <div class="type-substrate">
+                                        <div class="event-type online">online</div>
+                                    </div>
+                                    <div class="button-substrate">
+                                        <button class="btn btn-remove_app"> Отмена регистрации</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
+                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
+                                            <p class="preview-date">8 января 2025 г.</p>
+                                            <p class="preview-time">11:00-16:00</p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker">
+                                            <label for="speaker" class="preview-speaker">Спикер:</label>
+                                            Лобанова Стефания Данииловна
+                                        </div>
+                                    </div>
+                                    <div class="event-preview-description">
+                                        <label for="" class="preview-about">О мероприятии:</label> 
+                                        <p class="preview-description">
+                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. 
+                                            Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
+                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a> 
+                                        </p>
+                                    </div>
+                                    <div class="preview-event-id">
+                                        <label for="event-id" class="event-id">id: </label>
+                                        <div class="e-id">0003</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1 right-column"></div>
                 </div>
             </section>
             <pagination>
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item {% if not event_card_views.has_previous %} disabled {% endif %}">
-                            <a class="page-link"
-                                href="{% if event_card_views.has_previous %}?{% change_params page=event_card_views.previous_page_number %}{% else %}#{% endif %}">Назад</a>
+                    <ul class="pagination">
+                        <li class="pagination__item pagination__item--prev">
+                            <a href="#" class="pagination__link">Назад</a>
                         </li>
-                        <li class="page-item {% if event_card_views.number == page %} active {% endif %}">
-                            <a class="page-link" href="#">1</a>
-                        <li class="page-item {% if not event_card_views.has_next %} disabled {% endif %}">
-                            <a class="page-link"
-                                href="{% if event_card_views.has_next %}?{% change_params page=event_card_views.next_page_number %}{% else %}#{% endif %}">Следующая</a>
+                        <li class="pagination__item pagination__item--active">
+                            <a href="#" class="pagination__link">1</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">2</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#" class="pagination__link">3</a>
+                        </li>
+                        <li class="pagination__item pagination__item--next">
+                            <a href="#" class="pagination__link">Следующая</a>
                         </li>
                     </ul>
                 </nav>
             </pagination>
         </div>
+        <div class="col-lg-1 right-column"></div>
     </main>
 </body>
 
