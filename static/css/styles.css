@@ -9,20 +9,13 @@ body {
     background-attachment: fixed;
     background-size: cover;
     padding-top: 0;
-<<<<<<< HEAD
     padding-right: 0;
-=======
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
     margin: 0;
     height: 100vh;
     font-family: "Onest", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-<<<<<<< HEAD
-    width: 100vw;
-=======
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
 }
 
 .navbar-brand {
@@ -34,61 +27,32 @@ body {
 
 main{
     /* padding-top: 1em; */
-<<<<<<< HEAD
-    /* height: 93%;  */
+    height: 93%; 
     width: 100vw;
-=======
-    height: 93%;
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
 }
 .feed {
     background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
     box-shadow: 1px 10px 27px 2px #000000;
-<<<<<<< HEAD
-    min-height: 100%;
-=======
     height: 100%;
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
 }
 
 header {
     background-color: #292828;
     margin: 0;
     color: aliceblue;
-<<<<<<< HEAD
     box-sizing: content-box;
-
-=======
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
 }
 
 div {
     text-indent: 20px;
     line-height: 2;
-<<<<<<< HEAD
-}
-
-.sort-filter{
-    text-align: right;
-}
-
-=======
     text-align: justify;
     
 }
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
 .btn-outline-success {
     background-color: rgb(225, 248, 250);
 }
 
-<<<<<<< HEAD
-=======
-.days-one-regular {
-    font-family: "Days One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf
   
 @font-face {
     font-family: 'Days One';
@@ -99,7 +63,6 @@ h2 {
     font-family: 'Days One', sans-serif;
     font-weight: 400;
     font-style: normal;
-<<<<<<< HEAD
 }
 
 button {
@@ -136,9 +99,7 @@ button {
     z-index: 1;
     padding: 10px;
     padding-left: 0;
-    padding-bottom: 0;
-    text-align: left;
-    border-bottom-left-radius: 25px;
+    text-align: left;border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
 
 }
@@ -163,13 +124,10 @@ button {
 
 .btn-remove_app{
     background: rgba(108, 105, 128, 0.5);
-    margin-right: 5px;
 }
 
 .btn-sent_app {
     background:rgb(190, 125, 14);
-    margin-right: 5px;
-
 }
 
 .btn-comment {
@@ -192,7 +150,52 @@ button {
     padding-right: 0;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
 
+.pagination__item {
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 30px;
+    transition: background-color 0.3s;
+}
+
+.pagination__item--active {
+    background-color: #808080;
+    color: #fff;
+}
+
+.pagination__link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.pagination__item:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination__link:hover {
+    color: #007bff;
+}
+
+.pagination__item--prev,
+.pagination__item--next {
+    min-width: 80px;
+}
 
 .event-type {
     /* position: relative; */
@@ -369,134 +372,14 @@ button {
     display: inline;
 }
 
-.page-item {
-    border-radius: 12px;
-   
-    margin: 5px;
-}
 
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.pagination__item {
-    margin: 0 5px;
-    text-indent: 0;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #fff;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-    line-height: 130%;
-    min-width: 40px;
-    height: 30px;
-    transition: background-color 0.3s;
-    padding: 5px;
-}
-
-.pagination__item--active {
-    background-color: #808080;
-    color: #fff;
-}
-
-.pagination__link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.pagination__item:hover {
-    background-color: #e0e0e0;
-}
-
-.pagination__link:hover {
-    color: #007bff;
-}
-
-.pagination__item--prev,
-.pagination__item--next {
-    min-width: 80px;
-}
-
-
-@media(max-width: 991px) {
-    body {
-        padding: 0;
-    }
-    .left-column {
-        width: 10%;
-    }
-    .feed {
-        width: 80%;
-        margin: auto;
-
-    }
-    .heading {
-        width: 40%;
-    }
-    .sort-filter{
-        width: 40%;
-    }
-
-    .right-column {
-        width: 10%;
-
-    }
-
-    .event-type,
-    .preview-description,
-    .preview-about {
-        font-size: 14px;
-    }
-
-    .event-title-preview {
-        font-size: 18px;
-
-    }
-    .preview-date,
-    .preview-time,
-    .event-preview-time,
-    .event-preview-speaker,
-    .preview-event-id {
-        font-size: 12px;
-    }
-
-}
-
-
+/* For tablets (768px and above) */
 @media (max-width: 850px) {
-    .left-column {
-        width: 7%;
-        margin: 0;
-        padding: 0;
-    }
-    .feed {
-        width: 88%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .right-column {
-        width: 5%;
-        margin: 0;
-        padding: 0%;
-    }
-
     .card {
         margin: 15px;
         /* padding: 5px; */
         padding-left: 0;
-        border-radius: px;
+        border-radius: 15px;
     }
     
     .event-preview-photo {
@@ -519,11 +402,11 @@ button {
     .event-type,
     .preview-description,
     .preview-about {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .event-title-preview {
-        font-size: 16px;
+        font-size: 18px;
 
     }
     .preview-date,
@@ -554,85 +437,13 @@ button {
     .type-substrate {
         padding: 3px;
         border-radius: 0px 10px 0px 7px;
-			
+            
     }
 
 }
-
-@media(max-width: 741px) {
-    .event-preview-photo {
-        /* height: auto; */
-        width: 45%;
-    }
-    
-    .event-preview-text {
-        /* padding-inline: 5px; */
-        padding-right: 12px;
-        width: 55%;
-    }
-
-    .event-type,
-    .preview-description,
-    .preview-about {
-        font-size: 12px;
-    }
-
-    .event-title-preview {
-        font-size: 16px;
-
-    }
-
-    .preview-date,
-    .preview-time,
-    .event-preview-time,
-    .event-preview-speaker,
-    .preview-event-id {
-        font-size: 10px;
-    }
-
-    .btn {
-        font-size: 12px;
-    }
-
-    .button-substrate {
-        /* width: 119px; */
-        /* height: 27px; */
-        padding-bottom: 0;
-        padding-top: 5px;
-        padding-right: 5px;
-        border-radius: 0px 13px 0px 10px;
-    }
-}
-
 
 /* For mobile phones (480px and above) */
 @media (max-width: 480px) {
-    .left-column {
-        width: 5%;
-        margin: 0;
-        padding: 0;
-    }
-    .feed {
-        width: 95%;
-        padding: 0;
-    }
-    .heading {
-        text-align: center;
-    }
-
-    .sort-filter {
-        /* width: 75%; */
-    }
-    
-    .sort-filter {
-        text-align: center;
-    }
-
-    .right-column {
-        width: 0%;
-        margin: 0;
-        padding: 0%;
-    }
     
 
     .event-preview-photo {
@@ -652,12 +463,9 @@ button {
         font-size: 8px;
     }
 
-    .preview-description {
-        line-height: 100%;
-    }
-
     .event-title-preview {
-        font-size: 9px;
+        font-size: 10px;
+
     }
 
     .preview-date,
@@ -675,34 +483,22 @@ button {
         border-radius: 0px 13px 0px 10px;
     }
 
-    .btn {
-        font-size: 8px;
-        line-height: 100%;
-        padding: 0;
-        padding-inline: 5px;
-        height: 22px;
-        margin: 0;
-        width: 45%;
-    }
-
-    .past {
-        width: 100%;
-    }
-
-
     .btn-remove_app {
+        font-size: 10px;
+        padding: 0;
+        width: 115px;
         height: 22px;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
         background: rgba(108, 105, 128, 0.5);
         margin: 0;
     }
     
-    .btn-sent_app {}
+    .btn-sent_app
 
     .type-substrate {
         padding: 3px;
         border-radius: 0px 10px 0px 7px;
-			
+            
     }
     .event-type {
         margin: 0;
@@ -770,23 +566,4 @@ button {
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
     }
-
-    body {
-        height: 100vh;
-    }
-
-    main {
-        flex: 1;
-        min-height: 100%;
-
-    }
-
-    .feed {
-        min-height: 100%;
-        flex: 1;
-    }
 }
-
-=======
-}
->>>>>>> 85ffcf24e5833c1360ff1b68e01f4658588783cf

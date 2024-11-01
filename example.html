@@ -74,26 +74,17 @@
                                         кабинет</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-black" href={% url "bookmarks:registered"
-                                        %}>Зарегистрированные</a>
+                                    <a class="dropdown-item text-black" href='#'>Зарегистрированные</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item text-black"
-                                        href="{% url 'bookmarks:favorites' %}">Избранные</a>
+                                        href="#">Избранные</a>
                                 </li>
-                                {% comment %} <li>
+                                <li>
                                     <a class="dropdown-item text-black"
-                                        href="{% url 'bookmarks:events_attended' %}">Посещенные</a>
-                                </li> {% endcomment %}
-                                {% if user.is_admin or user.is_superuser or user.is_staff %}
-                                <li>
-                                    <a class="dropdown-item text-black" href="{% url 'admin:index' %}">Админ панель</a>
+                                        href="#">Посещенные</a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item text-black" href="{% url 'personal:personal' %}">Кабинет
-                                        администратора</a>
-                                </li>
-
+                                
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
@@ -105,7 +96,7 @@
 
 
                     </ul>
-                    <form class="d-flex" role="search" action="{% if name_page == 'Онлайн' %}{% url "
+                    <form class="d-flex" role="search" action="#"
                         events_available:search_online" %}{% elif name_page=='Оффлайн' %}{%
                         url "events_available:search_offline" %}{% elif name_page=='Доступные к посещению' %}{%
                         url "events_cultural:search_events_for_visiting" %}{% elif name_page=='Достопримечательности'
@@ -128,7 +119,7 @@
                 <div class="row mt-3 mb-3 name-for-events">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-7">
-                        <h2> Онлайн </h2>
+                        <h2 style="color: white;"> Онлайн </h2>
                     </div>
 
                     <div class="col-lg-3 text-end d-flex justify-content-end align-items-center">
@@ -141,15 +132,56 @@
 
                         <!-- Кнопка для открытия фильтров -->
                         <button id="filter-toggle" class="btn btn-primary me-2">
-                            <img src="/static/general/icons/filters.png" alt="Фильтры"
-                                style="width: 24px; height: 24px;">
+                            Фильтры
                         </button>
 
                         <!-- Кнопка для сортировки -->
-                        <button id="sort-toggle" class="btn btn-primary">
-                            <img src="/static/general/icons/sort.png" alt="Сортировка"
-                                style="width: 24px; height: 24px;">
-                        </button>
+                        <button id="sort-toggle" class="btn btn-primary">Сортировка</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row mt-3 mb-3 events">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="card">
+                            <div class="row event">
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo" >
+                                    <img src="static/finopolis_preview.jpg" alt="" class="preview-photo">
+                                    <div class="type-substrate">
+                                        <div class="event-type online">online</div>
+                                    </div>
+                                    <div class="button-substrate">
+                                        <button class="btn btn-remove_app"> Отмена регистрации</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
+                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
+                                            <p class="preview-date">8 января 2025 г.</p>
+                                            <p class="preview-time">11:00-16:00</p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker">
+                                            <label for="speaker" class="preview-speaker">Спикер:</label>
+                                            Лобанова Стефания Данииловна
+                                        </div>
+                                    </div>
+                                    <div class="event-preview-description">
+                                        <label for="" class="preview-about">О мероприятии:</label> 
+                                        <p class="preview-description">
+                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. 
+                                            Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
+                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a> 
+                                        </p>
+                                    </div>
+                                    <div class="preview-event-id">
+                                        <label for="event-id" class="event-id">id: </label>
+                                        <div class="e-id">0003</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
