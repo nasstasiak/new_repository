@@ -19,6 +19,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+
+    <style>
+        .index-link {
+            font-family: 'Days One', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 20pt;
+        }
+    </style>
 </head>
 
 <body style="background-image: url(background2.jpg);">
@@ -77,14 +88,12 @@
                                     <a class="dropdown-item text-black" href='#'>Зарегистрированные</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-black"
-                                        href="#">Избранные</a>
+                                    <a class="dropdown-item text-black" href="#">Избранные</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-black"
-                                        href="#">Посещенные</a>
+                                    <a class="dropdown-item text-black" href="#">Посещенные</a>
                                 </li>
-                                
+
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
@@ -96,12 +105,11 @@
 
 
                     </ul>
-                    <form class="d-flex" role="search" action="#"
-                        events_available:search_online" %}{% elif name_page=='Оффлайн' %}{%
-                        url "events_available:search_offline" %}{% elif name_page=='Доступные к посещению' %}{%
-                        url "events_cultural:search_events_for_visiting" %}{% elif name_page=='Достопримечательности'
-                        %}{% url "events_cultural:search_attractions" %}{% elif name_page=='Все мероприятия' %}{%
-                        url "main:search_all" %}{% endif %}" method="get">
+                    <form class="d-flex" role="search" action="#" events_available:search_online" %}{% elif
+                        name_page=='Оффлайн' %}{% url "events_available:search_offline" %}{% elif
+                        name_page=='Доступные к посещению' %}{% url "events_cultural:search_events_for_visiting" %}{%
+                        elif name_page=='Достопримечательности' %}{% url "events_cultural:search_attractions" %}{% elif
+                        name_page=='Все мероприятия' %}{% url "main:search_all" %}{% endif %}" method="get">
                         <input class="form-control me-2" type="search" name="q" placeholder="Search"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">
@@ -116,10 +124,19 @@
         <div class="col-lg-1 left-column"></div>
         <div class="col-lg-10 feed">
             <section>
+                <div class="row mt-3 mb-3 name-for-events">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-7">
+                        <h2 style="color: white;"> Список шаблонов </h2>
+                    </div>
+                    <div class="col-lg-3 text-end d-flex justify-content-end align-items-center">
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
                 <div class="row mt-3 mb-3 events">
                     <div class="col-lg-1 left-column"></div>
                     <div class="col-lg-10">
-                        <a href="example.html">Страница с онлайн мероприятиями</a>
+                        <a href="example.html" class="index-link">Страница с онлайн-мероприятиями</a>
 
                     </div>
                     <div class="col-lg-1 right-column"></div>
