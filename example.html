@@ -77,14 +77,12 @@
                                     <a class="dropdown-item text-black" href='#'>Зарегистрированные</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-black"
-                                        href="#">Избранные</a>
+                                    <a class="dropdown-item text-black" href="#">Избранные</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-black"
-                                        href="#">Посещенные</a>
+                                    <a class="dropdown-item text-black" href="#">Посещенные</a>
                                 </li>
-                                
+
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
@@ -96,12 +94,11 @@
 
 
                     </ul>
-                    <form class="d-flex" role="search" action="#"
-                        events_available:search_online" %}{% elif name_page=='Оффлайн' %}{%
-                        url "events_available:search_offline" %}{% elif name_page=='Доступные к посещению' %}{%
-                        url "events_cultural:search_events_for_visiting" %}{% elif name_page=='Достопримечательности'
-                        %}{% url "events_cultural:search_attractions" %}{% elif name_page=='Все мероприятия' %}{%
-                        url "main:search_all" %}{% endif %}" method="get">
+                    <form class="d-flex" role="search" action="#" events_available:search_online" %}{% elif
+                        name_page=='Оффлайн' %}{% url "events_available:search_offline" %}{% elif
+                        name_page=='Доступные к посещению' %}{% url "events_cultural:search_events_for_visiting" %}{%
+                        elif name_page=='Достопримечательности' %}{% url "events_cultural:search_attractions" %}{% elif
+                        name_page=='Все мероприятия' %}{% url "main:search_all" %}{% endif %}" method="get">
                         <input class="form-control me-2" type="search" name="q" placeholder="Search"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">
@@ -145,7 +142,7 @@
                     <div class="col-lg-10 cards">
                         <div class="card">
                             <div class="row event">
-                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo" >
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
                                     <img src="static/finopolis_preview.jpg" alt="" class="preview-photo">
                                     <div class="type-substrate">
                                         <div class="event-type online">online</div>
@@ -154,7 +151,7 @@
                                         <button class="btn btn-remove_app"> Отмена регистрации</button>
                                         <button class="btn btn-comment"> Оставить отзыв</button>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
                                     <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
@@ -169,11 +166,12 @@
                                         </div>
                                     </div>
                                     <div class="event-preview-description">
-                                        <label for="" class="preview-about">О мероприятии:</label> 
+                                        <label for="" class="preview-about">О мероприятии:</label>
                                         <p class="preview-description">
-                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. 
+                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется
+                                            в Сочи.
                                             Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
-                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a> 
+                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a>
                                         </p>
                                     </div>
                                     <div class="preview-event-id">
@@ -185,7 +183,7 @@
                         </div>
                         <div class="card">
                             <div class="row event">
-                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo" >
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
                                     <img src="static/lending_pace.jpeg" alt="" class="preview-photo">
                                     <div class="type-substrate">
                                         <div class="event-type online">online</div>
@@ -193,72 +191,74 @@
                                     <div class="button-substrate">
                                         <button class="btn btn-comment"> Оставить отзыв</button>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
-                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                                    <h4 class="event-title-preview">В феврале темп кредитования в целом был сдержанным,
+                                        хотя потребительские кредиты растут выше ожиданий</h4>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
-                                            <p class="preview-date">8 января 2025 г.</p>
-                                            <p class="preview-time">11:00-16:00</p>
+                                            <p class="preview-date">1 января 2024 г.</p>
+                                            <p class="preview-time">13:10-15:00</p>
                                         </div>
                                         <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker">
                                             <label for="speaker" class="preview-speaker">Спикер:</label>
-                                            Лобанова Стефания Данииловна
+                                            Голубева Кира Ильинична
                                         </div>
                                     </div>
                                     <div class="event-preview-description">
-                                        <label for="" class="preview-about">О мероприятии:</label> 
+                                        <label for="" class="preview-about">О мероприятии:</label>
                                         <p class="preview-description">
-                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. 
-                                            Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
-                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a> 
+                                            Ипотека немного ускорилась (+0,7% после +0,6% в январе), что ожидаемо с
+                                            учетом невысоких значений января из-за праздников. Рост потребительского
+                                            кр... <a href="#" class="show-more">Подробнее</a>
                                         </p>
                                     </div>
                                     <div class="preview-event-id">
                                         <label for="event-id" class="event-id">id: </label>
-                                        <div class="e-id">0003</div>
+                                        <div class="e-id">0004</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="row event">
-                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo" >
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
                                     <img src="static/monetary_conditions.jpg" alt="" class="preview-photo">
                                     <div class="type-substrate">
                                         <div class="event-type online">online</div>
                                     </div>
                                     <div class="button-substrate">
-                                        <button class="btn btn-remove_app"> Отмена регистрации</button>
+                                        <button class="btn btn-sent_app"> Отправить заявку</button>
                                         <button class="btn btn-comment"> Оставить отзыв</button>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
-                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
-                                            <p class="preview-date">8 января 2025 г.</p>
-                                            <p class="preview-time">11:00-16:00</p>
+                                    <h4 class="event-title-preview">Денежно-кредитные условия продолжили ужесточаться</h4>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
+                                                <p class="preview-date">9 апреля 2025 г.</p>
+                                                <p class="preview-time">18:20-19:20</p>
+                                            </div>
+                                            <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker">
+                                                <label for="speaker" class="preview-speaker">Спикер:</label>
+                                                Голубева Кира Ильинична
+                                            </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker">
-                                            <label for="speaker" class="preview-speaker">Спикер:</label>
-                                            Лобанова Стефания Данииловна
+                                        <div class="event-preview-description">
+                                            <label for="" class="preview-about">О мероприятии:</label>
+                                            <p class="preview-description">
+                                                В марте индикаторы денежно-кредитных условий продолжили сдвигаться
+                                                в сторону ужесточения, реагируя на сигналы Банка России о более
+                                                длительном, чем ожидалось, периоде поддержания высоких...<a href="#"
+                                                    class="show-more">Подробнее</a>
+                                            </p>
                                         </div>
-                                    </div>
-                                    <div class="event-preview-description">
-                                        <label for="" class="preview-about">О мероприятии:</label> 
-                                        <p class="preview-description">
-                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. 
-                                            Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
-                                            FINOPOLIS традиционно... <a href="#" class="show-more">Подробнее</a> 
-                                        </p>
-                                    </div>
-                                    <div class="preview-event-id">
-                                        <label for="event-id" class="event-id">id: </label>
-                                        <div class="e-id">0003</div>
-                                    </div>
+                                        <div class="preview-event-id">
+                                            <label for="event-id" class="event-id">id: </label>
+                                            <div class="e-id">0005</div>
+                                        </div>
                                 </div>
                             </div>
                         </div>
