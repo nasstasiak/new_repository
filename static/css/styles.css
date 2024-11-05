@@ -472,36 +472,43 @@ button {
         margin: 0;
     }
     
-
+    .card {
+        padding-left: 5px;
+    }
     .event-preview-photo {
-        /* height: auto; */
-        width: 45%;
+        height: auto;
+        width: 95%;
     }
-    
+
     .event-preview-text {
-        /* padding-inline: 5px; */
-        padding-right: 12px;
-        width: 55%;
-    }
+        padding-right: 15px; 
+        margin-left: 15px;
+        width: 95%;
+        margin-top: 5px;
+    } 
 
     .event-type,
     .preview-description,
     .preview-about {
-        font-size: 6px;
+        font-size: 12px;
     }
 
     .event-title-preview {
-        font-size: 10px;
+        font-size: 14px;
 
     }
 
     .preview-date,
     .preview-time,
     .event-preview-time,
-    .event-preview-speaker,
-    .preview-event-id {
-        font-size: 6px;
+    .event-preview-speaker {
+        font-size: 10px;
     }
+
+    .preview-event-id {
+        font-size: 8px;
+    }
+
     .button-substrate {
         /* width: 119px; */
         /* height: 27px; */
@@ -510,14 +517,18 @@ button {
         border-radius: 0px 13px 0px 10px;
     }
 
-    .btn-remove_app {
+    .btn {
         font-size: 10px;
         padding: 0;
         width: 115px;
         height: 22px;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
-        background: rgba(108, 105, 128, 0.5);
         margin: 0;
+    }
+
+    .btn-remove_app {
+        background: rgba(108, 105, 128, 0.5);
+        
     }
     
     .btn-sent_app
@@ -533,7 +544,6 @@ button {
 
     .event-preview-photo {
         /* height: auto; */
-        width: 45%;
         border-radius: 10px;
         margin-left: 0;
         padding: 0;
@@ -592,5 +602,5 @@ button {
     .event {
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
-    }
+    } 
 }
