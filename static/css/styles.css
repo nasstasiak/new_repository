@@ -454,6 +454,10 @@ button {
 
 /* For mobile phones (480px and above) */
 @media (max-width: 480px) {
+    body {
+        min-height: 110vh;
+    }
+
     main {
         width: 100vw;
         margin: 0;
