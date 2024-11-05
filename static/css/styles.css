@@ -98,7 +98,9 @@ button {
     position: absolute;
     background-color: rgba(217, 217, 217, 0.8);
     z-index: 1;
-    padding: 10px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 0;
     padding-left: 0;
     text-align: left;border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -111,6 +113,7 @@ button {
     /* height: 46.6px; */
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
     margin: 0;
+    margin-right: 5px;
     border-radius: 25px;
     padding-inline: 15px;
     left: 0;
@@ -331,7 +334,6 @@ button {
     bottom: 0px; /* Отступ от низа */
     left: 30px; /* Отступ от левого края */
     background-color: rgba(217, 217, 217, 0.8);
-    padding: 10px;
     padding-left: 0;
     border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -520,7 +522,7 @@ button {
     }
 
     .button-substrate {
-        /* width: 119px; */
+        width: auto;
         /* height: 27px; */
         padding: 0;
         padding-right: 5px;
@@ -528,10 +530,11 @@ button {
     }
 
     .btn {
-        font-size: 10px;
+        font-size: 12px;
         padding: 0;
-        width: 115px;
+        width: auto;
         height: 22px;
+        padding-inline: 10px;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
         margin: 0;
     }
