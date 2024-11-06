@@ -434,7 +434,7 @@ button {
 .admin-request {
     text-indent: 0;
     color: rgb(39, 66, 106);
-    font-family: Onest;
+    font-family: 'Onest';
     font-size: 24px;
     font-weight: 600;
     line-height: 160%;
@@ -844,10 +844,10 @@ button {
     } 
 
     .account-title {
-        font-size: 30px;
+        font-size: 26px;
     }
 
-    fields {
+    .fields {
         width: 45%;
     }
 
@@ -856,13 +856,66 @@ button {
     }
     
     .button-column {
+        margin-left: 20px;
         width: 90%;
         padding: 0;
+    }
+
+    .change-password {
+        height: 30px;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 170%;
+        letter-spacing: 0%;
     }
 
     .side-indent {
         width: 5%;
     }
 
+    .send-request {
+        margin-top: 10px;
+        height: 30px;
+        width: 50%;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 170%;
+        letter-spacing: 0%;
+    }
+    
+    .request-reason {
+        min-height: 30px;
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 25px;
+        border: none;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        background: rgb(230, 230, 230);
+        color: rgb(81, 88, 95);
+        font-family: 'Onest';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 200%;
+        letter-spacing: 0%;
+        padding: 5px;
+        padding-inline: 15px;
+    }
 
+    .admin-request {
+        text-indent: 0;
+        color: rgb(39, 66, 106);
+        font-family: 'Onest';
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 160%;
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .rights-title {
+        font-size: 24px;
+    }
+    
 }
