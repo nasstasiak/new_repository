@@ -527,6 +527,12 @@ button {
     }
 }
 
+@media (max-width: 1392px) {
+    body {
+        max-width: 1380px;
+    }
+}
+
 @media (max-width: 1341px) {
     .fields {
         width: 30%;
