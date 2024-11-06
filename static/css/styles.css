@@ -504,6 +504,7 @@ button {
 }
 
 @media (max-width: 1467px) {
+
     .profile-fields {
         font-size: 18px;
     }
@@ -518,6 +519,11 @@ button {
 
     .change-password {
         font-size: 16px;
+    }
+
+    .send-request {
+        font-size: 16px;
+        width: 40%;
     }
 }
 
