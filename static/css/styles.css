@@ -60,7 +60,7 @@ div {
     src: url('DaysOne-Regular.ttf') format('truetype');
 }
 
-h2 {
+h2, h3 {
     font-family: 'Days One', sans-serif;
     font-weight: 400;
     font-style: normal;
