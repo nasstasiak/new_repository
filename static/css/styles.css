@@ -842,4 +842,27 @@ button {
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
     } 
+
+    .account-title {
+        font-size: 30px;
+    }
+
+    fields {
+        width: 45%;
+    }
+
+    .info {
+        width: 45%;
+    }
+    
+    .button-column {
+        width: 90%;
+        padding: 0;
+    }
+
+    .side-indent {
+        width: 5%;
+    }
+
+
 }
