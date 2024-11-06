@@ -379,6 +379,7 @@ button {
 }
 
 .account-title {
+    text-indent: 0;
     text-align: center;
     font-size: 48px;
     line-height: 160%;
@@ -387,6 +388,7 @@ button {
 }
 
 .profile-fields {
+    text-indent: 0;
     top: 201px;
     color: rgb(39, 66, 106);
     font-family: Onest;
@@ -397,6 +399,7 @@ button {
 }
 
 .account-information {
+    text-indent: 0;
     color: rgb(39, 66, 106);
     font-family: 'Onest';
     font-size: 24px;
@@ -406,21 +409,58 @@ button {
     text-align: left;
 }
 
+.button-column {
+    text-indent: 0;
+}
+
 .change-password {
     width: 100%;
     margin-top: 10px;
+    margin-right: 0;
     border-radius: 25px;
-    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25),-2px 2px 4px 0px rgba(0, 0, 0, 0.25);
     background: rgb(39, 66, 106);
     border: none;
     color: rgb(255, 255, 255);
     font-family: 'Onest';
     font-size: 18px;
     font-weight: 600;
+    line-height: 170%;
     letter-spacing: 0%;
     text-align: center;
-    box-shadow: 0px 3px 6px 0px #000000;
+
 }
+
+.admin-request {
+    text-indent: 0;
+    color: rgb(39, 66, 106);
+    font-family: Onest;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.request-reason {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(230, 230, 230);
+    color: rgb(81, 88, 95);
+    font-family: 'Onest';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 200%;
+    letter-spacing: 0%;
+    padding: 5px;
+    padding-inline: 15px;
+
+}
+
 
 @media (max-width: 1705px) {
     .profile-fields {
