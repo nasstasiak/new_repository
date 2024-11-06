@@ -100,7 +100,7 @@ button {
     z-index: 1;
     padding-top: 10px;
     padding-right: 5px;
-    padding-bottom: 0;
+    padding-bottom: 1px;
     padding-left: 0;
     text-align: left;
     border-bottom-left-radius: 25px;
@@ -387,8 +387,6 @@ button {
 }
 
 .profile-fields {
-    width: 224px;
-    height: 228px;
     top: 201px;
     color: rgb(39, 66, 106);
     font-family: Onest;
@@ -398,7 +396,118 @@ button {
     letter-spacing: 0%;
 }
 
-@media (max-width: 850px) {
+.account-information {
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.change-password {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(39, 66, 106);
+    border: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Onest';
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0%;
+    text-align: center;
+    box-shadow: 0px 3px 6px 0px #000000;
+}
+
+@media (max-width: 1705px) {
+    .profile-fields {
+        font-size: 20px;
+    }
+
+    .account-information {
+        font-size: 20px;
+    }
+    
+    .account-title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1467px) {
+    .profile-fields {
+        font-size: 18px;
+    }
+
+    .account-information {
+        font-size: 18px;
+    }
+
+    .account-title {
+        font-size: 36px;
+    }
+
+    .change-password {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1341px) {
+    .fields {
+        width: 30%;
+    }
+
+    .info {
+        width: 30%;
+    }
+    
+    .button-column {
+        width: 60%;
+    }
+
+    .side-indent {
+        width: 20%;
+    }
+
+    .profile-fields {
+        font-size: 16px;
+    }
+
+    .account-information {
+        font-size: 16px;
+    }
+
+    .account-title {
+        font-size: 34px;
+    }
+
+    .change-password {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 1219px) {
+    .profile-fields {
+        font-size: 14px;
+    }
+
+    .account-information {
+        font-size: 14px;
+    }
+
+    .account-title {
+        font-size: 32px;
+    }
+
+    .change-password {
+        margin-top: 5px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) {
     .left-column {
         width: 10%;
     }
@@ -406,6 +515,11 @@ button {
     .feed {
         width: 80%;
     }
+
+    .account-title {
+        font-size: 30px;
+    }
+
 }
 
 
@@ -473,6 +587,30 @@ button {
         padding: 3px;
         border-radius: 0px 10px 0px 7px;
             
+    }
+
+}
+
+@media (max-width: 795px) {
+    .account-title {
+        font-size: 30px;
+    }
+
+    fields {
+        width: 35%;
+    }
+
+    .info {
+        width: 35%;
+    }
+    
+    .button-column {
+        width: 65%;
+        padding: 0;
+    }
+
+    .side-indent {
+        width: 15%;
     }
 
 }
