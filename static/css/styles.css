@@ -547,6 +547,7 @@ table {
 }
 
 @media (max-width: 1467px) {
+
     .profile-fields {
         font-size: 18px;
     }
@@ -561,6 +562,17 @@ table {
 
     .change-password {
         font-size: 16px;
+    }
+
+    .send-request {
+        font-size: 16px;
+        width: 40%;
+    }
+}
+
+@media (max-width: 1392px) {
+    body {
+        max-width: 1380px;
     }
 }
 
