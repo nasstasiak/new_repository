@@ -29,10 +29,7 @@ body {
     font-style: normal;
 }
 
-
-
 main{
-    /* padding-top: 1em; */
     min-height: 93%; 
     width: 100vw;
 }
@@ -71,6 +68,11 @@ h2, h3 {
     font-weight: 400;
     font-style: normal;
 }
+
+.page-header {
+    font-size: 48px;
+}
+
 
 button {
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
@@ -135,9 +137,22 @@ button {
 
 .btn-primary {
     background: none;
+    width: auto;
     padding: 0;
     border: none;
     box-shadow: none;
+}
+
+.selection-icon {
+    height: 54px;
+    width: 54px;
+    border-radius: 12px;
+}
+
+.selection-icon:hover {
+    height: 64px;
+    width: 64px;
+    box-shadow: 0px 0px 10px 6px #d9d9d9;
 }
 
 .btn-remove_app{
@@ -533,6 +548,10 @@ table {
 }
 
 @media (max-width: 1705px) {
+    .page-header {
+        font-size: 46px;
+    }
+
     .profile-fields {
         font-size: 20px;
     }
@@ -543,6 +562,14 @@ table {
     
     .account-title {
         font-size: 42px;
+    }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
     }
 }
 
@@ -568,15 +595,35 @@ table {
         font-size: 16px;
         width: 40%;
     }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 @media (max-width: 1392px) {
-    body {
+    /* body {
         max-width: 1380px;
+    } */
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
     }
 }
 
 @media (max-width: 1341px) {
+    .page-header {
+        font-size: 44px;
+    }
+
     .fields {
         width: 30%;
     }
@@ -608,6 +655,14 @@ table {
     .change-password {
         margin-top: 5px;
     }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 @media (max-width: 1219px) {
@@ -627,9 +682,29 @@ table {
         margin-top: 5px;
         font-size: 14px;
     }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 @media (max-width: 991px) {
+   .main-header {
+    width: 50%;
+   }
+
+   .selection {
+    width: 50%;
+   }
+
+    .page-header {
+        font-size: 42px;
+    }
+
     .left-column {
         width: 10%;
     }
@@ -642,6 +717,13 @@ table {
         font-size: 30px;
     }
 
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 
@@ -711,6 +793,14 @@ table {
             
     }
 
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
 }
 
 @media (max-width: 795px) {
@@ -733,6 +823,14 @@ table {
 
     .side-indent {
         width: 15%;
+    }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
     }
 
 }
@@ -976,12 +1074,71 @@ table {
     .rights-title {
         font-size: 22px;
     }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .main-header {
+        width: 50%;
+       }
     
+    .selection {
+    width: 50%;
+    padding-top: 0;
+    }
+
+    .selection-icon {
+        margin: 0;
+        height: 44px;
+        width: 44px;
+    }
+    
+}
+
+@media (max-width: 470px) {
+    .btn-primary {
+        margin-top: 0;
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .main-header {
+        width: 50%;
+       }
+    
+       .selection {
+        width: 50%;
+        
+       }
 }
 
 
 @media (max-width: 384px) {
+    .main-header {
+        width: 50%;
+       }
+    
+       .selection {
+        width: 50%;
+       }
+
     .account-title {
         font-size: 24px;
+    }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
     }
 }

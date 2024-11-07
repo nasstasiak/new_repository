@@ -115,11 +115,11 @@
             <section>
                 <div class="row mt-3 mb-3 name-for-events">
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-7">
-                        <h2 style="color: white;"> Онлайн </h2>
+                    <div class="col-lg-7 main-header">
+                        <h2 style="color: white;" class="page-header"> Онлайн </h2>
                     </div>
 
-                    <div class="col-lg-3 text-end d-flex justify-content-end align-items-center">
+                    <div class="col-lg-3 selection text-end d-flex justify-content-end">
                         <!-- Кнопка сброса фильтров, которая будет скрыта по умолчанию -->
                         <div id="reset-filters-container" class="me-2" style="display: none;">
                             <form action="/events_available/online/" method="get">
@@ -129,12 +129,12 @@
 
                         <!-- Кнопка для открытия фильтров -->
                         <button id="filter-toggle" class="btn btn-primary me-2">
-                            <img src="static/filters.png" alt="Фильтры" style="width: 54px; height: 54px;" class="">
+                            <img src="static/filters.png" alt="Фильтры" class="selection-icon">
                         </button>
 
                         <!-- Кнопка для сортировки -->
                         <button id="sort-toggle" class="btn btn-primary">
-                            <img src="static/sort.png" alt="Сортировка" style="width: 54px; height: 54px;">
+                            <img src="static/sort.png" alt="Сортировка" class="selection-icon">
                         </button>
                     </div>
                     <div class="col-lg-1"></div>
