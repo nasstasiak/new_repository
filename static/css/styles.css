@@ -3,6 +3,11 @@
     src: url('Onest-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Kadwa';
+    src: url('Kadwa-Regular.ttf') format('truetype');
+}
+
 body {
     background-image: url("background2.jpg");
     background-repeat: no-repeat;
@@ -23,6 +28,7 @@ body {
     font-weight: bold;
     font-style: normal;
 }
+
 
 
 main{
@@ -125,6 +131,13 @@ button {
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0%;
+}
+
+.btn-primary {
+    background: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
 }
 
 .btn-remove_app{
@@ -487,6 +500,36 @@ button {
     line-height: 160%;
     letter-spacing: 0%;
     text-shadow: -0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+table {
+    width: 100%;
+    border-collapse: collapse; /* Склеиваем границы ячеек для более компактного вида */
+  }
+  
+  td {
+    width: 50%;
+    vertical-align: top; /* Выравниваем содержимое по верху */
+    word-break: break-all; /* Разрешаем перенос слова */
+  }
+
+.role, .groups {
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.role-info, .group-info {
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: left;
 }
 
 @media (max-width: 1705px) {
