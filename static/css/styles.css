@@ -598,6 +598,42 @@ table {
     }
 }
 
+@media(max-width: 1668px) {
+    .btn {
+        padding-inline: 10px;
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width: 1566px) {
+    .event-preview-time, .event-preview-speaker,
+    .preview-description, .e-id,
+    .event-type {
+        font-size: 18px;
+    }
+
+    .event-title-preview {
+        font-size: 22px;
+    }
+
+    .preview-about {
+        font-size: 20px;
+    }
+
+    .event-type {
+        margin-right: 3px;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 1474px) {
+    .btn {
+        padding-inline: 8px;
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 1467px) {
 
     .profile-fields {
@@ -628,12 +664,38 @@ table {
         border: none;
         box-shadow: none;
     }
+    .btn {
+        padding-inline: 8px;
+        font-size: 16px;
+    }
+
+    .event-preview-time, .event-preview-speaker,
+    .preview-description, .e-id,
+    .event-id, .event-type {
+        font-size: 16px;
+    }
+
+    .event-title-preview {
+        font-size: 20px;
+    }
+
+    .preview-about {
+        font-size: 18px;
+    }
+
+    .event-type {
+        margin-right: 4px;
+        margin-top: 4px;
+    }
+
+    .type-substrate {
+        padding-left: 7px;
+        padding-bottom: 7px;
+        border-bottom-left-radius: 15px;
+    }
 }
 
 @media (max-width: 1392px) {
-    /* body {
-        max-width: 1380px;
-    } */
 
     .btn-primary {
         background: none;
@@ -643,6 +705,13 @@ table {
         box-shadow: none;
     }
 }
+
+@media (max-width: 1383px){
+    .nav-item {
+        font-size: 14px;
+    }
+}
+
 
 @media (max-width: 1341px) {
     .page-header {
@@ -690,7 +759,43 @@ table {
     }
 }
 
+@media (max-width: 1335px) {
+    .btn {
+        padding-inline: 6px;
+        font-size: 14px;
+        margin-right: 3px;
+    }
+
+    .event-preview-time, .event-preview-speaker,
+    .preview-description, .e-id,
+    .event-id, .event-type {
+        font-size: 14px;
+    }
+
+    .event-title-preview {
+        font-size: 18px;
+    }
+
+    .preview-about {
+        font-size: 16px;
+    }
+
+}
+
+
 @media (max-width: 1219px) {
+    .feed-left-column{
+        width: 5%;
+    }
+
+    .cards {
+        width: 90%;
+    }
+
+    .feed {
+        width: 80%;
+    }
+
     .profile-fields {
         font-size: 14px;
     }
