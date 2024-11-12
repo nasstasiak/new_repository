@@ -822,6 +822,94 @@ table {
     }
 }
 
+@media (max-width: 1115px) {
+    .event-preview-text {
+        padding-inline: 10px;
+        padding-right: 20px;
+        width: 55%;
+    }
+
+    .event-type,
+    .preview-description,
+    .preview-about {
+        font-size: 14px;
+    }
+
+    .event-title-preview {
+        font-size: 16px;
+
+    }
+
+    .preview-date,
+    .preview-time,
+    .event-preview-time,
+    .event-preview-speaker {
+        font-size: 12px;
+    }
+
+    .preview-event-id {
+        font-size: 8px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 0;
+        width: auto;
+        height: 33px;
+        padding-inline: 10px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        margin: 0;
+    }
+
+    .button-substrate {
+        padding-top: 7px;
+    }
+}
+
+@media (max-width: 1088px) {
+
+    .btn {
+        font-size: 13px;
+        padding: 0;
+        width: auto;
+        height: 33px;
+        padding-inline: 8px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        margin: 0;
+    }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        margin-left: 5px;
+    }
+
+    .card {
+        padding-left: 5px;
+        padding-bottom: 5px;
+
+    }
+
+}
+
+@media (max-width: 1064px) {
+
+    .event-preview-photo {
+        /* height: auto; */
+        width: 45%;
+    }
+
+    .event-preview-text {
+        padding-inline: 5px;
+        padding-right: 20px;
+        width: 55%;
+    }
+
+}
+
 @media (max-width: 991px) {
    .main-header {
     width: 50%;
@@ -854,6 +942,95 @@ table {
         border: none;
         box-shadow: none;
     }
+
+    .event-preview-time {
+        width: 45%;
+    }
+
+    .event-preview-speaker {
+        text-indent: 0;
+        padding-right: 0;
+        margin-right: 0;
+        width: 50%;
+    }
+}
+
+@media (max-width: 978px) {
+    
+    .event-preview-photo {
+        /* height: auto; */
+        width: 45%;
+    }
+
+    .event-title-preview {
+        font-size: 16px;
+    }
+
+    .event-preview-text {
+        padding-inline: 5px;
+        padding-right: 20px;
+        width: 55%;
+    }
+
+    .event-type,
+    .preview-description,
+    .preview-about {
+        font-size: 14px;
+    }
+
+    .event-preview-time {
+        width: 50%;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    .event-preview-speaker {
+        text-indent: 0;
+        padding-right: 10px;
+        margin-right: 0;
+        width: 50%;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .cards {
+        width: 95%;
+        padding: 0;
+    }
+
+    .feed-left-column {
+        width: 0;
+    }
+
+    .feed {
+        width: 90%;
+    }
+
+    .left-column {
+        width: 6vw;
+    }
+
+    .preview-event-id {
+        display: block;
+        position: absolute;
+        right: 20px;
+        bottom: 25px;
+        text-align: right;
+        color: rgb(35, 62, 102);
+        font-family: 'Days One';
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 0%;
+    }
+
+    .button-substrate {
+        padding-right: 5px;
+        border-radius: 0px 20px 0px 25px;
+    }
+
 }
 
 
