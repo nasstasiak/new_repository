@@ -1536,3 +1536,38 @@ table {
         box-shadow: none;
     }
 }
+
+
+@media (max-width: 360px) {
+    .btn {
+        font-size: 13px;
+        padding: 0;
+        width: auto;
+        height: 25px;
+        padding-inline: 3px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        margin-right: 3px;
+  
+    }
+
+    .main-header {
+        width: 50%;
+       }
+    
+       .selection {
+        width: 50%;
+       }
+
+    .account-title {
+        font-size: 24px;
+    }
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+}
+
