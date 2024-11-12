@@ -1297,7 +1297,7 @@ table {
         font-size: 14px;
         padding: 0;
         width: auto;
-        height: 22px;
+        height: 25px;
         padding-inline: 10px;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
         margin: 0;
@@ -1501,6 +1501,16 @@ table {
 
 
 @media (max-width: 384px) {
+    .btn {
+        font-size: 14px;
+        padding: 0;
+        width: auto;
+        height: 25px;
+        padding-inline: 5px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        margin: 0;
+    }
+
     .main-header {
         width: 50%;
        }
