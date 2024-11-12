@@ -1131,7 +1131,7 @@ table {
         font-size: 30px;
     }
 
-    fields {
+    .fields {
         width: 35%;
     }
 
@@ -1155,6 +1155,68 @@ table {
         border: none;
         box-shadow: none;
     }
+
+}
+
+
+@media (max-width: 786px) {
+    .btn {
+        padding-inline: 5px;
+    }
+}
+
+@media (max-width: 756px) {
+
+    .left-column {
+        width: 7%;
+        margin: 0;
+    }
+
+    .feed {
+        width: 90%;
+        margin: 0;
+        padding: 0.5rem;
+    }
+    .right-column {
+        width: 3%;
+        margin: 0;
+    }
+
+    .cards {
+        width: 95%;
+        padding: 0;
+    }
+    
+    .card {
+        padding-left: 5px;
+        margin: 10px;
+    }
+    .event-preview-photo {
+        height: auto;
+        width: 95%;
+    }
+
+    .event-preview-text {
+        padding-right: 15px; 
+        margin-left: 15px;
+        width: 95%;
+        margin-top: 5px;
+    } 
+
+    .event-title-preview {
+        font-size: 20px;
+    }
+
+    .preview-about {
+        font-size: 18px;
+    }
+
+    .event-preview-speaker {
+        text-indent: 0;
+        padding-right: 10px;
+        margin-right: 0;
+    }
+
 
 }
 
@@ -1204,11 +1266,11 @@ table {
     .event-type,
     .preview-description,
     .preview-about {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .event-title-preview {
-        font-size: 14px;
+        font-size: 16px;
 
     }
 
@@ -1216,7 +1278,7 @@ table {
     .preview-time,
     .event-preview-time,
     .event-preview-speaker {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .preview-event-id {
@@ -1232,7 +1294,7 @@ table {
     }
 
     .btn {
-        font-size: 12px;
+        font-size: 14px;
         padding: 0;
         width: auto;
         height: 22px;
@@ -1240,13 +1302,6 @@ table {
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
         margin: 0;
     }
-
-    .btn-remove_app {
-        background: rgba(108, 105, 128, 0.5);
-        
-    }
-    
-    .btn-sent_app
 
     .type-substrate {
         padding: 3px;
@@ -1259,14 +1314,14 @@ table {
 
     .event-preview-photo {
         /* height: auto; */
-        border-radius: 10px;
+        border-radius: 15px;
         margin-left: 0;
         padding: 0;
     }
 
     .preview-photo {
         width: 100%;
-        border-radius: 10px;
+        border-radius: 15px;
     }
 
     .event-preview-description {
