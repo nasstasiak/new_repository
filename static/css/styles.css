@@ -29,10 +29,22 @@ body {
     font-style: normal;
 }
 
-main{
+#search {
+    background-color: rgb(230, 230, 230);
+    font-family: 'Onest';
+    border-radius: 15px;
+    color: rgb(96, 105, 114);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0%;
+}
+
+main {
     min-height: 93%; 
     width: 100vw;
 }
+
 .feed {
     background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
     box-shadow: 1px 10px 27px 2px #000000;
@@ -543,13 +555,11 @@ button {
 }
 table {
     width: 100%;
-    border-collapse: collapse; /* Склеиваем границы ячеек для более компактного вида */
   }
   
   td {
     width: 50%;
     vertical-align: top; /* Выравниваем содержимое по верху */
-    word-break: break-all; /* Разрешаем перенос слова */
   }
 
 .role, .groups {
@@ -570,6 +580,7 @@ table {
     line-height: 160%;
     letter-spacing: 0%;
     text-align: left;
+    word-break: keep-all;
 }
 
 @media (max-width: 1705px) {
@@ -596,7 +607,14 @@ table {
         border: none;
         box-shadow: none;
     }
+    
+    .role, .role-info,
+    .groups, .group-info {
+        font-size: 20px;
+    }
+
 }
+
 
 @media(max-width: 1668px) {
     .btn {
@@ -625,6 +643,11 @@ table {
         margin-right: 3px;
         margin-top: 3px;
     }
+
+    .send-request {
+        font-size: 16px;
+        width: 40%;
+    }
 }
 
 @media (max-width: 1474px) {
@@ -640,7 +663,9 @@ table {
         font-size: 18px;
     }
 
-    .account-information {
+    .account-information,
+    .role, .role-info,
+    .groups, .group-info {
         font-size: 18px;
     }
 
@@ -738,7 +763,9 @@ table {
         font-size: 16px;
     }
 
-    .account-information {
+    .account-information,
+    .role, .role-info,
+    .groups, .group-info {
         font-size: 16px;
     }
 
@@ -756,6 +783,10 @@ table {
         padding: 0;
         border: none;
         box-shadow: none;
+    }
+
+    .rights-column {
+        width: 60%;
     }
 }
 
@@ -800,7 +831,9 @@ table {
         font-size: 14px;
     }
 
-    .account-information {
+    .account-information,
+    .role, .role-info,
+    .groups, .group-info {
         font-size: 14px;
     }
 
@@ -861,9 +894,32 @@ table {
         margin: 0;
     }
 
+    .change-password {
+        height: 30px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 170%;
+        letter-spacing: 0%;
+    }
+
+    .send-request {
+        margin-top: 10px;
+        height: 30px;
+        width: 50%;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 170%;
+        letter-spacing: 0%;
+    }
+
     .button-substrate {
         padding-top: 7px;
     }
+
+    table {
+        width: 100%;
+      }
 }
 
 @media (max-width: 1088px) {
@@ -885,6 +941,25 @@ table {
         border: none;
         box-shadow: none;
         margin-left: 5px;
+    }
+
+    .change-password {
+        height: 30px;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 170%;
+        letter-spacing: 0%;
+    }
+
+    .send-request {
+        margin-top: 10px;
+        height: 30px;
+        width: 50%;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 170%;
+        letter-spacing: 0%;
     }
 
     .card {
@@ -1156,6 +1231,11 @@ table {
         box-shadow: none;
     }
 
+    .rights-column {
+        width: 65%;
+        padding: 0;
+    }
+
 }
 
 
@@ -1395,6 +1475,12 @@ table {
     }
     
     .button-column {
+        margin-left: 20px;
+        width: 90%;
+        padding: 0;
+    }
+
+    .rights-column {
         margin-left: 20px;
         width: 90%;
         padding: 0;
