@@ -1566,6 +1566,10 @@ table {
         height: 44px;
         width: 44px;
     }
+
+    .change-password {
+        width: 100%;
+    }
     
 }
 
@@ -1584,10 +1588,14 @@ table {
         width: 50%;
        }
     
-       .selection {
-        width: 50%;
-        
-       }
+    .selection {
+    width: 50%;
+    
+    }
+
+    .change-password {
+        width: 100%;
+    }
 }
 
 
@@ -1620,6 +1628,10 @@ table {
         padding: 0;
         border: none;
         box-shadow: none;
+    }
+
+    .change-password {
+        width: 100%;
     }
 }
 
