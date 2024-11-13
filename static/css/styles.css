@@ -95,7 +95,6 @@ h2, h3 {
 
 .dropdown-menu {
     background-color: rgba(217, 217, 217, 0.9);
-    text-indent: 0;
 }
 
 .dropdown-filter {
@@ -108,6 +107,10 @@ h2, h3 {
 
 input, .form-control {
     border-radius: 10px;
+}
+
+.form-check {
+    text-indent: 0;
 }
 
 button {
@@ -1595,7 +1598,16 @@ table {
     .change-password {
         width: 100%;
     }
+
+    .dropdown-filter {
+        max-width: 300px;
+        font-size: 14px;
+        text-align: left;
+    }
     
+    .speaker-filter {
+        padding-inline: 2px;
+    }
 }
 
 

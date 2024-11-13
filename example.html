@@ -102,7 +102,8 @@
                         name_page=='Все мероприятия' %}{% url "main:search_all" %}{% endif %}" method="get">
                         <input class="form-control me-2" type="search" name="q" placeholder="Поиск" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">
-                            <img src="static/general/icons/search.svg" style="height: 20px; width: 20px; margin-top: 0;">
+                            <img src="static/general/icons/search.svg"
+                                style="height: 20px; width: 20px; margin-top: 0;">
                         </button>
                     </form>
                 </div>
@@ -142,62 +143,71 @@
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-                <div id="filter-section" class="row filter-events-row mt-2">
+                <div id="rools" class="row filter-events-row mt-2">
                     <div class="row filter-events-row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-2">
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Название
                                 </button>
-                                <form action="" method="get" class="dropdown-menu dropdown-filter w-100" data-bs-theme="dark" >
+                                <form action="" method="get" class="dropdown-menu dropdown-filter w-100"
+                                    data-bs-theme="dark">
                                     <div class="form-check ">
-                                        <input class="form-control me-3" type="search" id="event-name-search" name="name_search" placeholder="Введите название">
+                                        <input class="form-control me-3" type="search" id="event-name-search"
+                                            name="name_search" placeholder="Введите название">
                                     </div>
-                                    <div id="autocomplete-results" class="autocomplete-results"></div> 
+                                    <div id="autocomplete-results" class="autocomplete-results"></div>
                                     <div class="text-center">
-                                        <button class="btn btn-outline-success" type="submit" style="margin-top: 10px;">Применить</button>
+                                        <button class="btn btn-outline-success" type="submit"
+                                            style="margin-top: 10px;">Применить</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        
-                        
-                        
+
                         <div class="col-lg-2">
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dateFilterButton">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false" id="dateFilterButton">
                                     Дата
                                 </button>
-                                <form action="/events_available/online/" method="get" class="dropdown-menu dropdown-filter" data-bs-theme="dark" id="dateDropdown" style="overflow-y: auto;">
+                                <form action="/events_available/online/" method="get"
+                                    class="dropdown-menu dropdown-filter" data-bs-theme="dark" id="dateDropdown"
+                                    style="overflow-y: auto;">
                                     <div class="form-check ">
                                         Дата начала <br>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            <input type="text" id="date_start" name="date_start" value="" placeholder="дд/мм/гггг" class="flatpickr-input" readonly="readonly">
+                                            <input type="text" id="date_start" name="date_start" value=""
+                                                placeholder="дд/мм/гггг" class="flatpickr-input" readonly="readonly">
                                         </label>
                                     </div>
                                     <div class="form-check ">
                                         Дата окончания <br>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            <input type="text" id="date_end" name="date_end" value="" placeholder="дд/мм/гггг" class="flatpickr-input" readonly="readonly">
+                                            <input type="text" id="date_end" name="date_end" value=""
+                                                placeholder="дд/мм/гггг" class="flatpickr-input" readonly="readonly">
                                         </label>
                                     </div>
-                        
-                                    
-                        
+
+
+
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-outline-success mt-3">Применить</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-2">
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Время
                                 </button>
-                                <form action="" method="get" class="dropdown-menu dropdown-filter dropdown-menu-custom" data-bs-theme="dark" style="max-height: 220px; overflow-y: auto;">
+                                <form action="" method="get" class="dropdown-menu dropdown-filter dropdown-menu-custom"
+                                    data-bs-theme="dark" style="max-height: 220px; overflow-y: auto;">
                                     <div class="form-check ">
                                         Время начала <br>
                                         <label class="form-check-label" for="flexCheckDefault">
@@ -210,126 +220,145 @@
                                             <input type="time" id="time_to_end" name="time_to_end" value="">
                                         </label>
                                     </div>
-                            
+
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-outline-success mt-3 ">Применить</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        
-                        
-                        <div class="col-lg-2">
+
+                        <div class="col-lg-2 ">
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Спикеры
                                 </button>
-                                <form action="" method="get" class="dropdown-menu dropdown-filter" style="max-height: 220px; overflow-y: auto; width: 400px;">
+                                <form action="" method="get" class="dropdown-menu speaker-filter dropdown-filter "
+                                    style="max-height: 220px; overflow-y: auto; width: 350px;">
                                     <!-- Поле для ввода, которое будет использоваться для поиска -->
                                     <div class="form-check" style="margin-left: 15px; margin-right:15px; padding: 0px;">
-                                        <input class="form-control w-100" id="search-speakers" type="text" placeholder="Поиск спикеров..." style="height: 35px;">
+                                        <input class="form-control w-100" id="search-speakers" type="text"
+                                            placeholder="Поиск спикеров..." style="height: 35px;">
                                     </div>
-                        
+
                                     <!-- Список спикеров, который будет фильтроваться по мере ввода текста -->
                                     <div id="speakers-list">
-                                        
-                                            <div class="form-check  mx-3 speaker-item">
-                                                <input class="form-check-input" type="checkbox" name="f_speakers" id="flexCheckDefault1" value="Павловская Ольга Витальевна">
-                                                <label class="form-check-label" for="flexCheckDefault1">Павловская Ольга Витальевна</label>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 speaker-item">
-                                                <input class="form-check-input" type="checkbox" name="f_speakers" id="flexCheckDefault2" value="Иванов Иван Иванович">
-                                                <label class="form-check-label" for="flexCheckDefault2">Иванов Иван Иванович</label>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 speaker-item">
-                                                <input class="form-check-input" type="checkbox" name="f_speakers" id="flexCheckDefault3" value="Коловрат Евпатий Андреевич">
-                                                <label class="form-check-label" for="flexCheckDefault3">Коловрат Евпатий Андреевич</label>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 speaker-item">
-                                                <input class="form-check-input" type="checkbox" name="f_speakers" id="flexCheckDefault4" value="Смирнова Каролина Михайловна">
-                                                <label class="form-check-label" for="flexCheckDefault4">Смирнова Каролина Михайловна</label>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 speaker-item">
-                                                <input class="form-check-input" type="checkbox" name="f_speakers" id="flexCheckDefault5" value="Богданова Елизавета Степановна">
-                                                <label class="form-check-label" for="flexCheckDefault5">Богданова Елизавета Степановна</label>
-                                            </div>
-                                        
+
+                                        <div class="form-check  mx-3 speaker-item">
+                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                                id="flexCheckDefault1" value="Павловская Ольга Витальевна">
+                                            <label class="form-check-label" for="flexCheckDefault1">Павловская Ольга
+                                                Витальевна</label>
+                                        </div>
+
+                                        <div class="form-check  mx-3 speaker-item">
+                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                                id="flexCheckDefault2" value="Иванов Иван Иванович">
+                                            <label class="form-check-label" for="flexCheckDefault2">Иванов Иван
+                                                Иванович</label>
+                                        </div>
+
+                                        <div class="form-check  mx-3 speaker-item">
+                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                                id="flexCheckDefault3" value="Коловрат Евпатий Андреевич">
+                                            <label class="form-check-label" for="flexCheckDefault3">Коловрат Евпатий
+                                                Андреевич</label>
+                                        </div>
+
+                                        <div class="form-check  mx-3 speaker-item">
+                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                                id="flexCheckDefault4" value="Смирнова Каролина Михайловна">
+                                            <label class="form-check-label" for="flexCheckDefault4">Смирнова Каролина
+                                                Михайловна</label>
+                                        </div>
+
+                                        <div class="form-check  mx-3 speaker-item">
+                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                                id="flexCheckDefault5" value="Богданова Елизавета Степановна">
+                                            <label class="form-check-label" for="flexCheckDefault5">Богданова Елизавета
+                                                Степановна</label>
+                                        </div>
+
                                     </div>
-                            
-                                    
-                                    
-                                    
+
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-outline-success mt-3">Применить</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        
-                        
-                        
+
                         <div class="col-lg-2">
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Теги
                                 </button>
-                                <form action="" method="get" class="dropdown-menu dropdown-filter" style="max-height: 200px; overflow-y: auto; ">
+                                <form action="" method="get" class="dropdown-menu dropdown-filter"
+                                    style="max-height: 200px; overflow-y: auto; width: 200px;">
                                     <!-- Поле для поиска тегов -->
-                                    <div class="form-check " style="margin-left: 15px; margin-right:15px; padding: 0px;">
-                                        <input class="form-control w-100" id="search-tags" type="text" placeholder="Поиск тегов..." style="height: 35px;">
+                                    <div class="form-check "
+                                        style="margin-left: 15px; margin-right:15px; padding: 0px;">
+                                        <input class="form-control w-100" id="search-tags" type="text"
+                                            placeholder="Поиск тегов..." style="height: 35px;">
                                     </div>
-                        
+
                                     <!-- Список тегов -->
                                     <div id="tags-list">
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault1" value="#ITEL">
-                                                <label class="form-check-label" for="flexCheckDefault1">#ITEL</label>
-                                                <br>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault2" value="#Пму">
-                                                <label class="form-check-label" for="flexCheckDefault2">#Пму</label>
-                                                <br>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault3" value="#СОУ ИТС">
-                                                <label class="form-check-label" for="flexCheckDefault3">#СОУ ИТС</label>
-                                                <br>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault4" value="#CITRIX">
-                                                <label class="form-check-label" for="flexCheckDefault4">#CITRIX</label>
-                                                <br>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault5" value="#Деньги">
-                                                <label class="form-check-label" for="flexCheckDefault5">#Деньги</label>
-                                                <br>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault6" value="#ТЕГИМЕГИПЕГИ">
-                                                <label class="form-check-label" for="flexCheckDefault6">#ТЕГИМЕГИПЕГИ</label>
-                                                <br>
-                                            </div>
-                                        
-                                            <div class="form-check  mx-3 tag-item" style="height: 5px;">
-                                                <input class="form-check-input" type="checkbox" name="f_tags" id="flexCheckDefault7" value="#САДД">
-                                                <label class="form-check-label" for="flexCheckDefault7">#САДД</label>
-                                                <br>
-                                            </div>
-                                        
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault1" value="#ITEL">
+                                            <label class="form-check-label" for="flexCheckDefault1">#ITEL</label>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault2" value="#Пму">
+                                            <label class="form-check-label" for="flexCheckDefault2">#Пму</label>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault3" value="#СОУ ИТС">
+                                            <label class="form-check-label" for="flexCheckDefault3">#СОУ ИТС</label>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault4" value="#CITRIX">
+                                            <label class="form-check-label" for="flexCheckDefault4">#CITRIX</label>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault5" value="#Деньги">
+                                            <label class="form-check-label" for="flexCheckDefault5">#Деньги</label>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault6" value="#ТЕГИМЕГИПЕГИ">
+                                            <label class="form-check-label"
+                                                for="flexCheckDefault6">#ТЕГИМЕГИПЕГИ</label>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-check  mx-3 tag-item" style="height: 5px;">
+                                            <input class="form-check-input" type="checkbox" name="f_tags"
+                                                id="flexCheckDefault7" value="#САДД">
+                                            <label class="form-check-label" for="flexCheckDefault7">#САДД</label>
+                                            <br>
+                                        </div>
+
                                     </div>
-                        
+
                                     <!-- Кнопка для применения тегов -->
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-outline-success mt-3">Применить</button>
@@ -337,9 +366,47 @@
                                 </form>
                             </div>
                         </div>
-                
                     </div>
                 </div>
+
+                <div id="sort-section" class="dropdown-menu bg-dark" style="display: block; width: 100px;">
+                    <form action="" method="get">
+                        <div class="form-check text-white mx-3">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-default" value="default" checked="">
+                            <label class="form-check-label" for="sort-time-default">По умолчанию</label>
+                        </div>
+                
+                        <h6 class="dropdown-header text-white">Сортировка по времени</h6>
+                
+                        <div class="form-check text-white mx-3">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-earlier" value="time_start">
+                            <label class="form-check-label" for="sort-time-earlier">Раньше</label>
+                        </div>
+                        <div class="form-check text-white mx-3">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-later" value="-time_start">
+                            <label class="form-check-label" for="sort-time-later">Позже</label>
+                        </div>
+                
+                        <h6 class="dropdown-header text-white">Сортировка по дате</h6>
+                        
+                        <div class="form-check text-white mx-3">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-date-newest" value="-date">
+                            <label class="form-check-label" for="sort-date-newest">Сначала новые</label>
+                        </div>
+                        <div class="form-check text-white mx-3">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-date-oldest" value="date">
+                            <label class="form-check-label" for="sort-date-oldest">Сначала старые</label>
+                        </div>
+                        
+                
+                        <!-- Передаем активные фильтры (исключаем текущий параметр сортировки) -->
+                        
+                
+                        <!-- Кнопка для применения сортировки -->
+                        <button type="submit" class="btn btn-primary mx-3 mt-3">Применить</button>
+                    </form>
+                </div>
+
                 <div class="row mt-3 mb-3 events">
                     <div class="col-lg-1 feed-left-column"></div>
                     <div class="col-lg-10 cards">
@@ -497,23 +564,42 @@
 
     <script>
         // Определяем функции для показа и скрытия дива
-        function toggleRools() {
-            const roolsDiv = document.getElementById('rools');
+        function toggleFilters() {
+            const filterDiv = document.getElementById('rools');
 
             // Проверяем текущее состояние и переключаем его
-            if (roolsDiv.style.display === 'none' || roolsDiv.style.display === '') {
-                roolsDiv.style.display = 'block'; // Показываем
+            if (filterDiv.style.display === 'none' || filterDiv.style.display === '') {
+                filterDiv.style.display = 'block'; // Показываем
             } else {
-                roolsDiv.style.display = 'none';  // Скрываем
+                filterDiv.style.display = 'none';  // Скрываем
             }
         }
 
         // Добавляем обработчик события на кнопку
-        document.getElementById('filter-toggle').addEventListener('click', toggleRools);
+        document.getElementById('filter-toggle').addEventListener('click', toggleFilters);
+
+        // Скрываем див по умолчани
+        document.getElementById('rools').style.display = 'none';
+    </script>
+
+    <script>
+        // Определяем функции для показа и скрытия дива
+        function toggleSortSection() {
+            const sortSectionDiv = document.getElementById('sort-section');
+
+            // Проверяем текущее состояние и переключаем его
+            if (sortSectionDiv.style.display === 'none' || sortSectionDiv.style.display === '') {
+                sortSectionDiv.style.display = 'block'; // Показываем
+            } else {
+                sortSectionDiv.style.display = 'none';  // Скрываем
+            }
+        }
+
+        // Добавляем обработчик события на кнопку
+        document.getElementById('sort-toggle').addEventListener('click', toggleSortSection);
 
         // Скрываем див по умолчанию
-        document.getElementById('filter-section').style.display = 'none';
-
+        document.getElementById('sort-section').style.display = 'none';
     </script>
 </body>
 
