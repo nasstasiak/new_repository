@@ -66,9 +66,17 @@ div {
     
 }
 .btn-outline-success {
-    background-color: rgb(225, 248, 250);
+    background: rgba(109, 106, 129, 0.5);
+    border: none;
 }
 
+.btn-outline-success:hover {
+    background-color: #D9D9D9;
+}
+
+.btn-outline-success:active {
+    background-color: rgb(39, 66, 106);
+}
   
 @font-face {
     font-family: 'Days One';
@@ -85,10 +93,27 @@ h2, h3 {
     font-size: 48px;
 }
 
+.dropdown-menu {
+    background-color: rgba(217, 217, 217, 0.9);
+    text-indent: 0;
+}
+
+.dropdown-filter {
+    padding-right: 20px;
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-weight: 400;
+    border-radius: 15px;
+}
+
+input, .form-control {
+    border-radius: 10px;
+}
 
 button {
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
 }
+
 .event {
     margin-top: 1rem;
     margin-bottom: 1rem;
