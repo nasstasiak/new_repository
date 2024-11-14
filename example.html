@@ -153,7 +153,7 @@
                                     Название
                                 </button>
                                 <form action="" method="get" class="dropdown-menu dropdown-filter w-100"
-                                    data-bs-theme="dark">
+                                    data-bs-theme="dark" id="name-form">
                                     <div class="form-check">
                                         <input class="form-control me-3" type="search" id="event-name-search"
                                             name="name_search" placeholder="Введите название">
@@ -416,6 +416,11 @@
                     <div class="col-lg-10">
                         <div id="filter-message" class="hidden">
                             Фильтр по названию: <span id="filter-name-value"></span>
+                            <button class="delete-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
                         </div>
                     </div>
                     <div class="col-lg-1"></div>
@@ -576,38 +581,25 @@
         <div class="col-lg-1 right-column"></div>
     </main>
 
+
     <script>
-        // Функция для переключения видимости фильтров
+        // Определяем функции для показа и скрытия дива
         function toggleFilters() {
             const filterDiv = document.getElementById('rools');
-    
+
             // Проверяем текущее состояние и переключаем его
             if (filterDiv.style.display === 'none' || filterDiv.style.display === '') {
                 filterDiv.style.display = 'block'; // Показываем
-                localStorage.setItem('filtersVisible', 'true'); // Сохраняем состояние
             } else {
-                filterDiv.style.display = 'none'; // Скрываем
-                localStorage.setItem('filtersVisible', 'false'); // Сохраняем состояние
+                filterDiv.style.display = 'none';  // Скрываем
             }
         }
-    
-        // При загрузке страницы
-        window.onload = function () {
-            const filterDiv = document.getElementById('rools');
-            const filtersVisible = localStorage.getItem('filtersVisible');
-    
-            // Восстанавливаем состояние дива
-            if (filtersVisible === 'true') {
-                filterDiv.style.display = 'block'; // Показываем, если состояние true
-            } else {
-                filterDiv.style.display = 'none'; // Скрываем в противном случае
-            }
-        };
-    
-        // Обработчик события для кнопки
+
+        // Добавляем обработчик события на кнопку
         document.getElementById('filter-toggle').addEventListener('click', toggleFilters);
+
     </script>
-    
+
 
     <script>
         // Определяем функции для показа и скрытия дива
@@ -675,6 +667,76 @@
 
         // Обработчик события для кнопки
         document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
+    </script>
+
+    <script>
+        function setNameFilter() {
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-message');
+            const searchValue = document.getElementById('event-name-search').value.trim();
+
+            // Устанавливаем значение в span
+            filterValueSpan.textContent = searchValue;
+
+            // Проверяем значение и отображаем или скрываем div с фильтром
+            if (searchValue !== "") {
+                filterMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значение в localStorage
+            localStorage.setItem('filterName', searchValue);
+        }
+
+        function clearFilter() {
+            const inputField = document.getElementById('event-name-search');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-message');
+
+            // Очищаем поле ввода
+            inputField.value = '';
+            filterValueSpan.textContent = ''; // Очищаем значение в span
+            filterMessageDiv.style.display = 'none'; // Скрываем сообщение
+
+            // Удаляем значение из localStorage
+            localStorage.removeItem('filterName');
+
+            // Отправляем форму
+            document.getElementById('name-form').submit();
+        }
+
+        // При загрузке страницы
+        window.onload = function () {
+            const savedValue = localStorage.getItem('filterName');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-message');
+            const inputField = document.getElementById('event-name-search');
+            const filterDiv = document.getElementById('rools'); // Предположительно, это фильтры
+
+            if (savedValue) {
+                inputField.value = savedValue; // Заполняем поле ввода
+                filterValueSpan.textContent = savedValue;
+
+                // Проверяем, нужно ли показывать сообщение
+                if (savedValue !== "") {
+                    filterMessageDiv.style.display = 'block'; // Показываем
+                    filterDiv.style.display = 'block';
+                } else {
+                    filterMessageDiv.style.display = 'none'; // Скрываем
+                    filterDiv.style.display = 'block';
+                }
+            }
+        };
+
+        // Обработчик события для кнопки Применить
+        document.getElementById('apply-name-button').addEventListener('click', (event) => {
+            event.preventDefault(); // Отменяем стандартное поведение кнопки
+            setNameFilter();
+        });
+
+        // Обработчик события для кнопки удаления фильтра
+        document.getElementById('delete-filter').addEventListener('click', clearFilter);
     </script>
 
 </body>
