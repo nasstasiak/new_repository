@@ -143,7 +143,7 @@
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-                <div id="rools" class="row filter-events-row mt-2">
+                <div id="rools" class="row filter-events-row mt-2 hidden">
                     <div class="row filter-events-row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-2">
@@ -154,13 +154,13 @@
                                 </button>
                                 <form action="" method="get" class="dropdown-menu dropdown-filter w-100"
                                     data-bs-theme="dark">
-                                    <div class="form-check ">
+                                    <div class="form-check">
                                         <input class="form-control me-3" type="search" id="event-name-search"
                                             name="name_search" placeholder="Введите название">
                                     </div>
                                     <div id="autocomplete-results" class="autocomplete-results"></div>
                                     <div class="text-center">
-                                        <button class="btn btn-outline-success" type="submit"
+                                        <button class="btn btn-outline-success" type="submit" id="apply-name-button"
                                             style="margin-top: 10px;">Применить</button>
                                     </div>
                                 </form>
@@ -173,21 +173,20 @@
                                     data-bs-toggle="dropdown" aria-expanded="false" id="dateFilterButton">
                                     Дата
                                 </button>
-                                <form action="/events_available/online/" method="get"
-                                    class="dropdown-menu dropdown-filter" data-bs-theme="dark" id="dateDropdown"
+                                <form action="" method="get" class="dropdown-menu dropdown-filter" id="dateDropdown"
                                     style="overflow-y: auto;">
                                     <div class="form-check ">
                                         Дата начала <br>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            <input type="text" id="date_start" name="date_start" value=""
-                                                placeholder="дд/мм/гггг" class="flatpickr-input" readonly="readonly">
+                                            <input type="date" id="date_start" name="date_start" value=""
+                                                placeholder="дд/мм/гггг" class="flatpickr-input">
                                         </label>
                                     </div>
                                     <div class="form-check ">
                                         Дата окончания <br>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            <input type="text" id="date_end" name="date_end" value=""
-                                                placeholder="дд/мм/гггг" class="flatpickr-input" readonly="readonly">
+                                            <input type="date" id="date_end" name="date_end" value=""
+                                                placeholder="дд/мм/гггг" class="flatpickr-input">
                                         </label>
                                     </div>
 
@@ -372,39 +371,54 @@
                 <div id="sort-section" class="dropdown-menu bg-dark" style="display: block; width: 100px;">
                     <form action="" method="get">
                         <div class="form-check text-white mx-3">
-                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-default" value="default" checked="">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-default"
+                                value="default" checked="">
                             <label class="form-check-label" for="sort-time-default">По умолчанию</label>
                         </div>
-                
+
                         <h6 class="dropdown-header text-white">Сортировка по времени</h6>
-                
+
                         <div class="form-check text-white mx-3">
-                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-earlier" value="time_start">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-earlier"
+                                value="time_start">
                             <label class="form-check-label" for="sort-time-earlier">Раньше</label>
                         </div>
                         <div class="form-check text-white mx-3">
-                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-later" value="-time_start">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-time-later"
+                                value="-time_start">
                             <label class="form-check-label" for="sort-time-later">Позже</label>
                         </div>
-                
+
                         <h6 class="dropdown-header text-white">Сортировка по дате</h6>
-                        
+
                         <div class="form-check text-white mx-3">
-                            <input class="form-check-input" type="radio" name="order_by" id="sort-date-newest" value="-date">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-date-newest"
+                                value="-date">
                             <label class="form-check-label" for="sort-date-newest">Сначала новые</label>
                         </div>
                         <div class="form-check text-white mx-3">
-                            <input class="form-check-input" type="radio" name="order_by" id="sort-date-oldest" value="date">
+                            <input class="form-check-input" type="radio" name="order_by" id="sort-date-oldest"
+                                value="date">
                             <label class="form-check-label" for="sort-date-oldest">Сначала старые</label>
                         </div>
-                        
-                
+
+
                         <!-- Передаем активные фильтры (исключаем текущий параметр сортировки) -->
-                        
-                
+
+
                         <!-- Кнопка для применения сортировки -->
                         <button type="submit" class="btn btn-primary mx-3 mt-3">Применить</button>
                     </form>
+                </div>
+
+                <div class="row mt-3 mb-3">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div id="filter-message" class="hidden">
+                            Фильтр по названию: <span id="filter-name-value"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
                 </div>
 
                 <div class="row mt-3 mb-3 events">
@@ -563,24 +577,37 @@
     </main>
 
     <script>
-        // Определяем функции для показа и скрытия дива
+        // Функция для переключения видимости фильтров
         function toggleFilters() {
             const filterDiv = document.getElementById('rools');
-
+    
             // Проверяем текущее состояние и переключаем его
             if (filterDiv.style.display === 'none' || filterDiv.style.display === '') {
                 filterDiv.style.display = 'block'; // Показываем
+                localStorage.setItem('filtersVisible', 'true'); // Сохраняем состояние
             } else {
-                filterDiv.style.display = 'none';  // Скрываем
+                filterDiv.style.display = 'none'; // Скрываем
+                localStorage.setItem('filtersVisible', 'false'); // Сохраняем состояние
             }
         }
-
-        // Добавляем обработчик события на кнопку
+    
+        // При загрузке страницы
+        window.onload = function () {
+            const filterDiv = document.getElementById('rools');
+            const filtersVisible = localStorage.getItem('filtersVisible');
+    
+            // Восстанавливаем состояние дива
+            if (filtersVisible === 'true') {
+                filterDiv.style.display = 'block'; // Показываем, если состояние true
+            } else {
+                filterDiv.style.display = 'none'; // Скрываем в противном случае
+            }
+        };
+    
+        // Обработчик события для кнопки
         document.getElementById('filter-toggle').addEventListener('click', toggleFilters);
-
-        // Скрываем див по умолчани
-        document.getElementById('rools').style.display = 'none';
     </script>
+    
 
     <script>
         // Определяем функции для показа и скрытия дива
@@ -601,6 +628,55 @@
         // Скрываем див по умолчанию
         document.getElementById('sort-section').style.display = 'none';
     </script>
+
+    <script>
+        function setNameFilter() {
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-message');
+            const searchValue = document.getElementById('event-name-search').value.trim();
+
+            // Устанавливаем значение в span
+            filterValueSpan.textContent = searchValue;
+
+            // Проверяем значение и отображаем или скрываем div с фильтром
+            if (searchValue !== "") {
+                filterMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значение в localStorage
+            localStorage.setItem('filterName', searchValue);
+        }
+
+        // При загрузке страницы
+        window.onload = function () {
+            const savedValue = localStorage.getItem('filterName');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-message');
+            const inputField = document.getElementById('event-name-search');
+            const filterDiv = document.getElementById('rools');
+            const filtersVisible = localStorage.getItem('filtersVisible');
+
+            if (savedValue) {
+                inputField.value = savedValue; // Заполняем поле ввода
+                filterValueSpan.textContent = savedValue;
+
+                // Проверяем, нужно ли показывать сообщение
+                if (savedValue !== "") {
+                    filterMessageDiv.style.display = 'block'; // Показываем
+                    filterDiv.style.display = 'block';
+                } else {
+                    filterMessageDiv.style.display = 'none'; // Скрываем
+                    filterDiv.style.display = 'block';
+                }
+            }
+        };
+
+        // Обработчик события для кнопки
+        document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
+    </script>
+
 </body>
 
 </html>

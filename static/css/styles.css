@@ -45,6 +45,10 @@ main {
     width: 100vw;
 }
 
+.hidden {
+    display: none;
+}
+
 .feed {
     background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
     box-shadow: 1px 10px 27px 2px #000000;
@@ -111,6 +115,20 @@ input, .form-control {
 
 .form-check {
     text-indent: 0;
+}
+
+#filter-message {
+    border-radius: 25px;
+    background: rgb(217, 217, 217);
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+    width: fit-content;
+    padding-right: 20px;
 }
 
 button {
