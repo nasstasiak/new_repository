@@ -189,9 +189,6 @@
                                                 placeholder="дд/мм/гггг" class="flatpickr-input">
                                         </label>
                                     </div>
-
-
-
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-outline-success mt-3">Применить</button>
                                     </div>
@@ -414,10 +411,10 @@
                 <div class="row mt-3 mb-3">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
-                        <div id="filter-message" class="hidden">
+                        <div id="filter-name-message" class="filter-message hidden">
                             Фильтр по названию: <span id="filter-name-value"></span>
-                            <button class="delete-filter" type="submit"
-                                style="border: none; background: none; box-shadow: none;" id="delete-filter">
+                            <button class="delete-name-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-name-filter">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
                             </button>
@@ -624,7 +621,7 @@
     <script>
         function setNameFilter() {
             const filterValueSpan = document.getElementById('filter-name-value');
-            const filterMessageDiv = document.getElementById('filter-message');
+            const filterMessageDiv = document.getElementById('filter-name-message');
             const searchValue = document.getElementById('event-name-search').value.trim();
 
             // Устанавливаем значение в span
@@ -645,7 +642,7 @@
         window.onload = function () {
             const savedValue = localStorage.getItem('filterName');
             const filterValueSpan = document.getElementById('filter-name-value');
-            const filterMessageDiv = document.getElementById('filter-message');
+            const filterMessageDiv = document.getElementById('filter-name-message');
             const inputField = document.getElementById('event-name-search');
             const filterDiv = document.getElementById('rools');
             const filtersVisible = localStorage.getItem('filtersVisible');
@@ -672,7 +669,7 @@
     <script>
         function setNameFilter() {
             const filterValueSpan = document.getElementById('filter-name-value');
-            const filterMessageDiv = document.getElementById('filter-message');
+            const filterMessageDiv = document.getElementById('filter-name-message');
             const searchValue = document.getElementById('event-name-search').value.trim();
 
             // Устанавливаем значение в span
@@ -692,7 +689,7 @@
         function clearFilter() {
             const inputField = document.getElementById('event-name-search');
             const filterValueSpan = document.getElementById('filter-name-value');
-            const filterMessageDiv = document.getElementById('filter-message');
+            const filterMessageDiv = document.getElementById('filter-name-message');
 
             // Очищаем поле ввода
             inputField.value = '';
@@ -710,7 +707,7 @@
         window.onload = function () {
             const savedValue = localStorage.getItem('filterName');
             const filterValueSpan = document.getElementById('filter-name-value');
-            const filterMessageDiv = document.getElementById('filter-message');
+            const filterMessageDiv = document.getElementById('filter-name-message');
             const inputField = document.getElementById('event-name-search');
             const filterDiv = document.getElementById('rools'); // Предположительно, это фильтры
 
@@ -736,7 +733,7 @@
         });
 
         // Обработчик события для кнопки удаления фильтра
-        document.getElementById('delete-filter').addEventListener('click', clearFilter);
+        document.getElementById('delete-name-filter').addEventListener('click', clearFilter);
     </script>
 
 </body>

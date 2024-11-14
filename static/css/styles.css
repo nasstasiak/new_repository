@@ -117,7 +117,7 @@ input, .form-control {
     text-indent: 0;
 }
 
-#filter-message {
+.filter-message {
     border-radius: 25px;
     background: rgb(217, 217, 217);
     color: rgb(39, 66, 106);
@@ -1306,6 +1306,7 @@ table {
     .right-column {
         width: 3%;
         margin: 0;
+        padding: 0;
     }
 
     .cards {
