@@ -708,79 +708,41 @@
 
     <script>
         function setDateFilter() {
-            const startDate = document.getElementById('start-date').value;
-            const endDate = document.getElementById('end-date').value;
-            const filterValueSpan = document.getElementById('filter-date-value');
+            const filterStartValueSpan = document.getElementById('filter-start-date-value');
+            const filterEndValueSpan = document.getElementById('filter-end-date-value');
             const filterDateMessageDiv = document.getElementById('filter-date-message');
-
-            // Устанавливаем значение в span
-            filterValueSpan.textContent = `: ${ startDate } до: ${ endDate }`;
-
-            // Проверяем значения и отображаем или скрываем div с фильтром
-            if (startDate && endDate) {
-                filterDateMessageDiv.style.display = 'block'; // Показываем
-            } else {
-                filterDateMessageDiv.style.display = 'none'; // Скрываем
-            }
-
-            // Сохраняем значения в localStorage
-            localStorage.setItem('startDate', startDate);
-            localStorage.setItem('endDate', endDate);
-        }
-
-        function setNameFilter() {
-            const filterValueSpan = document.getElementById('filter-name-value');
-            const filterNameMessageDiv = document.getElementById('filter-name-message');
-            const searchValue = document.getElementById('event-name-search').value.trim();
-
-            // Устанавливаем значение в span
-            filterValueSpan.textContent = searchValue;
-
-            // Проверяем значение и отображаем или скрываем div с фильтром
-            if (searchValue !== "") {
-                filterNameMessageDiv.style.display = 'block'; // Показываем
-            } else {
-                filterNameMessageDiv.style.display = 'none'; // Скрываем
-            }
-
-            // Сохраняем значение в localStorage
-            localStorage.setItem('filterName', searchValue);
-        }
-
-        window.onload = function () {
-            // Восстановление фильтра по дате
-            const savedStartDate = localStorage.getItem('startDate');
-            const savedEndDate = localStorage.getItem('endDate');
-            const filterValueSpanDate = document.getElementById('filter-date-value');
-            const filterDateMessageDiv = document.getElementById('filter-date-message');
-
-            if (savedStartDate && savedEndDate) {
-                document.getElementById('start-date').value = savedStartDate;
-                document.getElementById('end-date').value = savedEndDate;
-                filterValueSpanDate.textContent = `С: ${ savedStartDate } до: ${ savedEndDate }`;
+            const startDateValue = document.getElementById('date_start').value.trim();
+            const endDateValue = document.getElementById('date_end').value.trim();
+            filterStartValueSpan.textContent = startDateValue ? new Date(startDateValue).toLocaleDateString() : '';
+            filterEndValueSpan.textContent = endDateValue ? new Date(endDateValue).toLocaleDateString() : '';
+            if (startDateValue || endDateValue) {
                 filterDateMessageDiv.style.display = 'block';
+            } else {
+                filterDateMessageDiv.style.display = 'none';
+                localStorage.setItem('filterStartDate', startDateValue);
+                localStorage.setItem('filterEndDate', endDateValue);
             }
-
-            // Восстановление фильтра по имени
-            const savedNameValue = localStorage.getItem('filterName');
-
-            const filterValueSpanName = document.getElementById('filter-name-value');
-            const filterNameMessageDiv = document.getElementById('filter-name-message');
-
-            if (savedNameValue) {
-                document.getElementById('event-name-search').value = savedNameValue;
-                filterValueSpanName.textContent = savedNameValue;
-
-                if (savedNameValue !== "") {
-                    filterNameMessageDiv.style.display = 'block';
-                } else {
-                    filterNameMessageDiv.style.display = 'none';
+            window.onload = function () {
+                const savedStartDate = localStorage.getItem('filterStartDate');
+                const savedEndDate = localStorage.getItem('filterEndDate');
+                const filterStartValueSpan = document.getElementById('filter-start-date-value');
+                const filterEndValueSpan = document.getElementById('filter-end-date-value');
+                const filterDateMessageDiv = document.getElementById('filter-date-message');
+                if (savedStartDate) {
+                    document.getElementById('date_start').value = savedStartDate; // Заполняем поле даты начала
+                    filterStartValueSpan.textContent = new Date(savedStartDate).toLocaleDateString();
                 }
-            }
-
-            // Добавление обработчиков событий для кнопок
-            document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
-            document.getElementById('apply-date-button').addEventListener('click', setDateFilter); // Предполагается, что у вас есть такая кнопка
+                if (savedEndDate) {
+                    document.getElementById('date_end').value = savedEndDate;
+                    filterEndValueSpan.textContent = new Date(savedEndDate).toLocaleDateString();
+                }
+                if (savedStartDate || savedEndDate) {
+                    filterDateMessageDiv.style.display = 'block';
+                } else {
+                    filterDateMessageDiv.style.display = 'none';
+                }
+            };
+            document.getElementById('apply-date-button').addEventListener('click', setDateFilter);
         };
     </script>
 
