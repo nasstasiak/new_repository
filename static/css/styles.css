@@ -9,6 +9,7 @@
 }
 
 body {
+    background-color: #B3BFD1;
     background-image: url("background2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
