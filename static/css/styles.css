@@ -9,7 +9,8 @@
 }
 
 body {
-    background-color: #B3BFD1;
+    background-color: #323c48;
+    /* background-color: #B3BFD1; */
     background-image: url("background2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
