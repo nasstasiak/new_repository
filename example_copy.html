@@ -408,9 +408,32 @@
                         <button type="submit" class="btn btn-primary mx-3 mt-3">Применить</button>
                     </form>
                 </div>
+
                 <div class="row mt-3 mb-3">
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-10" id="filters-selected">
+                    <div class="col-lg-10">
+                        <div id="filter-name-message" class="filter-message hidden">
+                            Фильтр по названию: <span id="filter-name-value"></span>
+                            <button class="delete-name-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-name-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div id="filter-date-message" class="filter-message hidden">
+                            Фильтр по дате: <span id="filter-start-date-value"></span> &#8212; <span
+                                id="filter-end-date-value"></span>
+                            <button class="delete-date-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-date-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
@@ -575,31 +598,19 @@
         // Определяем функции для показа и скрытия дива
         function toggleFilters() {
             const filterDiv = document.getElementById('rools');
-    
+
             // Проверяем текущее состояние и переключаем его
             if (filterDiv.style.display === 'none' || filterDiv.style.display === '') {
                 filterDiv.style.display = 'block'; // Показываем
-                localStorage.setItem('rools-visible', 'true'); // Сохраняем состояние как показано
             } else {
                 filterDiv.style.display = 'none';  // Скрываем
-                localStorage.setItem('rools-visible', 'false'); // Сохраняем состояние как скрыто
             }
         }
-    
+
         // Добавляем обработчик события на кнопку
         document.getElementById('filter-toggle').addEventListener('click', toggleFilters);
-    
-        window.onload = function () {
-            // Проверяем, были ли фильтры показаны до обновления страницы
-            const filterDiv = document.getElementById('rools');
-            if (localStorage.getItem('rools-visible') === 'true') {
-                filterDiv.style.display = 'block';
-            } else {
-                filterDiv.style.display = 'none';
-            }
-        }
+
     </script>
-    
 
 
     <script>
@@ -622,6 +633,147 @@
         document.getElementById('sort-section').style.display = 'none';
     </script>
 
+    <script>
+        function setNameFilter() {
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-name-message');
+            const searchValue = document.getElementById('event-name-search').value.trim();
+
+            // Устанавливаем значение в span
+            filterValueSpan.textContent = searchValue;
+
+            // Проверяем значение и отображаем или скрываем div с фильтром
+            if (searchValue !== "") {
+                filterMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значение в localStorage
+            localStorage.setItem('filterName', searchValue);
+        }
+
+        // При загрузке страницы
+        window.onload = function () {
+            const savedValue = localStorage.getItem('filterName');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-name-message');
+            const inputField = document.getElementById('event-name-search');
+            const filterDiv = document.getElementById('rools');
+            const filtersVisible = localStorage.getItem('filtersVisible');
+
+            if (savedValue) {
+                inputField.value = savedValue; // Заполняем поле ввода
+                filterValueSpan.textContent = savedValue;
+
+                // Проверяем, нужно ли показывать сообщение
+                if (savedValue !== "") {
+                    filterMessageDiv.style.display = 'block'; // Показываем
+                    filterDiv.style.display = 'block';
+                } else {
+                    filterMessageDiv.style.display = 'none'; // Скрываем
+                    filterDiv.style.display = 'block';
+                }
+            }
+        };
+
+        // Обработчик события для кнопки
+        document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
+    </script>
+
+
+    <script>
+        function clearNameFilter() {
+            const inputField = document.getElementById('event-name-search');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-name-message');
+
+            // Очищаем поле ввода
+            inputField.value = '';
+            filterValueSpan.textContent = ''; // Очищаем значение в span
+            filterMessageDiv.style.display = 'none'; // Скрываем сообщение
+
+            // Удаляем значение из localStorage
+            localStorage.removeItem('filterName');
+
+            // Отправляем форму
+            document.getElementById('name-form').submit();
+        }
+
+        // Обработчик события для кнопки удаления фильтра
+        document.getElementById('delete-name-filter').addEventListener('click', clearNameFilter);
+    </script>
+
+    <script>
+        // Устанавливаем фильтры по дате
+        function setDateFilter() {
+            const filterStartSpan = document.getElementById('filter-start-date-value');
+            const filterEndSpan = document.getElementById('filter-end-date-value');
+            const filterDateMessageDiv = document.getElementById('filter-date-message');
+            const searchStartValue = document.getElementById('date_start').value.trim();
+            const searchEndValue = document.getElementById('date_end').value.trim();
+            
+
+            // Устанавливаем значение в span
+            filterStartSpan.textContent = searchStartValue;
+            filterEndSpan.textContent = searchEndValue;
+
+            // Проверяем значение и отображаем или скрываем div с фильтром
+            if (searchStartValue !== "" || searchEndValue !== "") {
+                filterDateMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterDateMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значение в localStorage
+            localStorage.setItem('filterStartDate', searchStartValue);
+            localStorage.setItem('filterEndDate', searchEndValue);
+        }
+
+        // При загрузке страницы
+        window.onload = function () {
+            const savedStartValue = localStorage.getItem('filterStartDate');
+            const savedEndValue = localStorage.getItem('filterEndDate');
+            const filterStartSpan = document.getElementById('filter-start-date-value');
+            const filterEndSpan = document.getElementById('filter-end-date-value');
+            const filterDateMessageDiv = document.getElementById('filter-date-message');
+            const inputStartField = document.getElementById('date_start');
+            const inputEndField = document.getElementById('date_end');
+            const filterDiv = document.getElementById('rools'); // Предположим, что 'rools' - это общий div для всех фильтров
+
+            if (savedStartValue) {
+                inputStartField.value = savedStartValue; // Заполняем поле ввода
+                filterStartSpan.textContent = savedStartValue;
+
+                // Проверяем, нужно ли показывать сообщение
+                if (savedStartValue !== "") {
+                    filterDateMessageDiv.style.display = 'block'; // Показываем
+                    filterDiv.style.display = 'block';
+                } else {
+                    filterDateMessageDiv.style.display = 'none'; // Скрываем
+                    filterDiv.style.display = 'block';
+                }
+            }
+
+            if (savedEndValue) {
+                inputEndField.value = savedEndValue;
+                filterEndSpan.textContent = savedEndValue;
+
+                // Проверяем, нужно ли показывать сообщение
+                if (savedEndValue !== "" ) {
+                    filterDateMessageDiv.style.display = 'block';
+                    filterDiv.style.display = 'block';
+                } else {
+                    filterDateMessageDiv.style.display = 'none';
+                    filterDiv.style.display = 'block';
+                }
+            }
+        };
+
+        // Обработчик события для кнопки
+        document.getElementById('apply-date-button').addEventListener('click', setDateFilter);
+
+    </script>
 </body>
 
 </html>
