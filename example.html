@@ -244,7 +244,7 @@
 
                                         <div class="form-check  mx-3 speaker-item">
                                             <input class="form-check-input" type="checkbox" name="f_speakers"
-                                                id="flexCheckDefault1" value="Павловская Ольга Витальевна">
+                                                id="flexCheckDefault1" value="Павловская Ольга Витальевна" >
                                             <label class="form-check-label" for="flexCheckDefault1">Павловская Ольга
                                                 Витальевна</label>
                                         </div>
@@ -366,35 +366,35 @@
                     </div>
                 </div>
 
-                <div id="sort-section" class="dropdown-menu bg-dark" style="display: block; width: fit-content;">
+                <div id="sort-section" class="col-lg-10 dropdown-menu" style="display: block; width: fit-content;">
                     <form action="" method="get">
-                        <div class="form-check text-white mx-3">
+                        <div class="form-check  mx-3">
                             <input class="form-check-input" type="radio" name="order_by" id="sort-time-default"
                                 value="default" checked="">
                             <label class="form-check-label" for="sort-time-default">По умолчанию</label>
                         </div>
 
-                        <h6 class="dropdown-header text-white">Сортировка по времени</h6>
+                        <h6 class="dropdown-header">Сортировка по времени</h6>
 
-                        <div class="form-check text-white mx-3">
+                        <div class="form-check  mx-3">
                             <input class="form-check-input" type="radio" name="order_by" id="sort-time-earlier"
                                 value="time_start">
                             <label class="form-check-label" for="sort-time-earlier">Раньше</label>
                         </div>
-                        <div class="form-check text-white mx-3">
+                        <div class="form-check  mx-3">
                             <input class="form-check-input" type="radio" name="order_by" id="sort-time-later"
                                 value="-time_start">
                             <label class="form-check-label" for="sort-time-later">Позже</label>
                         </div>
 
-                        <h6 class="dropdown-header text-white">Сортировка по дате</h6>
+                        <h6 class="dropdown-header ">Сортировка по дате</h6>
 
-                        <div class="form-check text-white mx-3">
+                        <div class="form-check  mx-3">
                             <input class="form-check-input" type="radio" name="order_by" id="sort-date-newest"
                                 value="-date">
                             <label class="form-check-label" for="sort-date-newest">Сначала новые</label>
                         </div>
-                        <div class="form-check text-white mx-3">
+                        <div class="form-check  mx-3">
                             <input class="form-check-input" type="radio" name="order_by" id="sort-date-oldest"
                                 value="date">
                             <label class="form-check-label" for="sort-date-oldest">Сначала старые</label>
@@ -405,12 +405,36 @@
 
 
                         <!-- Кнопка для применения сортировки -->
-                        <button type="submit" class="btn btn-primary mx-3 mt-3">Применить</button>
+                         <div class="text-center"><button type="submit" class="btn btn-outline-success mt-3">Применить</button></div>
+                        
                     </form>
+                </div>
+
+                <div class="row mt-3 mb-3">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div id="filter-name-message" class="filter-message hidden">
+                            Фильтр по названию: <span id="filter-name-value"></span>
+                            <button class="delete-name-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-name-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="row mt-3 mb-3">
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-10" id="filters-selected">
+                    <div class="col-lg-10">
+                        <div id="filter-date-message" class="filter-message hidden">
+                            Фильтр по дате: <span id="filter-start-date-value"></span> &#8212; <span
+                                id="filter-end-date-value"></span>
+                            <button class="delete-date-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-date-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
@@ -575,31 +599,19 @@
         // Определяем функции для показа и скрытия дива
         function toggleFilters() {
             const filterDiv = document.getElementById('rools');
-    
+
             // Проверяем текущее состояние и переключаем его
             if (filterDiv.style.display === 'none' || filterDiv.style.display === '') {
                 filterDiv.style.display = 'block'; // Показываем
-                localStorage.setItem('rools-visible', 'true'); // Сохраняем состояние как показано
             } else {
                 filterDiv.style.display = 'none';  // Скрываем
-                localStorage.setItem('rools-visible', 'false'); // Сохраняем состояние как скрыто
             }
         }
-    
+
         // Добавляем обработчик события на кнопку
         document.getElementById('filter-toggle').addEventListener('click', toggleFilters);
-    
-        window.onload = function () {
-            // Проверяем, были ли фильтры показаны до обновления страницы
-            const filterDiv = document.getElementById('rools');
-            if (localStorage.getItem('rools-visible') === 'true') {
-                filterDiv.style.display = 'block';
-            } else {
-                filterDiv.style.display = 'none';
-            }
-        }
+
     </script>
-    
 
 
     <script>
@@ -621,6 +633,156 @@
         // Скрываем див по умолчанию
         document.getElementById('sort-section').style.display = 'none';
     </script>
+
+    <script>
+        function setNameFilter() {
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterNameMessageDiv = document.getElementById('filter-name-message');
+            const searchValue = document.getElementById('event-name-search').value.trim();
+
+            // Устанавливаем значение в span
+            filterValueSpan.textContent = searchValue;
+
+            // Проверяем значение и отображаем или скрываем div с фильтром
+            if (searchValue !== "") {
+                filterNameMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterNameMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значение в localStorage
+            localStorage.setItem('filterName', searchValue);
+        }
+
+        // При загрузке страницы
+        window.onload = function () {
+            const savedValue = localStorage.getItem('filterName');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterNameMessageDiv = document.getElementById('filter-name-message');
+            const inputField = document.getElementById('event-name-search');
+            const filterDiv = document.getElementById('rools');
+            const filtersVisible = localStorage.getItem('filtersVisible');
+
+            if (savedValue) {
+                inputField.value = savedValue; // Заполняем поле ввода
+                filterValueSpan.textContent = savedValue;
+
+                // Проверяем, нужно ли показывать сообщение
+                if (savedValue !== "") {
+                    filterNameMessageDiv.style.display = 'block'; // Показываем
+                    filterDiv.style.display = 'block';
+                } else {
+                    filterNameMessageDiv.style.display = 'none'; // Скрываем
+                    filterDiv.style.display = 'block';
+                }
+            }
+        };
+
+        // Обработчик события для кнопки
+        document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
+    </script>
+
+
+    <script>
+        function clearNameFilter() {
+            const inputField = document.getElementById('event-name-search');
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterMessageDiv = document.getElementById('filter-name-message');
+
+            // Очищаем поле ввода
+            inputField.value = '';
+            filterValueSpan.textContent = ''; // Очищаем значение в span
+            filterMessageDiv.style.display = 'none'; // Скрываем сообщение
+
+            // Удаляем значение из localStorage
+            localStorage.removeItem('filterName');
+
+            // Отправляем форму
+            document.getElementById('name-form').submit();
+        }
+
+        // Обработчик события для кнопки удаления фильтра
+        document.getElementById('delete-name-filter').addEventListener('click', clearNameFilter);
+    </script>
+
+    <script>
+        function setDateFilter() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const filterValueSpan = document.getElementById('filter-date-value');
+            const filterDateMessageDiv = document.getElementById('filter-date-message');
+
+            // Устанавливаем значение в span
+            filterValueSpan.textContent = С: ${ startDate } до: ${ endDate };
+
+            // Проверяем значения и отображаем или скрываем div с фильтром
+            if (startDate && endDate) {
+                filterDateMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterDateMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значения в localStorage
+            localStorage.setItem('startDate', startDate);
+            localStorage.setItem('endDate', endDate);
+        }
+
+        function setNameFilter() {
+            const filterValueSpan = document.getElementById('filter-name-value');
+            const filterNameMessageDiv = document.getElementById('filter-name-message');
+            const searchValue = document.getElementById('event-name-search').value.trim();
+
+            // Устанавливаем значение в span
+            filterValueSpan.textContent = searchValue;
+
+            // Проверяем значение и отображаем или скрываем div с фильтром
+            if (searchValue !== "") {
+                filterNameMessageDiv.style.display = 'block'; // Показываем
+            } else {
+                filterNameMessageDiv.style.display = 'none'; // Скрываем
+            }
+
+            // Сохраняем значение в localStorage
+            localStorage.setItem('filterName', searchValue);
+        }
+
+        window.onload = function () {
+            // Восстановление фильтра по дате
+            const savedStartDate = localStorage.getItem('startDate');
+            const savedEndDate = localStorage.getItem('endDate');
+            const filterValueSpanDate = document.getElementById('filter-date-value');
+            const filterDateMessageDiv = document.getElementById('filter-date-message');
+
+            if (savedStartDate && savedEndDate) {
+                document.getElementById('start-date').value = savedStartDate;
+                document.getElementById('end-date').value = savedEndDate;
+                filterValueSpanDate.textContent = С: ${ savedStartDate } до: ${ savedEndDate };
+                filterDateMessageDiv.style.display = 'block';
+            }
+
+            // Восстановление фильтра по имени
+            const savedNameValue = localStorage.getItem('filterName');
+
+            const filterValueSpanName = document.getElementById('filter-name-value');
+            const filterNameMessageDiv = document.getElementById('filter-name-message');
+
+            if (savedNameValue) {
+                document.getElementById('event-name-search').value = savedNameValue;
+                filterValueSpanName.textContent = savedNameValue;
+
+                if (savedNameValue !== "") {
+                    filterNameMessageDiv.style.display = 'block';
+                } else {
+                    filterNameMessageDiv.style.display = 'none';
+                }
+            }
+
+            // Добавление обработчиков событий для кнопок
+            document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
+            document.getElementById('apply-date-button').addEventListener('click', setDateFilter); // Предполагается, что у вас есть такая кнопка
+        };
+    </script>
+
 
 </body>
 

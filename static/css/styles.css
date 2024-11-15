@@ -132,6 +132,30 @@ input, .form-control {
     padding-right: 20px;
 }
 
+#sort-section {
+    width: fit-content;
+    min-height: fit-content;
+    padding-right: 20px;
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-weight: 400;
+    border-radius: 15px;
+    position: absolute;
+    right: 15%;
+}
+
+.dropdown-header {
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-weight: 400;
+}
+
+.form-check-input:checked{
+    background-color:rgb(190, 125, 14);
+    border-color:rgb(39, 66, 106);
+    color: rgb(39, 66, 106);
+}
+
 button {
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
 }
@@ -967,6 +991,15 @@ table {
     table {
         width: 100%;
       }
+
+    .btn-primary {
+    background: none;
+    width: auto;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    margin-left: 5px;
+    }
 }
 
 @media (max-width: 1088px) {
