@@ -713,8 +713,6 @@
             const filterDateMessageDiv = document.getElementById('filter-date-message');
             const startDateValue = document.getElementById('date_start').value.trim();
             const endDateValue = document.getElementById('date_end').value.trim();
-            filterStartValueSpan.textContent = startDateValue ? new Date(startDateValue).toLocaleDateString() : '';
-            filterEndValueSpan.textContent = endDateValue ? new Date(endDateValue).toLocaleDateString() : '';
             if (startDateValue || endDateValue) {
                 filterDateMessageDiv.style.display = 'block';
             } else {
