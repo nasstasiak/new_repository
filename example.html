@@ -143,7 +143,7 @@
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-                <div id="rools" class="row filter-events-row mt-2 hidden">
+                <div id="rools" class="row filter-events-row hidden">
                     <div class="row filter-events-row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-2">
@@ -204,7 +204,7 @@
                                     Время
                                 </button>
                                 <form action="" method="get" class="dropdown-menu dropdown-filter dropdown-menu-custom"
-                                    data-bs-theme="dark" style="max-height: 220px; overflow-y: auto;">
+                                    data-bs-theme="dark" style="max-height: 220px; overflow-y: auto;" id="timeDropdown">
                                     <div class="form-check ">
                                         Время начала <br>
                                         <label class="form-check-label" for="flexCheckDefault">
@@ -411,7 +411,7 @@
                     </form>
                 </div>
 
-                <div class="row mt-3 mb-3">
+                <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
                         <div id="filter-name-message" class="filter-message hidden">
@@ -424,13 +424,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-3 mb-3">
+                <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
                         <div id="filter-date-message" class="filter-message hidden">
                             Фильтр по дате: <span id="filter-start-date-value"></span> &#8212;
                             <span id="filter-end-date-value"></span>
                             <button class="delete-date-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-date-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div id="filter-time-message" class="filter-message hidden">
+                            Фильтр по времени: <span id="filter-start-time-value"></span> &#8212;
+                            <span id="filter-end-time-value"></span>
+                            <button class="delete-time-filter" type="submit"
                                 style="border: none; background: none; box-shadow: none;" id="delete-date-filter">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
