@@ -1688,6 +1688,10 @@ table {
     .change-password {
         width: 100%;
     }
+
+    .filter-message {
+        font-size: 14px;
+    }
 }
 
 
@@ -1742,11 +1746,11 @@ table {
 
     .main-header {
         width: 50%;
-       }
+    }
     
-       .selection {
-        width: 50%;
-       }
+    .selection {
+    width: 50%;
+    }
 
     .account-title {
         font-size: 24px;
