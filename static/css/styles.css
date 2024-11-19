@@ -1668,9 +1668,7 @@ table {
         padding-inline: 2px;
     }
 
-    .col-lg-2, .dropdown {
-        text-indent: 17px;
-    }
+
 
 }
 
@@ -1702,9 +1700,6 @@ table {
         font-size: 14px;
     }
 
-    .col-lg-2, .dropdown {
-        text-indent: 17px;
-    }
 }
 
 
