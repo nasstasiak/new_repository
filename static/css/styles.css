@@ -1790,14 +1790,17 @@ table {
 
     .btn-remove_app:hover{
         background: rgba(109, 106, 129, 0.5);
+        color: rgb(255, 255, 255);
     }
     
     .btn-sent_app:hover {
         background:rgb(190, 125, 14);
+        color: rgb(255, 255, 255);
     }
     
     .btn-comment:hover {
      background: rgb(39, 66, 106);
+     color: rgb(255, 255, 255);
     }
 
 
