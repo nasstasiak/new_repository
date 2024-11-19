@@ -8,6 +8,10 @@
     src: url('Kadwa-Regular.ttf') format('truetype');
 }
 
+.col-lg-2, .dropdown {
+    padding-left: 0;
+}
+
 body {
     background-color: #323c48;
     /* background-color: #B3BFD1; */
@@ -1663,6 +1667,11 @@ table {
     .speaker-filter {
         padding-inline: 2px;
     }
+
+    .col-lg-2, .dropdown {
+        text-indent: 17px;
+    }
+
 }
 
 
@@ -1691,6 +1700,10 @@ table {
 
     .filter-message {
         font-size: 14px;
+    }
+
+    .col-lg-2, .dropdown {
+        text-indent: 17px;
     }
 }
 
@@ -1729,6 +1742,8 @@ table {
     .change-password {
         width: 100%;
     }
+
+
 }
 
 

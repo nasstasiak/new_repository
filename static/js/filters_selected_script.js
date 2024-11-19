@@ -15,6 +15,8 @@ function setNameFilter() {
 }
 // Обработчик события для кнопки
 document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
+
+
 function clearNameFilter() {
   const inputField = document.getElementById('event-name-search');
   const filterValueSpan = document.getElementById('filter-name-value');
@@ -30,6 +32,9 @@ function clearNameFilter() {
 }
 // Обработчик события для кнопки удаления фильтра
 document.getElementById('delete-name-filter').addEventListener('click', clearNameFilter);
+
+
+
 function setDateFilter() {
   const filterStartSpan = document.getElementById('filter-start-date-value');
   const filterEndSpan = document.getElementById('filter-end-date-value');
@@ -51,6 +56,8 @@ function setDateFilter() {
 }
 // Обработчик события для кнопки
 document.getElementById('apply-date-button').addEventListener('click', setDateFilter);
+
+
 function clearDateFilter() {
   const inputStartField = document.getElementById('date_start');
   const inputEndField = document.getElementById('date_end');
@@ -73,6 +80,9 @@ function clearDateFilter() {
 }
 // Обработчик события для кнопки удаления фильтра по дате
 document.getElementById('delete-date-filter').addEventListener('click', clearDateFilter);
+
+
+
 function setTimeFilter() {
   const filterStartTimeSpan = document.getElementById('filter-start-time-value');
   const filterEndTimeSpan = document.getElementById('filter-end-time-value');
@@ -94,6 +104,7 @@ function setTimeFilter() {
 }
 // Обработчик события для кнопки
 document.getElementById('apply-time-button').addEventListener('click', setTimeFilter);
+
 
 function clearTimeFilter() {
   const inputStartTimeField = document.getElementById('time_to_start');
@@ -117,6 +128,7 @@ function clearTimeFilter() {
 }
 // Обработчик события для кнопки удаления фильтра по времени
 document.getElementById('delete-time-filter').addEventListener('click', clearTimeFilter); 
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
