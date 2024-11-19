@@ -36,10 +36,13 @@ document.getElementById('delete-name-filter').addEventListener('click', clearNam
 
 
 function formatDate(date) {
-  if (!date) return ""; // Обработка пустой даты
+  if (!date) return "";
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-  return date.toLocaleDateString('ru-RU', options);
-}
+  const dateObj = new Date(date);
+  if (isNaN(dateObj.getTime())) return "";
+  return dateObj.toLocaleDateString('ru-RU', options);
+ }
+ 
 
 
 function setDateFilter() {
@@ -159,28 +162,27 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     filterNameMessageDiv.style.display = 'none';
   }
-  // Фильтр по дате
- const savedStartValue = localStorage.getItem('filterStartDate');
- const savedEndValue = localStorage.getItem('filterEndDate');
- const filterStartSpan = document.getElementById('filter-start-date-value');
- const filterEndSpan = document.getElementById('filter-end-date-value');
- const filterDateMessageDiv = document.getElementById('filter-date-message');
- const inputStartField = document.getElementById('date_start');
- const inputEndField = document.getElementById('date_end');
+    // Фильтр по дате
+  const savedStartValue = localStorage.getItem('filterStartDate');
+  const savedEndValue = localStorage.getItem('filterEndDate');
+  const filterStartSpan = document.getElementById('filter-start-date-value');
+  const filterEndSpan = document.getElementById('filter-end-date-value');
+  const filterDateMessageDiv = document.getElementById('filter-date-message');
+  const inputStartField = document.getElementById('date_start');
+  const inputEndField = document.getElementById('date_end');
 
- if (savedStartValue || savedEndValue) {
+  // Загрузка значений из localStorage и форматирование
   if (savedStartValue) {
-   inputStartField.value = savedStartValue;
-   filterStartSpan.textContent = formatDate(savedStartValue); // Применяем formatDate
+    inputStartField.value = savedStartValue;
+    filterStartSpan.textContent = formatDate(savedStartValue);
   }
   if (savedEndValue) {
-   inputEndField.value = savedEndValue;
-   filterEndSpan.textContent = formatDate(savedEndValue);  // Применяем formatDate
+    inputEndField.value = savedEndValue;
+    filterEndSpan.textContent = formatDate(savedEndValue);
   }
-  filterDateMessageDiv.style.display = 'block';
- } else {
-  filterDateMessageDiv.style.display = 'none';
- }
+
+  // Отображение блока фильтра по дате, если есть хоть одно значение
+  filterDateMessageDiv.style.display = (savedStartValue || savedEndValue) ? 'block' : 'none';
 
   // Фильтр по времени
   const savedStartTimeValue = localStorage.getItem('filterStartTime');
