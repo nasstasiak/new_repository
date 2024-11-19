@@ -342,7 +342,7 @@ button {
 }
 
 .pagination__link:hover {
-    color: #007bff;
+    color: rgb(190, 125, 14);
 }
 
 .pagination__item--prev,
@@ -1722,6 +1722,15 @@ table {
         margin-left: 5px;
     }
 
+    .pagination__link:hover {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .pagination__link:active {
+        color: rgb(190, 125, 14);
+    }
+
     .main-header {
         width: 50%;
        }
@@ -1777,6 +1786,18 @@ table {
     }
     .events {
         margin-top: 0;
+    }
+
+    .btn-remove_app:hover{
+        background: rgba(109, 106, 129, 0.5);
+    }
+    
+    .btn-sent_app:hover {
+        background:rgb(190, 125, 14);
+    }
+    
+    .btn-comment:hover {
+     background: rgb(39, 66, 106);
     }
 
 
