@@ -15,8 +15,6 @@ function setNameFilter() {
 }
 // Обработчик события для кнопки
 document.getElementById('apply-name-button').addEventListener('click', setNameFilter);
-
-
 function clearNameFilter() {
   const inputField = document.getElementById('event-name-search');
   const filterValueSpan = document.getElementById('filter-name-value');
@@ -32,9 +30,6 @@ function clearNameFilter() {
 }
 // Обработчик события для кнопки удаления фильтра
 document.getElementById('delete-name-filter').addEventListener('click', clearNameFilter);
-
-
-
 function setDateFilter() {
   const filterStartSpan = document.getElementById('filter-start-date-value');
   const filterEndSpan = document.getElementById('filter-end-date-value');
@@ -56,8 +51,6 @@ function setDateFilter() {
 }
 // Обработчик события для кнопки
 document.getElementById('apply-date-button').addEventListener('click', setDateFilter);
-
-
 function clearDateFilter() {
   const inputStartField = document.getElementById('date_start');
   const inputEndField = document.getElementById('date_end');
@@ -80,8 +73,6 @@ function clearDateFilter() {
 }
 // Обработчик события для кнопки удаления фильтра по дате
 document.getElementById('delete-date-filter').addEventListener('click', clearDateFilter);
-
-
 function setTimeFilter() {
   const filterStartTimeSpan = document.getElementById('filter-start-time-value');
   const filterEndTimeSpan = document.getElementById('filter-end-time-value');
@@ -104,8 +95,28 @@ function setTimeFilter() {
 // Обработчик события для кнопки
 document.getElementById('apply-time-button').addEventListener('click', setTimeFilter);
 
-
-
+function clearTimeFilter() {
+  const inputStartTimeField = document.getElementById('time_to_start');
+  const inputEndTimeField = document.getElementById('time_to_end');
+  const filterStartTimeSpan = document.getElementById('filter-start-time-value');
+  const filterEndTimeSpan = document.getElementById('filter-end-time-value');
+  const filterTimeMessageDiv = document.getElementById('filter-time-message');
+  // Очищаем поля ввода
+  inputStartTimeField.value = '';
+  inputEndTimeField.value = '';
+  // Очищаем значения в span
+  filterStartTimeSpan.textContent = '';
+  filterEndTimeSpan.textContent = '';
+  // Скрываем сообщение
+  filterTimeMessageDiv.style.display = 'none';
+  // Удаляем значения из localStorage
+  localStorage.removeItem('filterStartTime');
+  localStorage.removeItem('filterEndTime');
+  // Отправляем форму
+  document.getElementById('timeDropdown').submit(); 
+}
+// Обработчик события для кнопки удаления фильтра по времени
+document.getElementById('delete-time-filter').addEventListener('click', clearTimeFilter); 
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -115,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const filterNameMessageDiv = document.getElementById('filter-name-message');
   const inputNameField = document.getElementById('event-name-search');
   const filterDiv = document.getElementById('rools');
-
   if (savedNameValue) {
     inputNameField.value = savedNameValue;
     filterNameValueSpan.textContent = savedNameValue;
@@ -123,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     filterNameMessageDiv.style.display = 'none';
   }
-
   // Фильтр по дате
   const savedStartValue = localStorage.getItem('filterStartDate');
   const savedEndValue = localStorage.getItem('filterEndDate');
@@ -132,7 +141,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const filterDateMessageDiv = document.getElementById('filter-date-message');
   const inputStartField = document.getElementById('date_start');
   const inputEndField = document.getElementById('date_end');
-
   if (savedStartValue || savedEndValue) {
     if (savedStartValue) {
       inputStartField.value = savedStartValue;
@@ -146,33 +154,28 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     filterDateMessageDiv.style.display = 'none';
   }
-
   // Фильтр по времени
- const savedStartTimeValue = localStorage.getItem('filterStartTime');
- const savedEndTimeValue = localStorage.getItem('filterEndTime');
- const filterStartTimeSpan = document.getElementById('filter-start-time-value');
- const filterEndTimeSpan = document.getElementById('filter-end-time-value');
- const filterTimeMessageDiv = document.getElementById('filter-time-message');
- const inputStartTimeField = document.getElementById('time_to_start');
- const inputEndTimeField = document.getElementById('time_to_end');
-
- if (savedStartTimeValue || savedEndTimeValue) {
+  const savedStartTimeValue = localStorage.getItem('filterStartTime');
+  const savedEndTimeValue = localStorage.getItem('filterEndTime');
+  const filterStartTimeSpan = document.getElementById('filter-start-time-value');
+  const filterEndTimeSpan = document.getElementById('filter-end-time-value');
+  const filterTimeMessageDiv = document.getElementById('filter-time-message');
+  const inputStartTimeField = document.getElementById('time_to_start');
+  const inputEndTimeField = document.getElementById('time_to_end');
+  if (savedStartTimeValue || savedEndTimeValue) {
   if (savedStartTimeValue) {
-   inputStartTimeField.value = savedStartTimeValue;
-   filterStartTimeSpan.textContent = savedStartTimeValue;
+    inputStartTimeField.value = savedStartTimeValue;
+    filterStartTimeSpan.textContent = savedStartTimeValue;
   }
   if (savedEndTimeValue) {
-   inputEndTimeField.value = savedEndTimeValue;
-   filterEndTimeSpan.textContent = savedEndTimeValue;
+    inputEndTimeField.value = savedEndTimeValue;
+    filterEndTimeSpan.textContent = savedEndTimeValue;
   }
   filterTimeMessageDiv.style.display = 'block';
- } else {
+  } else {
   filterTimeMessageDiv.style.display = 'none';
- }
-
- // Отображение блока фильтров в целом
- filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
-
+  }
+  // Отображение блока фильтров в целом
+  filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
 });
-  
   
