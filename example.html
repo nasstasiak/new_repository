@@ -281,7 +281,8 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-outline-success mt-3">Применить</button>
+                                        <button type="submit" class="btn btn-outline-success mt-3"
+                                            id="apply-speakers-button">Применить</button>
                                     </div>
                                 </form>
                             </div>
@@ -417,7 +418,7 @@
                     <div class="col-lg-10">
                         <div id="filter-name-message" class="filter-message hidden">
                             Фильтр по названию: <span id="filter-name-value"></span>
-                            <button class="delete-name-filter" type="submit"
+                            <button class="delete-filter delete-name-filter" type="submit"
                                 style="border: none; background: none; box-shadow: none;" id="delete-name-filter">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
@@ -431,7 +432,7 @@
                         <div id="filter-date-message" class="filter-message hidden">
                             Фильтр по дате: <span id="filter-start-date-value"></span> &#8212;
                             <span id="filter-end-date-value"></span>
-                            <button class="delete-date-filter" type="submit"
+                            <button class="delete-filter delete-date-filter" type="submit"
                                 style="border: none; background: none; box-shadow: none;" id="delete-date-filter">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
@@ -446,7 +447,7 @@
                         <div id="filter-time-message" class="filter-message hidden">
                             Фильтр по времени: <span id="filter-start-time-value"></span> &#8212;
                             <span id="filter-end-time-value"></span>
-                            <button class="delete-time-filter" type="submit" id="delete-time-filter"
+                            <button class="delete-filter delete-time-filter" type="submit" id="delete-time-filter"
                                 style="border: none; background: none; box-shadow: none;">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
@@ -455,7 +456,21 @@
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-                <!-- в строке 458 убран mt-3 из класса-->
+                <div class="row">
+                    <div class="col-lg-1 feed-left-column"></div>
+                    <div class="col-lg-10">
+                        <div id="filter-speakers-message" class="filter-message hidden">
+                            Выбранные спикеры: <span id="filter-speakers-value"></span>
+                            <button class="delete-filter delete-speakers-filter" type="submit" id="delete-speakers-filter"
+                                style="border: none; background: none; box-shadow: none;">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <!-- в строке ниже убран mt-3 из класса-->
                 <div class="row mb-3 events">
                     <div class="col-lg-1 feed-left-column"></div>
                     <div class="col-lg-10 cards">

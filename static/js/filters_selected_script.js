@@ -148,6 +148,31 @@ document.getElementById('delete-time-filter').addEventListener('click', clearTim
 
 
 
+function displaySelectedSpeakers() {
+  const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');
+  const filterSpeakersMessageDiv = document.getElementById('filter-speakers-message');
+  const selectedSpeakers = [];
+ 
+  // Находим все чекбоксы спикеров (предполагается, что у них ID вида flexCheckDefaultN)
+  for (let i = 1; ; i++) {
+   const checkbox = document.getElementById(`flexCheckDefault${i}`);
+   if (!checkbox) break; // Выходим из цикла, если чекбокс не найден
+ 
+   if (checkbox.checked) {
+    selectedSpeakers.push(checkbox.value);
+   }
+  }
+ 
+  filterSpeakersValueSpan.textContent = selectedSpeakers.join(', ');
+  filterSpeakersMessageDiv.classList.toggle('hidden', selectedSpeakers.length === 0);
+  localStorage.setItem('selectedSpeakers', JSON.stringify(selectedSpeakers));
+ }
+ 
+ document.getElementById('apply-speakers-button').addEventListener('click', displaySelectedSpeakers);
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   // Фильтр по названию
   const savedNameValue = localStorage.getItem('filterName');
@@ -205,7 +230,23 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
   filterTimeMessageDiv.style.display = 'none';
   }
-  // Отображение блока фильтров в целом
-  filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
+
+ // Фильтр по спикерам
+ const storedSpeakers = localStorage.getItem('selectedSpeakers');
+ if (storedSpeakers) {
+  const speakers = JSON.parse(storedSpeakers);
+  speakers.forEach(speaker => {
+   const checkbox = document.querySelector(`input[value="${speaker}"]`);
+   if (checkbox) {
+    checkbox.checked = true;
+   }
+  });
+ }
+ displaySelectedSpeakers(); 
+
+ // Отображение блока фильтров в целом (изменено)
+ filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || localStorage.getItem('rools-visible') === 'true' ) ? 'block' : 'none';
 });
+
+
   

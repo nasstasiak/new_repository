@@ -1841,6 +1841,11 @@ table {
     .hidden {
         display: none;
     }
+
+    .delete-filter {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 
