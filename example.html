@@ -233,7 +233,8 @@
                                     Спикеры
                                 </button>
                                 <form action="" method="get" class="dropdown-menu speaker-filter dropdown-filter "
-                                    style="max-height: 220px; overflow-y: auto; width: fit-content; word-break: keep-all; white-space: nowrap;">
+                                    style="max-height: 220px; overflow-y: auto; width: fit-content; word-break: keep-all; white-space: nowrap;"
+                                    id="speaker-form">
                                     <!-- Поле для ввода, которое будет использоваться для поиска -->
                                     <div class="form-check" style="margin-left: 15px; margin-right:15px; padding: 0px;">
                                         <input class="form-control w-100" id="search-speakers" type="text"
@@ -242,37 +243,38 @@
 
                                     <!-- Список спикеров, который будет фильтроваться по мере ввода текста -->
                                     <div id="speakers-list">
-
+                                        <!-- заменила  name="f_speakers" на name="f_speakers[]", чтобы при нажатии на кнопку удаления 
+                                         выбранного фильтра на экране отправлялась форма с удалением этого фильтра-->
                                         <div class="form-check  mx-3 speaker-item">
-                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                            <input class="form-check-input" type="checkbox" name="f_speakers[]"
                                                 id="flexCheckDefault1" value="Павловская Ольга Витальевна">
                                             <label class="form-check-label" for="flexCheckDefault1">Павловская Ольга
                                                 Витальевна</label>
                                         </div>
 
                                         <div class="form-check  mx-3 speaker-item">
-                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                            <input class="form-check-input" type="checkbox" name="f_speakers[]"
                                                 id="flexCheckDefault2" value="Иванов Иван Иванович">
                                             <label class="form-check-label" for="flexCheckDefault2">Иванов Иван
                                                 Иванович</label>
                                         </div>
 
                                         <div class="form-check  mx-3 speaker-item">
-                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                            <input class="form-check-input" type="checkbox" name="f_speakers[]"
                                                 id="flexCheckDefault3" value="Коловрат Евпатий Андреевич">
                                             <label class="form-check-label" for="flexCheckDefault3">Коловрат Евпатий
                                                 Андреевич</label>
                                         </div>
 
                                         <div class="form-check  mx-3 speaker-item">
-                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                            <input class="form-check-input" type="checkbox" name="f_speakers[]"
                                                 id="flexCheckDefault4" value="Смирнова Каролина Михайловна">
                                             <label class="form-check-label" for="flexCheckDefault4">Смирнова Каролина
                                                 Михайловна</label>
                                         </div>
 
                                         <div class="form-check  mx-3 speaker-item">
-                                            <input class="form-check-input" type="checkbox" name="f_speakers"
+                                            <input class="form-check-input" type="checkbox" name="f_speakers[]"
                                                 id="flexCheckDefault5" value="Богданова Елизавета Степановна">
                                             <label class="form-check-label" for="flexCheckDefault5">Богданова Елизавета
                                                 Степановна</label>
@@ -461,8 +463,8 @@
                     <div class="col-lg-10">
                         <div id="filter-speakers-message" class="filter-message hidden">
                             Выбранные спикеры: <span id="filter-speakers-value"></span>
-                            <button class="delete-filter delete-speakers-filter" type="submit" id="delete-speakers-filter"
-                                style="border: none; background: none; box-shadow: none;">
+                            <button class="delete-filter delete-speakers-filter" type="submit"
+                                id="delete-speakers-filter" style="border: none; background: none; box-shadow: none;">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
                             </button>

@@ -171,6 +171,30 @@ function displaySelectedSpeakers() {
  document.getElementById('apply-speakers-button').addEventListener('click', displaySelectedSpeakers);
 
 
+ function clearSpeakersFilter() {
+  const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');
+  const filterSpeakersMessageDiv = document.getElementById('filter-speakers-message');
+  const checkboxes = document.querySelectorAll('input[name="f_speakers[]"]'); // Находим все чекбоксы
+ 
+  // Сбрасываем все чекбоксы
+  checkboxes.forEach(checkbox => checkbox.checked = false);
+ 
+  // Очищаем текст в span
+  filterSpeakersValueSpan.textContent = '';
+ 
+  // Скрываем сообщение
+  filterSpeakersMessageDiv.style.display = 'none';
+ 
+  // Удаляем данные из localStorage
+  localStorage.removeItem('selectedSpeakers');
+ 
+  // Отправка формы (если это необходимо)
+  document.getElementById('speaker-form').submit(); 
+
+ }
+ 
+ document.getElementById('delete-speakers-filter').addEventListener('click', clearSpeakersFilter);
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -245,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
  displaySelectedSpeakers(); 
 
  // Отображение блока фильтров в целом (изменено)
- filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || localStorage.getItem('rools-visible') === 'true' ) ? 'block' : 'none';
+ filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || storedSpeakers>=1 || localStorage.getItem('rools-visible') === 'true' ) ? 'block' : 'none';
 });
 
 
