@@ -308,7 +308,7 @@ displaySelectedTags();
 
 
  // Отображение блока фильтров
- filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || storedSpeakers>=1 || storedTags>=1  || localStorage.getItem('rools-visible') === 'true' ) ? 'block' : 'none';
+ filterDiv.style.display = (savedNameValue !== null || savedStartValue !== null || savedEndValue !== null || savedStartTimeValue !== null || savedEndTimeValue !== null || storedSpeakers !== null && JSON.parse(storedSpeakers).length > 0 || storedTags !== null && JSON.parse(storedTags).length > 0 || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
 });
 
 
