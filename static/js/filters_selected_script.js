@@ -148,7 +148,7 @@ document.getElementById('delete-time-filter').addEventListener('click', clearTim
 
 
 
-function displaySelectedSpeakers() {
+ function displaySelectedSpeakers() {
   const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');
   const filterSpeakersMessageDiv = document.getElementById('filter-speakers-message');
   const selectedSpeakers = [];
@@ -196,6 +196,40 @@ function displaySelectedSpeakers() {
  document.getElementById('delete-speakers-filter').addEventListener('click', clearSpeakersFilter);
 
 
+
+ function displaySelectedTags() {
+  const filterTagsValueSpan = document.getElementById('filter-tags-value');
+  const filterTagsMessageDiv = document.getElementById('filter-tags-message');
+  const selectedTags = [];
+ 
+  const checkboxes = document.querySelectorAll('input[name="f_tags[]"]');
+  checkboxes.forEach(checkbox => {
+   if (checkbox.checked) {
+    selectedTags.push(checkbox.value);
+   }
+  });
+ 
+  filterTagsValueSpan.textContent = selectedTags.join(', ');
+  filterTagsMessageDiv.classList.toggle('hidden', selectedTags.length === 0);
+  localStorage.setItem('selectedTags', JSON.stringify(selectedTags));
+ }
+
+ document.getElementById('apply-tags-button').addEventListener('click', displaySelectedTags);
+ 
+ function clearTagsFilter() {
+  const filterTagsValueSpan = document.getElementById('filter-tags-value');
+  const filterTagsMessageDiv = document.getElementById('filter-tags-message');
+  const checkboxes = document.querySelectorAll('input[name="f_tags[]"]');
+ 
+  checkboxes.forEach(checkbox => checkbox.checked = false);
+  filterTagsValueSpan.textContent = '';
+  filterTagsMessageDiv.classList.add('hidden');
+  localStorage.removeItem('selectedTags');
+ }
+
+ document.getElementById('delete-tags-filter').addEventListener('click', clearTagsFilter);
+
+ 
 
 document.addEventListener("DOMContentLoaded", function() {
   // Фильтр по названию
@@ -266,10 +300,26 @@ document.addEventListener("DOMContentLoaded", function() {
    }
   });
  }
- displaySelectedSpeakers(); 
+ displaySelectedSpeakers(); // Вызываем функцию для обновления отображения после загрузки из localStorage
 
- // Отображение блока фильтров в целом (изменено)
- filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || storedSpeakers>=1 || localStorage.getItem('rools-visible') === 'true' ) ? 'block' : 'none';
+ // Фильтр по тегам
+const storedTags = localStorage.getItem('selectedTags');
+if (storedTags) {
+ const tags = JSON.parse(storedTags);
+ tags.forEach(tag => {
+  const checkboxes = document.querySelectorAll('input[name="f_tags[]"]'); // Выбираем все чекбоксы тегов
+  checkboxes.forEach(checkbox => {
+   if (checkbox.value === tag) { // Сравниваем значения
+    checkbox.checked = true;
+   }
+  });
+ });
+}
+displaySelectedTags();
+
+
+ // Отображение блока фильтров
+ filterDiv.style.display = (savedNameValue || savedStartValue || savedEndValue || savedStartTimeValue || savedEndTimeValue || storedSpeakers>=1 || storedTags>=1  || localStorage.getItem('rools-visible') === 'true' ) ? 'block' : 'none';
 });
 
 
