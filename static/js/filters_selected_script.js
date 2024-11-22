@@ -177,6 +177,8 @@ function displaySelectedSpeakers() {
   filterSpeakersValueSpan.textContent = '';
   filterSpeakersMessageDiv.classList.add('hidden');
   localStorage.removeItem('selectedSpeakers');
+
+  document.getElementById('speaker-form').submit();
  }
  
  document.getElementById('delete-speakers-filter').addEventListener('click', clearSpeakersFilter);
@@ -211,6 +213,7 @@ function displaySelectedSpeakers() {
   filterTagsValueSpan.textContent = '';
   filterTagsMessageDiv.classList.add('hidden');
   localStorage.removeItem('selectedTags');
+  document.getElementById('tags-form').submit();
  }
 
  document.getElementById('delete-tags-filter').addEventListener('click', clearTagsFilter);
