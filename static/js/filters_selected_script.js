@@ -148,20 +148,17 @@ document.getElementById('delete-time-filter').addEventListener('click', clearTim
 
 
 
- function displaySelectedSpeakers() {
+function displaySelectedSpeakers() {
   const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');
   const filterSpeakersMessageDiv = document.getElementById('filter-speakers-message');
   const selectedSpeakers = [];
  
-  // Находим все чекбоксы спикеров (предполагается, что у них ID вида flexCheckDefaultN)
-  for (let i = 1; ; i++) {
-   const checkbox = document.getElementById(`flexCheckDefault${i}`);
-   if (!checkbox) break; // Выходим из цикла, если чекбокс не найден
- 
+  const checkboxes = document.querySelectorAll('input[name="f_speakers[]"]');
+  checkboxes.forEach(checkbox => {
    if (checkbox.checked) {
     selectedSpeakers.push(checkbox.value);
    }
-  }
+  });
  
   filterSpeakersValueSpan.textContent = selectedSpeakers.join(', ');
   filterSpeakersMessageDiv.classList.toggle('hidden', selectedSpeakers.length === 0);
@@ -174,23 +171,12 @@ document.getElementById('delete-time-filter').addEventListener('click', clearTim
  function clearSpeakersFilter() {
   const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');
   const filterSpeakersMessageDiv = document.getElementById('filter-speakers-message');
-  const checkboxes = document.querySelectorAll('input[name="f_speakers[]"]'); // Находим все чекбоксы
+  const checkboxes = document.querySelectorAll('input[name="f_speakers[]"]');
  
-  // Сбрасываем все чекбоксы
   checkboxes.forEach(checkbox => checkbox.checked = false);
- 
-  // Очищаем текст в span
   filterSpeakersValueSpan.textContent = '';
- 
-  // Скрываем сообщение
-  filterSpeakersMessageDiv.style.display = 'none';
- 
-  // Удаляем данные из localStorage
+  filterSpeakersMessageDiv.classList.add('hidden');
   localStorage.removeItem('selectedSpeakers');
- 
-  // Отправка формы (если это необходимо)
-  document.getElementById('speaker-form').submit(); 
-
  }
  
  document.getElementById('delete-speakers-filter').addEventListener('click', clearSpeakersFilter);
