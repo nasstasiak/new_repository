@@ -226,6 +226,12 @@
             margin-inline: 5px;
         }
 
+        .prev-btn:disabled,
+        .next-btn:disabled {
+            opacity: 0.5;
+        }
+
+
         .indicators {
             margin: 0 10px;
             /* Расстояние между кнопками и индикаторами */
@@ -253,50 +259,61 @@
 
     <script>
         const pages = document.querySelectorAll('.page');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        const indicatorsContainer = document.querySelector('.indicators');
-        let currentPageIndex = 0;
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const indicatorsContainer = document.querySelector('.indicators');
+let currentPageIndex = 0;
 
-        function createIndicators() {
-            for (let i = 0; i < pages.length; i++) {
-                const indicator = document.createElement('div');
-                indicator.classList.add('indicator');
-                indicator.dataset.index = i; // Добавляем атрибут data-index
-                indicator.addEventListener('click', function () {
-                    showPage(parseInt(this.dataset.index, 10)); // Парсим data-index в число
-                });
-                indicatorsContainer.appendChild(indicator);
-            }
-        }
+function createIndicators() {
+  for (let i = 0; i < pages.length; i++) {
+    const indicator = document.createElement('div');
+    indicator.classList.add('indicator');
+    indicator.dataset.index = i;
+    indicator.addEventListener('click', function() {
+      showPage(parseInt(this.dataset.index, 10));
+    });
+    if (i === 0) {
+      indicator.classList.add('active');
+    }
+    indicatorsContainer.appendChild(indicator);
+  }
+  updateIndicators();
+}
 
-        function updateIndicators() {
-            const indicators = document.querySelectorAll('.indicator');
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === currentPageIndex);
-            });
-        }
+function updateIndicators() {
+  const indicators = document.querySelectorAll('.indicator');
+  indicators.forEach((indicator, i) => {
+    indicator.classList.toggle('active', i === currentPageIndex);
+  });
+}
 
-        function showPage(index) {
-            pages.forEach((page, i) => {
-                page.classList.toggle('active', i === index);
-            });
-            updateIndicators();
-            currentPageIndex = index;
-        }
+function updateButtonStates() {
+  prevBtn.disabled = currentPageIndex === 0;
+  nextBtn.disabled = currentPageIndex === pages.length - 1;
+}
 
-        prevBtn.addEventListener('click', () => {
-            const prevIndex = (currentPageIndex - 1 + pages.length) % pages.length;
-            showPage(prevIndex);
-        });
+function showPage(index) {
+  pages.forEach((page, i) => {
+    page.classList.toggle('active', i === index);
+  });
+  currentPageIndex = index;
+  updateIndicators();
+  updateButtonStates();
+}
 
-        nextBtn.addEventListener('click', () => {
-            const nextIndex = (currentPageIndex + 1) % pages.length;
-            showPage(nextIndex);
-        });
+prevBtn.addEventListener('click', () => {
+  const prevIndex = (currentPageIndex - 1 + pages.length) % pages.length;
+  showPage(prevIndex);
+});
 
-        createIndicators();
-        updateIndicators();
+nextBtn.addEventListener('click', () => {
+  const nextIndex = (currentPageIndex + 1) % pages.length;
+  showPage(nextIndex);
+});
+
+createIndicators();
+updateButtonStates();
+
 
     </script>
 </body>
