@@ -124,6 +124,7 @@
         <div class="col-lg-1 left-column"></div>
         <div class="col-lg-10 feed" style="padding: 0; text-indent: 0;">
             <section class="event-page-section" style="width: 100%;">
+                <a href="index.html" class="to-main"><img src="static/general/icons/home.png" alt=""></a>
                 <div class="event-page-image" style="padding: 0; text-indent: 0;">
                     <img src="static/finopolis1.png" alt="" style="width: 100%;">
                 </div>
@@ -131,16 +132,46 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
                         <div class="row mt-3 mb-3">
-                            <div class="col-lg-6" style="text-indent: 0;">
-                                <h2>Что вас ждет</h2>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsa
-                                natus sunt aliquam dolor. Voluptatum corrupti assumenda laboriosam similique eveniet
-                                eius, a quod inventore obcaecati, velit recusandae? Ut, amet dolorem.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam qui fugit asperiores,
-                                labore fuga dolorem minus officiis veritatis esse voluptatem excepturi distinctio atque.
-                                Quia vitae molestiae quo autem modi culpa?
+                            <div class="col-lg-6 about-event" style="text-indent: 0;">
+                                <h2 class="what-awaits-header">Что вас ждет</h2>
+                                <div class="text-container">
+                                    <div class="page active">
+                                        <!-- Текст первой страницы -->
+                                        Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в
+                                        Сочи. Он
+                                        пройдет на территории Образовательного центра «Сириус». FINOPOLIS
+                                        традиционно станет
+                                        площадкой для обсуждения тенденций и возможностей современных технологий в
+                                        финансовом
+                                        секторе.
+                                    </div>
+                                    <div class="page">
+                                        <!-- Текст второй страницы -->
+                                        На форуме будет представлена широкая деловая программа с пленарными и
+                                        секционными
+                                        дискуссиями, а также выставочная зона с передовыми сервисами, инновационными
+                                        технологическими решениями, мастер-классами и различными интерактивными
+                                        мероприятиями от
+                                        партнеров.Кроме того, лучшие команды региональных кейс-чемпионатов
+                                        Молодежной программы
+                                        FINOPOLIS.365 покажут экспертам финансового рынка свои проекты и поборются
+                                        за звание
+                                        суперфиналиста и денежный приз.
+                                    </div>
+                                </div>
+                                <div class="button-container">
+                                    <button class="prev-btn"><img src="static/general/icons/arrow-left(1).png"
+                                            alt=""></button>
+                                    <div class="indicators"></div>
+                                    <button class="next-btn"><img src="static/general/icons/arrow-right(1).png"
+                                            alt=""></button>
+                                </div>
                             </div>
-                            <div class="col-lg-6"></div>
+                            <div class="col-lg-6">
+                                <div class="main-image">
+                                    <img src="static/finopolis_preview.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-1"></div>
@@ -149,6 +180,125 @@
         </div>
         <div class="col-lg-1 right-column" style="padding: 0;"></div>
     </main>
+
+    <style>
+        .text-container {
+            overflow: hidden;
+            /* Скрываем лишний контент */
+            height: 300px;
+            /*  Установите нужную высоту блока */
+        }
+
+        .page {
+            display: none;
+            /* Скрываем все страницы по умолчанию */
+            text-indent: 0;
+            color: rgb(39, 66, 106);
+            font-family: 'Onest';
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: 0%;
+            text-align: left;
+
+        }
+
+        .page.active {
+            display: block;
+            /* Отображаем активную страницу */
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .prev-btn,
+        .next-btn {
+            height: 0px;
+            background: none;
+            width: auto;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            margin-inline: 5px;
+        }
+
+        .indicators {
+            margin: 0 10px;
+            /* Расстояние между кнопками и индикаторами */
+            display: flex;
+            background-color: #d9d9d9;
+            padding: 5px;
+            margin-top: 40px;
+            border-radius: 25px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #5c5c5c;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: black;
+            /* Цвет активного индикатора */
+        }
+    </style>
+
+    <script>
+        const pages = document.querySelectorAll('.page');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const indicatorsContainer = document.querySelector('.indicators');
+        let currentPageIndex = 0;
+
+        function createIndicators() {
+            for (let i = 0; i < pages.length; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                indicator.dataset.index = i; // Добавляем атрибут data-index
+                indicator.addEventListener('click', function () {
+                    showPage(parseInt(this.dataset.index, 10)); // Парсим data-index в число
+                });
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === currentPageIndex);
+            });
+        }
+
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                page.classList.toggle('active', i === index);
+            });
+            updateIndicators();
+            currentPageIndex = index;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            const prevIndex = (currentPageIndex - 1 + pages.length) % pages.length;
+            showPage(prevIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const nextIndex = (currentPageIndex + 1) % pages.length;
+            showPage(nextIndex);
+        });
+
+        createIndicators();
+        updateIndicators();
+
+    </script>
 </body>
 
 </html>

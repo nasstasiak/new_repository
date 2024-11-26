@@ -665,6 +665,49 @@ table {
     word-break: keep-all;
 }
 
+.to-main {
+    position: absolute;
+    width: 219px;
+    height: 32px;
+    margin-left: 30px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+
+.what-awaits-header {
+    color: rgb(39, 66, 106);
+    font-family: 'Days One';
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 160%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.about-event {
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.main-image {
+    width: 90%; 
+    float: right;
+}
+
+.main-image img {
+    width: 100%; 
+    border-radius: 25px;
+}
+
 @media (max-width: 1705px) {
     .page-header {
         font-size: 46px;
@@ -1704,7 +1747,7 @@ table {
     }
 
     .filters-selected-row {
-        max-height: 130px;
+        max-height: 120px;
         overflow: auto;
     }
 
