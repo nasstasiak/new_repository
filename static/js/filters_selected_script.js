@@ -306,6 +306,37 @@ if (storedTags) {
 }
 displaySelectedTags();
 
+ // Отображение сортировки
+ const savedSortBy = localStorage.getItem('filterSortBy');
+ const filterSortValueSpan = document.getElementById('filter-sort-value');
+ const filterSortMessageDiv = document.getElementById('filter-sort-message');
+
+ if (savedSortBy) {
+    let displayValue;
+    switch (savedSortBy) {
+      case "default":
+        displayValue = "По умолчанию";
+        break;
+      case "time_start":
+        displayValue = "Раньше";
+        break;
+      case "-time_start":
+        displayValue = "Позже";
+        break;
+      case "date":
+        displayValue = "Сначала старые";
+        break;
+      case "-date":
+        displayValue = "Сначала новые";
+        break;
+      default:
+        displayValue = "Неизвестная сортировка";
+    }
+    document.querySelector(`input[name="order_by"][value="${savedSortBy}"]`).checked = true;
+    filterSortValueSpan.textContent = displayValue;
+    filterSortMessageDiv.classList.remove('hidden');
+  }
+
 
  // Отображение блока фильтров
  filterDiv.style.display = (savedNameValue !== null || savedStartValue !== null || savedEndValue !== null || savedStartTimeValue !== null || savedEndTimeValue !== null || storedSpeakers !== null && JSON.parse(storedSpeakers).length > 0 || storedTags !== null && JSON.parse(storedTags).length > 0 || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
