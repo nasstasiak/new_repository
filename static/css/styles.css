@@ -1947,3 +1947,51 @@ table {
 
 }
 
+@media (max-width: 320px) {
+    .btn {
+        font-size: 12px;
+        padding: 0;
+        width: auto;
+        height: 25px;
+        padding-inline: 1px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        margin-right: 2px;
+  
+    }
+
+    .btn-comment {
+        margin-right: 1px;
+    }
+
+    .page-header {
+        text-indent: 10px;
+        font-size: 32px;
+    }
+
+    .selection-icon {
+        margin: 0;
+        height: 40px;
+        width: 40px;
+    }
+
+    .selection-icon:hover {
+        height: 40px;
+        width: 40px;
+        box-shadow: none;
+    }
+    /* либо оставить так, либо заменить свойство hover на focus */
+    .selection-icon:active {
+        height: 44px;
+        width: 44px;
+        box-shadow: 0px 0px 10px 6px #d9d9d9;
+    }
+
+    .btn-primary {
+        height: 0px;
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+}
