@@ -1496,6 +1496,11 @@ table {
         margin-bottom: 0;
     }
 
+    .event-page-section {
+        padding: 0%;
+        margin: 0;
+    }
+
     .cards {
         width: 100%;
         padding: 0;
@@ -1695,6 +1700,11 @@ table {
         letter-spacing: 0%;
         padding: 5px;
         padding-inline: 15px;
+    }
+
+    .filters-selected-row {
+        max-height: 130px;
+        overflow: auto;
     }
 
     .admin-request {
