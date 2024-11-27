@@ -173,12 +173,35 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-1 right-column" style="padding: 0;"></div>
+                        <div class="blocks">
+                            <div class="info-block">
+                                <div class="title">Спикер</div>
+                                <div class="info-content">
+                                    <label>Лобанова Стефания Даниловна</label>
+                                </div>
+                            </div>
+
+                            <div class="info-block">
+                                <div class="title">Дата проведения</div>
+                                <div class="info-content">
+                                    <label>8 января 2024</label> <br>
+                                    <label>1:00 - 16:00</label>
+                                </div>
+                            </div>
+
+                            <div class="info-block">
+                                <div class="title">Подключение</div>
+                                <div class="info-content">
+                                    <label><a href="" class="connection-link">Ссылка для подключения</a></label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-            </section>
         </div>
-        <div class="col-lg-1 right-column" style="padding: 0;"></div>
+        </section>
     </main>
 
     <style>
@@ -212,7 +235,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 0px;
         }
 
         .prev-btn,
@@ -255,64 +278,131 @@
             background-color: black;
             /* Цвет активного индикатора */
         }
+
+        .blocks {
+            display: flex;
+            /* Изменено на flex */
+            justify-content: space-around;
+            /* Равномерно распределяем блоки по ширине */
+            text-align: center;
+        }
+
+        .info-block {
+            display: inline-block;
+            margin: 30px;
+            width: 300px;
+            height: 150px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            box-shadow: -2px 2px 6px 0px rgba(0, 0, 0, 0.25), 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
+            background: rgba(217, 217, 217, 0.8);
+            color: rgb(76, 79, 95);
+            font-family: 'Onest';
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 130%;
+            letter-spacing: 0%;
+            text-align: center;
+        }
+
+        .info-content {
+            padding-top: 10px;
+            padding-inline: 20px;
+            color: rgb(76, 79, 95);
+            font-family: 'Onest';
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 130%;
+            letter-spacing: 0%;
+            text-indent: 0;
+            text-align: center;
+        }
+
+        .connection-link {
+            color: rgb(76, 79, 95); 
+        }
+
+        .title {
+            width: 100%;
+            height: 52.88px;
+            box-sizing: border-box;
+            border-left: 1px solid rgb(121, 138, 163);
+            border-right: 1px solid rgb(121, 138, 163);
+            border-top: 1px solid rgb(121, 138, 163);
+            border-radius: 25px 25px 0px 0px;
+            background: rgba(121, 138, 163, 0.5);
+            color: rgb(42, 64, 111);
+            font-family: 'Days One';
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+            display: flex;
+            /* Используем flexbox */
+            justify-content: center;
+            /* Центрирование по горизонтали */
+            align-items: center;
+            text-indent: 0;
+        }
     </style>
 
     <script>
         const pages = document.querySelectorAll('.page');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const indicatorsContainer = document.querySelector('.indicators');
-let currentPageIndex = 0;
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const indicatorsContainer = document.querySelector('.indicators');
+        let currentPageIndex = 0;
 
-function createIndicators() {
-  for (let i = 0; i < pages.length; i++) {
-    const indicator = document.createElement('div');
-    indicator.classList.add('indicator');
-    indicator.dataset.index = i;
-    indicator.addEventListener('click', function() {
-      showPage(parseInt(this.dataset.index, 10));
-    });
-    if (i === 0) {
-      indicator.classList.add('active');
-    }
-    indicatorsContainer.appendChild(indicator);
-  }
-  updateIndicators();
-}
+        function createIndicators() {
+            for (let i = 0; i < pages.length; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                indicator.dataset.index = i;
+                indicator.addEventListener('click', function () {
+                    showPage(parseInt(this.dataset.index, 10));
+                });
+                if (i === 0) {
+                    indicator.classList.add('active');
+                }
+                indicatorsContainer.appendChild(indicator);
+            }
+            updateIndicators();
+        }
 
-function updateIndicators() {
-  const indicators = document.querySelectorAll('.indicator');
-  indicators.forEach((indicator, i) => {
-    indicator.classList.toggle('active', i === currentPageIndex);
-  });
-}
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === currentPageIndex);
+            });
+        }
 
-function updateButtonStates() {
-  prevBtn.disabled = currentPageIndex === 0;
-  nextBtn.disabled = currentPageIndex === pages.length - 1;
-}
+        function updateButtonStates() {
+            prevBtn.disabled = currentPageIndex === 0;
+            nextBtn.disabled = currentPageIndex === pages.length - 1;
+        }
 
-function showPage(index) {
-  pages.forEach((page, i) => {
-    page.classList.toggle('active', i === index);
-  });
-  currentPageIndex = index;
-  updateIndicators();
-  updateButtonStates();
-}
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                page.classList.toggle('active', i === index);
+            });
+            currentPageIndex = index;
+            updateIndicators();
+            updateButtonStates();
+        }
 
-prevBtn.addEventListener('click', () => {
-  const prevIndex = (currentPageIndex - 1 + pages.length) % pages.length;
-  showPage(prevIndex);
-});
+        prevBtn.addEventListener('click', () => {
+            const prevIndex = (currentPageIndex - 1 + pages.length) % pages.length;
+            showPage(prevIndex);
+        });
 
-nextBtn.addEventListener('click', () => {
-  const nextIndex = (currentPageIndex + 1) % pages.length;
-  showPage(nextIndex);
-});
+        nextBtn.addEventListener('click', () => {
+            const nextIndex = (currentPageIndex + 1) % pages.length;
+            showPage(nextIndex);
+        });
 
-createIndicators();
-updateButtonStates();
+        createIndicators();
+        updateButtonStates();
 
 
     </script>
