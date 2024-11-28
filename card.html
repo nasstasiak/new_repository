@@ -200,130 +200,98 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <h2 class="gallery">фотогалерея</h2>
-                    <div class="slide-container">
-                        <div class="slide active"> <!-- Добавили класс active -->
-                            <img src='static/finopolis_preview.jpg' alt=''>
+                        <h2 class="gallery">фотогалерея</h2>
+                        <div class="slide-container">
+                            <div class="slide active"> <!-- Добавили класс active -->
+                                <img src='static/finopolis_preview.jpg' alt=''>
+                            </div>
+                            <div class="slide ">
+                                <img src='static/finopolis_png1.png' alt=''>
+                            </div>
+                            <div class="slide ">
+                                <img src='static/monetary_conditions.jpg' alt=''>
+                            </div>
+                            <div class="prev" title="Previous"><img src="static/general/icons/arrow-left(1).png" alt="">
+                            </div>
+                            <div class="next" title="Next"><img src="static/general/icons/arrow-right(1).png" alt="">
+                            </div>
                         </div>
-                        <div class="slide ">
-                            <img src='static/lending_pace.jpeg' alt=''>
+                        <div class="dots-container" style="opacity: 0;">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
-                        <div class="slide ">
-                            <img src='static/monetary_conditions.jpg' alt=''>
+                        <h2 class="comment-title">что о нас говорят</h2>
+                        <div class="slide-container review-container">
+                            <div class="row review">
+                                <div class="col-lg-4 user-info">
+                                    <div class="user-icon">
+                                        <img src="static/general/icons/profile-image-default.png" alt="">
+                                    </div>
+                                    <div class="username">username</div>
+                                </div>
+
+                                <div class="col-lg-8 review-block">
+                                    <span class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt=""></span>
+                                    <div class="col-lg-11 review-text">текст отзыва</div>
+                                </div>
+                            </div>
+
+                            <div class="prev" title="Previous"><img src="static/general/icons/arrow-left(1).png" alt="">
+                            </div>
+                            <div class="next" title="Next"><img src="static/general/icons/arrow-right(1).png" alt="">
+                            </div>
                         </div>
-                        <div class="prev" title="Previous"><img src="static/general/icons/arrow-left(1).png" alt="">
+                        <div class="dots-container" style="opacity: 0;">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
-                        <div class="next" title="Next"><img src="static/general/icons/arrow-right(1).png" alt=""></div>
-                    </div>
-                    <div class="dots-container" style="opacity: 0;">
-                        <span class="dot active"></span> 
-                        <span class="dot"></span>
-                        <span class="dot"></span>
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
         </div>
         </section>
     </main>
-
     <style>
-        .text-container {
-            overflow: hidden;
-            /* Скрываем лишний контент */
-            height: 260px;
-            /*  Установите нужную высоту блока */
+        .review {
+            background-color: #fff;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            padding-top: 55px;
+            margin: 20px;
+            width: 690px;
+            height: 380px;
+            border-radius: 25px;
+            box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25), 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+            background: rgba(217, 217, 217, 0.8);
         }
 
-        .page {
-            display: none;
-            /* Скрываем все страницы по умолчанию */
+        .user-info {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .user-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+
+        .username {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
             text-indent: 0;
             color: rgb(39, 66, 106);
             font-family: 'Onest';
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 130%;
-            letter-spacing: 0%;
-            text-align: left;
-
-        }
-
-        .page.active {
-            display: block;
-            /* Отображаем активную страницу */
-        }
-
-        .button-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-            margin-top: 0px;
-        }
-
-        .prev-btn,
-        .next-btn {
-            height: 0px;
-            background: none;
-            width: auto;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-            margin-inline: 5px;
-        }
-
-        .prev-btn:disabled,
-        .next-btn:disabled {
-            opacity: 0.5;
-        }
-
-
-        .indicators {
-            margin: 0 10px;
-            /* Расстояние между кнопками и индикаторами */
-            display: flex;
-            background-color: #d9d9d9;
-            padding: 5px;
-            margin-top: 40px;
-            border-radius: 25px;
-        }
-
-        .indicator {
-            width: 10px;
-            height: 10px;
-            background-color: #5c5c5c;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        .indicator.active {
-            background-color: black;
-            /* Цвет активного индикатора */
-        }
-
-        .blocks {
-            display: flex;
-            /* Изменено на flex */
-            justify-content: space-around;
-            /* Равномерно распределяем блоки по ширине */
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        .info-block {
-            display: inline-block;
-            margin: 30px;
-            width: 380px;
-            height: 150px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 25px;
-            box-shadow: -2px 2px 6px 0px rgba(0, 0, 0, 0.25), 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
-            background: rgba(217, 217, 217, 0.8);
-            color: rgb(76, 79, 95);
-            font-family: 'Onest';
             font-size: 24px;
             font-weight: 400;
             line-height: 130%;
@@ -331,222 +299,39 @@
             text-align: center;
         }
 
-        .info-content {
-            padding-top: 10px;
-            padding-inline: 20px;
-            color: rgb(76, 79, 95);
-            font-family: 'Onest';
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 130%;
-            letter-spacing: 0%;
-            text-indent: 0;
-            text-align: center;
-        }
-
-        .connection-link {
-            color: rgb(76, 79, 95);
-        }
-
-        .title {
-            width: 100%;
-            height: 52.88px;
-            box-sizing: border-box;
-            border-left: 1px solid rgb(121, 138, 163);
-            border-right: 1px solid rgb(121, 138, 163);
-            border-top: 1px solid rgb(121, 138, 163);
-            border-radius: 25px 25px 0px 0px;
-            background: rgba(121, 138, 163, 0.5);
-            color: rgb(42, 64, 111);
-            font-family: 'Days One';
-            font-size: 28px;
-            font-weight: 400;
-            line-height: 100%;
-            letter-spacing: 0%;
-            text-align: center;
+        .review-block {
             display: flex;
-            /* Используем flexbox */
-            justify-content: center;
-            /* Центрирование по горизонтали */
-            align-items: center;
-            text-indent: 0;
         }
 
-        .slide-container .prev,
-        .slide-container .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            transition: all 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-        .slide-container .prev {
-            left: 2px;
-        }
-
-        .slide-container .next {
-            right: 2px;
-        }
-
-        .dots-container {
+        .rating {
             display: flex;
-            justify-content: center;
             align-items: center;
+            margin-bottom: 10px;
+        }
+
+
+
+        .rating-text {
+            font-size: 16px;
+        }
+
+        .review-text {
+            border: 1px solid #ccc;
             padding: 10px;
-            margin-bottom: 50px;
+            border-radius: 4px;
         }
 
-        .dots-container .dot {
-            cursor: pointer;
-            margin: 5px;
-            width: 20px;
-            height: 20px;
-            color: #333;
-            border-radius: 50%;
-            background-color: #dfd6ce;
-        }
-
-        .dots-container .dot.active {
-            border: 2px solid green;
-        }
-
-        .slide-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 1000px;
-            margin: auto;
-            position: relative;
-            margin-top: 10px;
-        }
-
-        .slide-container .slide {
-            display: none;
-        }
-
-        .slide-container .slide.active {
-            display: block;
-        }
-
-        .slide-container .slide.fade {
-            animation: fade 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-            text-align: center;
-        }
-
-        .slide-container .slide img {
-            max-width: 690px;
-            max-height: 460px;
-            border-radius: 25px;
+        .quote {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #336699;
         }
     </style>
+    </style>
 
-    <script>
-        const pages = document.querySelectorAll('.page');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        const indicatorsContainer = document.querySelector('.indicators');
-        let currentPageIndex = 0;
+    <script src="static/js/page_indicator_script.js"></script>
 
-        function createIndicators() {
-            for (let i = 0; i < pages.length; i++) {
-                const indicator = document.createElement('div');
-                indicator.classList.add('indicator');
-                indicator.dataset.index = i;
-                indicator.addEventListener('click', function () {
-                    showPage(parseInt(this.dataset.index, 10));
-                });
-                if (i === 0) {
-                    indicator.classList.add('active');
-                }
-                indicatorsContainer.appendChild(indicator);
-            }
-            updateIndicators();
-        }
-
-        function updateIndicators() {
-            const indicators = document.querySelectorAll('.indicator');
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === currentPageIndex);
-            });
-        }
-
-        function updateButtonStates() {
-            prevBtn.disabled = currentPageIndex === 0;
-            nextBtn.disabled = currentPageIndex === pages.length - 1;
-        }
-
-        function showPage(index) {
-            pages.forEach((page, i) => {
-                page.classList.toggle('active', i === index);
-            });
-            currentPageIndex = index;
-            updateIndicators();
-            updateButtonStates();
-        }
-
-        prevBtn.addEventListener('click', () => {
-            const prevIndex = (currentPageIndex - 1 + pages.length) % pages.length;
-            showPage(prevIndex);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            const nextIndex = (currentPageIndex + 1) % pages.length;
-            showPage(nextIndex);
-        });
-
-        createIndicators();
-        updateButtonStates();
-
-        let currentSlide = 0;
-        const slides = document.querySelectorAll(".slide")
-        const dots = document.querySelectorAll('.dot')
-
-        const init = (n) => {
-            slides.forEach((slide, index) => {
-                slide.style.display = "none"
-                dots.forEach((dot, index) => {
-                    dot.classList.remove("active")
-                })
-            })
-            slides[n].style.display = "block"
-            dots[n].classList.add("active")
-        }
-        document.addEventListener("DOMContentLoaded", init(currentSlide))
-        const next = () => {
-            currentSlide >= slides.length - 1 ? currentSlide = 0 : currentSlide++
-            init(currentSlide)
-        }
-
-        const prev = () => {
-            currentSlide <= 0 ? currentSlide = slides.length - 1 : currentSlide--
-            init(currentSlide)
-        }
-
-        document.querySelector(".next").addEventListener('click', next)
-
-        document.querySelector(".prev").addEventListener('click', prev)
-
-
-        setInterval(() => {
-            next()
-        }, 15000);
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                console.log(currentSlide)
-                init(i)
-                currentSlide = i
-            })
-        })
-    </script>
+    <script src="static/js/gallery_slider_script.js"></script>
 </body>
 
 </html>
