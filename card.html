@@ -222,34 +222,72 @@
                             <span class="dot"></span>
                         </div>
                         <h2 class="comment-title">что о нас говорят</h2>
-                        <div class="slide-container review-container">
-                            <div class="row review">
-                                <div class="col-lg-4 user-info">
-                                    <div class="user-icon">
-                                        <img src="static/general/icons/profile-image-default.png" alt="">
+                        <div class="review-container">
+                            <div class="slide-review active">
+                                <div class="row review">
+
+                                    <div class="col-lg-4 user-info">
+                                        <div class="user-icon">
+                                            <img src="static/general/icons/profile-image-default.png" alt="">
+                                        </div>
+                                        <div class="username">username</div>
                                     </div>
-                                    <div class="username">username</div>
-                                </div>
 
-                                <div class="col-lg-8 review-block">
-                                    <span class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt=""></span>
-                                    <div class="col-lg-11 review-text">текст отзыва</div>
+                                    <div class="col-lg-8 review-block">
+                                        <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt="">
+                                        </div>
+                                        <div class="col-lg-11 review-text">текст отзыва</div>
+                                    </div>
+
                                 </div>
                             </div>
+                            <div class="slide-review">
+                                <div class="row review">
+                                    <div class="col-lg-4 user-info">
+                                        <div class="user-icon">
+                                            <img src="static/general/icons/profile-image-default.png" alt="">
+                                        </div>
+                                        <div class="username">username</div>
+                                    </div>
 
-                            <div class="prev" title="Previous"><img src="static/general/icons/arrow-left(1).png" alt="">
+                                    <div class="col-lg-8 review-block">
+                                        <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt="">
+                                        </div>
+                                        <div class="col-lg-11 review-text">текст отзыва</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="next" title="Next"><img src="static/general/icons/arrow-right(1).png" alt="">
+                            <div class="slide-review">
+                                <div class="row review">
+                                    <div class="col-lg-4 user-info">
+                                        <div class="user-icon">
+                                            <img src="static/general/icons/profile-image-default.png" alt="">
+                                        </div>
+                                        <div class="username">username</div>
+                                    </div>
+
+                                    <div class="col-lg-8 review-block">
+                                        <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt="">
+                                        </div>
+                                        <div class="col-lg-11 review-text">текст отзыва</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="dots-container" style="opacity: 0;">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
+
+                        <div class="prev-reviews" title="Previous"><img src="static/general/icons/arrow-left(1).png"
+                                alt=""></div>
+                        <div class="next-reviews" title="Next"><img src="static/general/icons/arrow-right(1).png"
+                                alt=""></div>
                     </div>
-                    <div class="col-lg-1"></div>
+                    <div class="dots-container-reviews" style="opacity: 0;">
+                        <span class="dot-reviews active"></span>
+                        <span class="dot-reviews"></span>
+                        <span class="dot-reviews"></span>
+                    </div>
                 </div>
+                <div class="col-lg-1"></div>
+        </div>
         </div>
         </section>
     </main>
@@ -303,13 +341,6 @@
             display: flex;
         }
 
-        .rating {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-
 
         .rating-text {
             font-size: 16px;
@@ -318,16 +349,60 @@
         .review-text {
             border: 1px solid #ccc;
             padding: 10px;
+            padding-top: 0%;
             border-radius: 4px;
+            font-family: 'Onest';
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 130%;
+            letter-spacing: 0%;
+            color: rgb(39, 66, 106);
         }
 
         .quote {
-            font-size: 24px;
-            margin-right: 10px;
-            color: #336699;
+            text-indent: 0;
         }
     </style>
     </style>
+
+    <script>
+        let currentSlideReviews = 0;
+        const slidesReviews = document.querySelectorAll(".slide-review");
+        const dotsReviews = document.querySelectorAll('.dot-reviews');
+
+        const initReviews = (n) => {
+            slidesReviews.forEach((slide, index) => {
+                slide.style.display = "none";
+                dotsReviews.forEach((dot, index) => {
+                    dot.classList.remove("active");
+                });
+            });
+            slidesReviews[n].style.display = "block";
+            dotsReviews[n].classList.add("active");
+        };
+
+        document.addEventListener("DOMContentLoaded", () => initReviews(currentSlideReviews));
+
+        const nextReviews = () => {
+            currentSlideReviews >= slidesReviews.length - 1 ? currentSlideReviews = 0 : currentSlideReviews++;
+            initReviews(currentSlideReviews);
+        };
+
+        const prevReviews = () => {
+            currentSlideReviews <= 0 ? currentSlideReviews = slidesReviews.length - 1 : currentSlideReviews--;
+            initReviews(currentSlideReviews);
+        };
+
+        document.querySelector(".next-reviews").addEventListener('click', nextReviews);
+        document.querySelector(".prev-reviews").addEventListener('click', prevReviews);
+
+        dotsReviews.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                initReviews(i);
+                currentSlideReviews = i;
+            });
+        });
+    </script>
 
     <script src="static/js/page_indicator_script.js"></script>
 
