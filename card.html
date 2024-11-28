@@ -162,7 +162,10 @@
                                 <div class="button-container">
                                     <button class="prev-btn"><img src="static/general/icons/arrow-left(1).png"
                                             alt=""></button>
-                                    <div class="indicators"></div>
+
+                                    <div style="display: flex; vertical-align: middle;">
+                                        <div class="indicators"></div>
+                                    </div>
                                     <button class="next-btn"><img src="static/general/icons/arrow-right(1).png"
                                             alt=""></button>
                                 </div>
@@ -198,6 +201,26 @@
                             </div>
                         </div>
                     </div>
+                    <h2 class="gallery">фотогалерея</h2>
+                    <div class="slide-container">
+                        <div class="slide active"> <!-- Добавили класс active -->
+                            <img src='static/finopolis_preview.jpg' alt=''>
+                        </div>
+                        <div class="slide ">
+                            <img src='static/lending_pace.jpeg' alt=''>
+                        </div>
+                        <div class="slide ">
+                            <img src='static/monetary_conditions.jpg' alt=''>
+                        </div>
+                        <div class="prev" title="Previous"><img src="static/general/icons/arrow-left(1).png" alt="">
+                        </div>
+                        <div class="next" title="Next"><img src="static/general/icons/arrow-right(1).png" alt=""></div>
+                    </div>
+                    <div class="dots-container" style="opacity: 0;">
+                        <span class="dot active"></span> 
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
                     <div class="col-lg-1"></div>
                 </div>
         </div>
@@ -208,7 +231,7 @@
         .text-container {
             overflow: hidden;
             /* Скрываем лишний контент */
-            height: 300px;
+            height: 260px;
             /*  Установите нужную высоту блока */
         }
 
@@ -235,6 +258,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            vertical-align: middle;
             margin-top: 0px;
         }
 
@@ -285,12 +309,14 @@
             justify-content: space-around;
             /* Равномерно распределяем блоки по ширине */
             text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
         .info-block {
             display: inline-block;
             margin: 30px;
-            width: 300px;
+            width: 380px;
             height: 150px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 25px;
@@ -319,7 +345,7 @@
         }
 
         .connection-link {
-            color: rgb(76, 79, 95); 
+            color: rgb(76, 79, 95);
         }
 
         .title {
@@ -344,6 +370,81 @@
             /* Центрирование по горизонтали */
             align-items: center;
             text-indent: 0;
+        }
+
+        .slide-container .prev,
+        .slide-container .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .slide-container .prev {
+            left: 2px;
+        }
+
+        .slide-container .next {
+            right: 2px;
+        }
+
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+
+        .dots-container .dot {
+            cursor: pointer;
+            margin: 5px;
+            width: 20px;
+            height: 20px;
+            color: #333;
+            border-radius: 50%;
+            background-color: #dfd6ce;
+        }
+
+        .dots-container .dot.active {
+            border: 2px solid green;
+        }
+
+        .slide-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .slide-container .slide {
+            display: none;
+        }
+
+        .slide-container .slide.active {
+            display: block;
+        }
+
+        .slide-container .slide.fade {
+            animation: fade 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+            text-align: center;
+        }
+
+        .slide-container .slide img {
+            max-width: 690px;
+            max-height: 460px;
+            border-radius: 25px;
         }
     </style>
 
@@ -404,7 +505,47 @@
         createIndicators();
         updateButtonStates();
 
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide")
+        const dots = document.querySelectorAll('.dot')
 
+        const init = (n) => {
+            slides.forEach((slide, index) => {
+                slide.style.display = "none"
+                dots.forEach((dot, index) => {
+                    dot.classList.remove("active")
+                })
+            })
+            slides[n].style.display = "block"
+            dots[n].classList.add("active")
+        }
+        document.addEventListener("DOMContentLoaded", init(currentSlide))
+        const next = () => {
+            currentSlide >= slides.length - 1 ? currentSlide = 0 : currentSlide++
+            init(currentSlide)
+        }
+
+        const prev = () => {
+            currentSlide <= 0 ? currentSlide = slides.length - 1 : currentSlide--
+            init(currentSlide)
+        }
+
+        document.querySelector(".next").addEventListener('click', next)
+
+        document.querySelector(".prev").addEventListener('click', prev)
+
+
+        setInterval(() => {
+            next()
+        }, 15000);
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                console.log(currentSlide)
+                init(i)
+                currentSlide = i
+            })
+        })
     </script>
 </body>
 
