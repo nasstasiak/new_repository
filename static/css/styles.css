@@ -1149,8 +1149,6 @@ table {
     }
     
     .page {
-        display: none;
-        /* Скрываем все страницы по умолчанию */
         text-indent: 0;
         color: rgb(39, 66, 106);
         font-family: 'Onest';
@@ -1186,6 +1184,33 @@ table {
 
     .review-text {
         font-size: 18px;
+    }
+
+    .info-block {
+        display: inline-block;
+        margin: 25px;
+        width: 330px;
+        height: 130px;
+    }
+
+    .title {
+        height: 50.88px;
+        font-size: 24px;
+    }
+
+    .info-content {
+        font-size: 20px;
+    }
+
+    .gallery, .comment-title {
+        text-indent: 0;
+        color: rgb(39, 66, 106);
+        font-family: 'Days One';
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: center;
+        text-transform: uppercase;
     }
 }
 
@@ -1276,6 +1301,93 @@ table {
         padding: 0;
         border: none;
         box-shadow: none;
+    }
+
+    .main-image img {
+        width: 100%; 
+        border-radius: 40px;
+        max-width: 420px;
+        height: 325px;
+    }
+
+    .what-awaits-header {
+        font-size: 28px;
+    }
+
+    .text-container {
+        overflow: hidden;
+        /* Скрываем лишний контент */
+        height: 210px;
+        /*  Установите нужную высоту блока */
+    }
+    
+    .page {
+        display: none;
+        /* Скрываем все страницы по умолчанию */
+        text-indent: 0;
+        color: rgb(39, 66, 106);
+        font-family: 'Onest';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 130%;
+        letter-spacing: 0%;
+        text-align: left;
+    
+    }
+
+    .slide-container, .review-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 840px;
+        margin: auto;
+        position: relative;
+        margin-top: 10px;
+    }    
+
+    .slide-container .slide img {
+        width: 580px;
+        height: 387px;
+        border-radius: 25px;
+    }
+
+    .review {
+        width: 580px;
+        height: 320px;
+        border-radius: 25px;
+    }
+
+    .review-text {
+        float: right;
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .info-block {
+        display: inline-block;
+        margin: 25px;
+        width: 330px;
+        height: 130px;
+    }
+
+    .title {
+        height: 50.88px;
+        font-size: 24px;
+    }
+
+    .info-content {
+        font-size: 20px;
+    }
+
+    .gallery, .comment-title {
+        text-indent: 0;
+        color: rgb(39, 66, 106);
+        font-family: 'Days One';
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: center;
+        text-transform: uppercase;
     }
 }
 
