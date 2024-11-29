@@ -1529,6 +1529,107 @@ table {
     .hidden {
         display: none;
     }
+
+    .main-image img{
+        width: 100%; 
+        border-radius: 30px;
+        width: 390px;
+        height: 300px;
+    }
+
+    .to-main img{
+        position: absolute;
+        width: 160px;
+        height: 39px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .username {
+        font-size: 20px;
+    }
+
+    .what-awaits-header {
+        font-size: 24px;
+    }
+
+    .text-container {
+        overflow: hidden;
+        /* Скрываем лишний контент */
+        height: 180px;
+    }
+    
+    .page {
+        display: none;
+        /* Скрываем все страницы по умолчанию */
+        text-indent: 0;
+        color: rgb(39, 66, 106);
+        font-family: 'Onest';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 130%;
+        letter-spacing: 0%;
+        text-align: left;
+    
+    }
+
+    .slide-container, .review-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 840px;
+        margin: auto;
+        position: relative;
+        margin-top: 10px;
+    }    
+
+    .slide-container .slide img {
+        width: 500px;
+        height: 334px;
+        border-radius: 25px;
+    }
+
+    .review {
+        padding-inline: 10px;
+        width: 500px;
+        height: 300px;
+        border-radius: 25px;
+    }
+
+    .review-text {
+        padding-left: 10px;
+        float: right;
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .info-block {
+        display: inline-block;
+        margin: 20px;
+        width: 330px;
+        height: 130px;
+    }
+
+    .title {
+        height: 50.88px;
+        font-size: 22px;
+    }
+
+    .info-content {
+        font-size: 18px;
+    }
+
+    .gallery, .comment-title {
+        text-indent: 0;
+        color: rgb(39, 66, 106);
+        font-family: 'Days One';
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
 }
 
 @media (max-width: 1115px) {
