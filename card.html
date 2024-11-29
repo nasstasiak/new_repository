@@ -178,22 +178,22 @@
                         </div>
                         <div class="col-lg-1 right-column" style="padding: 0;"></div>
                         <div class="blocks">
-                            <div class="info-block">
+                            <div class="info-block speaker">
                                 <div class="title">Спикер</div>
                                 <div class="info-content">
-                                    <label>Лобанова Стефания Даниловна</label>
+                                    <label for="speaker">Лобанова Стефания Даниловна</label>
                                 </div>
                             </div>
 
-                            <div class="info-block">
+                            <div class="info-block date-time">
                                 <div class="title">Дата проведения</div>
                                 <div class="info-content">
-                                    <label>8 января 2024</label> <br>
-                                    <label>1:00 - 16:00</label>
+                                    <label for="date">8 января 2024</label> <br>
+                                    <label for="time">1:00 - 16:00</label>
                                 </div>
                             </div>
 
-                            <div class="info-block">
+                            <div class="info-block connection">
                                 <div class="title">Подключение</div>
                                 <div class="info-content">
                                     <label><a href="" class="connection-link">Ссылка для подключения</a></label>
@@ -236,7 +236,7 @@
                                     <div class="col-lg-8 review-block">
                                         <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt="">
                                         </div>
-                                        <div class="col-lg-11 review-text">текст отзыва</div>
+                                        <div class="col-lg-11 review-text">первый отзыв</div>
                                     </div>
 
                                 </div>
@@ -253,7 +253,7 @@
                                     <div class="col-lg-8 review-block">
                                         <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt="">
                                         </div>
-                                        <div class="col-lg-11 review-text">текст отзыва</div>
+                                        <div class="col-lg-11 review-text">второй отзыв</div>
                                     </div>
                                 </div>
                             </div>
@@ -269,144 +269,47 @@
                                     <div class="col-lg-8 review-block">
                                         <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png" alt="">
                                         </div>
-                                        <div class="col-lg-11 review-text">текст отзыва</div>
+                                        <div class="col-lg-11 review-text">третий отзыв</div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="prev-reviews" title="Previous"><img src="static/general/icons/arrow-left(1).png"
+                                    alt=""></div>
+                            <div class="next-reviews" title="Next"><img src="static/general/icons/arrow-right(1).png"
+                                    alt=""></div>
                         </div>
-
-                        <div class="prev-reviews" title="Previous"><img src="static/general/icons/arrow-left(1).png"
-                                alt=""></div>
-                        <div class="next-reviews" title="Next"><img src="static/general/icons/arrow-right(1).png"
-                                alt=""></div>
+                        <div class="dots-container-reviews" style="opacity: 0;">
+                            <span class="dot-reviews active"></span>
+                            <span class="dot-reviews"></span>
+                            <span class="dot-reviews"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6 main-buttons">
+                                <div class="col-lg-6" style="text-align: center;">
+                                    <button class="btn btn-sent_app"> Отправить заявку</button>
+                                    <button class="btn btn-remove_app hidden"> Отмена регистрации</button>
+                                </div>
+                                <div class="col-lg-6" style="text-align: center;">
+                                    <button class="btn btn-comment"> Оставить отзыв</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-3"></div>
+                        </div>
                     </div>
-                    <div class="dots-container-reviews" style="opacity: 0;">
-                        <span class="dot-reviews active"></span>
-                        <span class="dot-reviews"></span>
-                        <span class="dot-reviews"></span>
-                    </div>
+                    <div class="col-lg-1"></div>
                 </div>
-                <div class="col-lg-1"></div>
-        </div>
         </div>
         </section>
     </main>
-    <style>
-        .review {
-            background-color: #fff;
-            border-radius: 25px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            padding-top: 55px;
-            margin: 20px;
-            width: 690px;
-            height: 380px;
-            border-radius: 25px;
-            box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25), 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
-            background: rgba(217, 217, 217, 0.8);
-        }
 
-        .user-info {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .user-icon {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            display: inline;
-            justify-content: center;
-            align-items: center;
-            margin-right: 10px;
-        }
-
-
-        .username {
-            margin-top: 10px;
-            width: 100%;
-            text-align: center;
-            font-weight: bold;
-            text-indent: 0;
-            color: rgb(39, 66, 106);
-            font-family: 'Onest';
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 130%;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-        .review-block {
-            display: flex;
-        }
-
-
-        .rating-text {
-            font-size: 16px;
-        }
-
-        .review-text {
-            border: 1px solid #ccc;
-            padding: 10px;
-            padding-top: 0%;
-            border-radius: 4px;
-            font-family: 'Onest';
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 130%;
-            letter-spacing: 0%;
-            color: rgb(39, 66, 106);
-        }
-
-        .quote {
-            text-indent: 0;
-        }
-    </style>
-    </style>
-
-    <script>
-        let currentSlideReviews = 0;
-        const slidesReviews = document.querySelectorAll(".slide-review");
-        const dotsReviews = document.querySelectorAll('.dot-reviews');
-
-        const initReviews = (n) => {
-            slidesReviews.forEach((slide, index) => {
-                slide.style.display = "none";
-                dotsReviews.forEach((dot, index) => {
-                    dot.classList.remove("active");
-                });
-            });
-            slidesReviews[n].style.display = "block";
-            dotsReviews[n].classList.add("active");
-        };
-
-        document.addEventListener("DOMContentLoaded", () => initReviews(currentSlideReviews));
-
-        const nextReviews = () => {
-            currentSlideReviews >= slidesReviews.length - 1 ? currentSlideReviews = 0 : currentSlideReviews++;
-            initReviews(currentSlideReviews);
-        };
-
-        const prevReviews = () => {
-            currentSlideReviews <= 0 ? currentSlideReviews = slidesReviews.length - 1 : currentSlideReviews--;
-            initReviews(currentSlideReviews);
-        };
-
-        document.querySelector(".next-reviews").addEventListener('click', nextReviews);
-        document.querySelector(".prev-reviews").addEventListener('click', prevReviews);
-
-        dotsReviews.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                initReviews(i);
-                currentSlideReviews = i;
-            });
-        });
-    </script>
+    <script src="static/js/sent_remove_script.js"></script>
 
     <script src="static/js/page_indicator_script.js"></script>
 
     <script src="static/js/gallery_slider_script.js"></script>
+
+    <script src="static/js/review_slider_script.js"></script>
 </body>
 
 </html>

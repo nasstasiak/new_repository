@@ -797,8 +797,11 @@ table {
     background-color: black;
     /* Цвет активного индикатора */
 }
+.main-buttons {
+    margin-bottom: 100px;
+}
 
-.blocks {
+.blocks, .main-buttons {
     display: flex;
     /* Изменено на flex */
     justify-content: space-around;
@@ -806,6 +809,14 @@ table {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 150px;
 }
 
 .info-block {
@@ -891,7 +902,32 @@ table {
     right: 2px;
 }
 
-.dots-container {
+.review-container .prev-reviews,
+.review-container .next-reviews {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.review-container .prev-reviews {
+    left: 2px;
+}
+
+.review-container .next-reviews {
+    right: 2px;
+}
+
+.dots-container
+ {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -899,7 +935,15 @@ table {
     margin-bottom: 30px;
 }
 
-.dots-container .dot {
+.dots-container-reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.dots-container-reviews .dot-reviews {
     cursor: pointer;
     margin: 5px;
     width: 20px;
@@ -909,11 +953,12 @@ table {
     background-color: #dfd6ce;
 }
 
-.dots-container .dot.active {
+.dots-container-reviews .dot-reviews.active {
     border: 2px solid green;
 }
 
-.slide-container {
+
+.slide-container, .review-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -923,23 +968,92 @@ table {
     margin-top: 10px;
 }
 
-.slide-container .slide {
+.slide-container .slide,
+.review-container .slide-review {
     display: none;
 }
 
-.slide-container .slide.active {
+.slide-container .slide.active,
+.review-container .slide-review.active {
     display: block;
-}
-
-.slide-container .slide.fade {
-    animation: fade 10s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-    text-align: center;
 }
 
 .slide-container .slide img {
     width: 690px;
     height: 460px;
     border-radius: 25px;
+}
+
+.review {
+    background-color: #fff;
+    float: right;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    padding-top: 55px;
+    margin: 20px;
+    width: 690px;
+    height: 380px;
+    border-radius: 25px;
+    box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25), 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    background: rgba(217, 217, 217, 0.8);
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.user-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+
+.username {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-indent: 0;
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.review-block {
+    display: flex;
+}
+
+
+.rating-text {
+    font-size: 16px;
+}
+
+.review-text {
+    border: 1px solid #ccc;
+    padding: 10px;
+    padding-top: 0%;
+    border-radius: 4px;
+    font-family: 'Onest';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: rgb(39, 66, 106);
+}
+
+.quote {
+    text-indent: 0;
 }
 
 @media (max-width: 1705px) {
