@@ -11,12 +11,16 @@
 
     <style>
         body {
+            background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f8f9fa;
+        }
+
+        h2 {
+            text-align: center;
         }
 
         iframe {
@@ -24,21 +28,24 @@
         }
 
         .container {
-            background: white;
             padding: 30px;
             border-radius: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 380px;
-            background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
-            box-shadow: 1px 10px 27px 2px #000000;
-            color: white;
+            background-color: rgba(217, 217, 217, 0.8);
+            box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25), 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+            color: rgb(39, 66, 106);
+            text-indent: 0;
         }
 
-        .btn-primary {
+        .enter {
             background-color: #0088BB;
             /* Корпоративный цвет */
             border: none;
+            color: #d9d9d9;
+            margin-top: 10px;
+            width: 100%;
         }
 
         .btn-primary:hover {
@@ -60,14 +67,13 @@
             display: flex;
             align-items: center;
             text-align: center;
-            margin: 20px 0;
         }
 
         .divider::before,
         .divider::after {
             content: '';
             flex: 1;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid rgb(39, 66, 106);
         }
 
         .divider::before {
@@ -77,12 +83,10 @@
         .divider::after {
             margin-left: 10px;
         }
-
-        
     </style>
 </head>
 
-<body style="background-image: url(background2.jpg);">
+<body>
 
     <div class="container">
         <h2 class="mb-4 ">Вход</h2>
@@ -93,21 +97,21 @@
         <form method="post" action="">
             <input type="hidden" name="csrfmiddlewaretoken"
                 value="MIuGCqWZqeeOZMxnonu1JlUXHT0gGtTZd8kfIncLno0rzD8YMWi6l01aElaMrNKS">
-            <div class="mb-3">
-                <label for="username" class="form-label">Логин</label>
+            <div class="mb-3" style="text-indent: 0;">
+                <label for="username" class="form-label">Логин</label><br>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Введите ваш логин">
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Пароль</label>
+            <div class="mb-3" style="text-indent: 0;">
+                <label for="password" class="form-label">Пароль</label><br>
                 <input type="password" class="form-control" id="password" name="password"
                     placeholder="Введите ваш пароль">
             </div>
-            <button type="submit" class="btn btn-primary w-100"><a href="index.html">Войти</a></button>
+            <button type="submit" class="btn w-100 enter"><a href="index.html" style="color: white; text-decoration: none;">Войти</a></button>
         </form>
 
-        <div class="divider">или</div>
+        <div class="divider" style="text-indent: 0;">или</div>
 
-        <div class="text-center">
+        <div class="text-center" style="text-indent: 0">
             <p>Войдите через Telegram:</p>
             <iframe id="telegram-login-None"
                 src="https://oauth.telegram.org/embed/None?origin=http%3A%2F%2F127.0.0.1%3A8000&amp;return_to=http%3A%2F%2F127.0.0.1%3A8000%2Fusers%2Flogin%2F%3Fnext%3D%2F&amp;size=large&amp;request_access=write"
