@@ -30,7 +30,7 @@ let currentSlide = 0;
 
         setInterval(() => {
             next()
-        }, 15000);
+        }, 5000);
 
         dots.forEach((dot, i) => {
             dot.addEventListener("click", () => {
