@@ -25,6 +25,7 @@
 
         iframe {
             border-radius: 10px;
+            margin-left: 0;
         }
 
         .container {
@@ -32,11 +33,12 @@
             border-radius: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 380px;
+            max-width: 320px;
             background-color: rgba(217, 217, 217, 0.8);
             box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25), 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
             color: rgb(39, 66, 106);
             text-indent: 0;
+            font-size: 16px;
         }
 
         .enter {
@@ -46,6 +48,8 @@
             color: #d9d9d9;
             margin-top: 10px;
             width: 100%;
+            min-height: 24px;
+            max-height: 30px;
         }
 
         .btn-primary:hover {
@@ -83,13 +87,21 @@
         .divider::after {
             margin-left: 10px;
         }
+
+        #username,
+        #password {
+            width: 100%;
+            font-weight: 400;
+            min-height: 24px;
+            max-height: 30px;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h2 class="mb-4 ">Вход</h2>
+        <h2 class="mb-4">Вход</h2>
 
         <!-- Место для сообщений -->
         <div id="messageArea" class="alert alert-info" style="display: none;"></div>
@@ -106,13 +118,14 @@
                 <input type="password" class="form-control" id="password" name="password"
                     placeholder="Введите ваш пароль">
             </div>
-            <button type="submit" class="btn w-100 enter"><a href="index.html" style="color: white; text-decoration: none;">Войти</a></button>
+            <button type="submit" class="btn w-100 enter"><a href="index.html"
+                    style="color: white; text-decoration: none;">Войти</a></button>
         </form>
 
         <div class="divider" style="text-indent: 0;">или</div>
 
-        <div class="text-center" style="text-indent: 0">
-            <p>Войдите через Telegram:</p>
+        <div class="text-center" style="text-indent: 0;">
+            <p style="margin-top: 0; margin-bottom: 0">Войдите через Telegram:</p>
             <iframe id="telegram-login-None"
                 src="https://oauth.telegram.org/embed/None?origin=http%3A%2F%2F127.0.0.1%3A8000&amp;return_to=http%3A%2F%2F127.0.0.1%3A8000%2Fusers%2Flogin%2F%3Fnext%3D%2F&amp;size=large&amp;request_access=write"
                 width="238" height="40" frameborder="0" scrolling="no"
