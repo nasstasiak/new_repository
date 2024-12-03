@@ -1391,7 +1391,7 @@ table {
     }
 }
 
-@media (max-width: 1383px){
+@media (max-width: 1385px){
     .nav-item {
         font-size: 14px;
     }
@@ -1483,6 +1483,38 @@ table {
         display: none;
     }
 
+    .card-button {
+        padding-inline: 8px;
+        font-size: 16px;
+    }
+
+    .page {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: 0%;
+    }
+
+}
+
+@media (max-width: 1285px){
+    .nav-item {
+        font-size: 13px;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 1232px){
+    .nav-item {
+        font-size: 11px;
+    }
+
+    .hidden {
+        display: none;
+    }
 }
 
 
@@ -1556,7 +1588,7 @@ table {
     .text-container {
         overflow: hidden;
         /* Скрываем лишний контент */
-        height: 180px;
+        height: 190px;
     }
     
     .page {
@@ -1567,7 +1599,7 @@ table {
         font-family: 'Onest';
         font-size: 14px;
         font-weight: 600;
-        line-height: 130%;
+        line-height: 120%;
         letter-spacing: 0%;
         text-align: left;
     
@@ -1630,6 +1662,26 @@ table {
         text-transform: uppercase;
     }
 
+}
+
+@media (max-width: 1138px){
+    .nav-item {
+        font-size: 11px;
+        padding-inline: 1px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .main-image img{
+        width: 100%; 
+        border-radius: 30px;
+        width: 350px;
+        height: 300px;
+    }
 }
 
 @media (max-width: 1115px) {
