@@ -1662,6 +1662,23 @@ table {
         text-transform: uppercase;
     }
 
+    .prev-btn img, .next-btn img,
+    .prev img, .next img,
+    .prev-reviews img, .next-reviews img {
+        height: 34px;
+        width: 34px;
+    } 
+
+}
+
+@media (max-width: 1155px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .info-content {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 1138px){
@@ -1762,6 +1779,11 @@ table {
     .hidden {
         display: none;
     }
+
+    .card-button {
+        padding-inline: 8px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 1088px) {
@@ -1813,7 +1835,36 @@ table {
     .hidden {
         display: none;
     }
+    .card-button {
+        padding-inline: 8px;
+        font-size: 16px;
+    }
 
+    .to-main img{
+        position: absolute;
+        width: 144px;
+        height: 35px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+}
+
+@media (max-width: 1070px) {
+    .what-awaits-header{
+        font-size: 22px;
+    }
+
+    .page {
+        font-size: 14px;
+        font-weight: 550;
+        line-height: 120%;
+    }
+
+    .card-button {
+        padding-inline: 8px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 1064px) {
@@ -1834,6 +1885,24 @@ table {
     }
 
 }
+
+@media (max-width: 1050px) {
+    .to-main img{
+        position: absolute;
+        width: 129.6px;
+        height: 31.5px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 995px) {
+    .card-button {
+        padding-inline: 6px;
+        font-size: 16px;
+    }
+}
+
 
 @media (max-width: 991px) {
     .dropdown-button {
