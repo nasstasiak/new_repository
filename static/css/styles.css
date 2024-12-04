@@ -1056,6 +1056,10 @@ td {
     display: none;
 }
 
+.review {
+    margin-top: 0;
+}
+
 @media (max-width: 1705px) {
     .page-header {
         font-size: 46px;
@@ -1640,7 +1644,6 @@ td {
     }
 
     .info-block {
-        display: inline-block;
         margin: 20px;
         width: 330px;
         height: 130px;
@@ -2019,6 +2022,10 @@ td {
         width: 700px;
     }
 
+    .review {
+        margin-top: 0;
+    }
+
     .main-buttons {
         width: 60%;
     }
@@ -2044,6 +2051,11 @@ td {
         border-radius: 30px;
         width: 500px;
         height: 334px;
+    }
+
+    .blocks {
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
 }
 
@@ -2265,6 +2277,18 @@ td {
         display: none;
     }
 
+    .to-main {
+        margin-top: 10px;
+    }
+
+    .to-main img{
+        position: absolute;
+        width: 116.6px;
+        height: 28.35px;
+        margin-left: 5px;
+        margin-top: 0;
+    }
+
 }
 
 
@@ -2339,6 +2363,13 @@ td {
         display: none;
     }
 
+    .slide-container,
+    .review-container {
+        width: 660px;
+        margin-left: 0;
+    }
+
+    
 }
 
 
@@ -2698,6 +2729,98 @@ td {
      color: rgb(255, 255, 255);
     }
 
+    .main-image-mobile img {
+        width: 330px;
+        height: 230px;
+    }
+
+    .text-container {
+        height: 190px;
+    }
+    
+    .what-awaits-header {
+        font-size: 20px;
+    }
+
+    .page {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 120%;
+        text-indent: 20px;
+    }
+    
+    .blocks {
+        display: block;
+        /* height: 110px;
+        overflow-y: scroll; */
+        padding-bottom: 5px;
+    }
+
+    .info-block {
+        display: block;
+        width: 70%;
+        height: 90px;
+        margin-bottom: 0;
+        margin-top: 10px;
+        margin-left: 15%;
+    }
+    
+    .title {
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .info-content {
+        font-size: 14px;
+    }
+
+    .to-main {
+        margin-top: 0;
+    }
+
+    .to-main img{
+        position: absolute;
+        width: 92.8px;
+        height: 22.7px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .prev-btn img, .next-btn img,
+    .prev img, .next img,
+    .prev-reviews img, .next-reviews img {
+        height: 24px;
+        width: 24px;
+    } 
+
+    .indicators {
+        margin: 0 5px;
+        /* Расстояние между кнопками и индикаторами */
+        display: flex;
+        background-color: #d9d9d9;
+        padding: 5px;
+        margin-top: 40px;
+        border-radius: 25px;
+    }
+
+    .indicator {
+        width: 7px;
+        height: 7px;
+        background-color: #5c5c5c;
+        border-radius: 50%;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        height: 25px;
+    }
 
 }
 
