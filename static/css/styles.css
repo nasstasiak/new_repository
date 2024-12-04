@@ -639,7 +639,7 @@ table {
     width: 100%;
   }
   
-  td {
+td {
     width: 50%;
     vertical-align: top; /* Выравниваем содержимое по верху */
   }
@@ -1050,6 +1050,10 @@ table {
 
 .quote {
     text-indent: 0;
+}
+
+.main-image-mobile {
+    display: none;
 }
 
 @media (max-width: 1705px) {
@@ -1959,6 +1963,88 @@ table {
     .hidden {
         display: none;
     }
+
+    .main-image {
+        display: none;
+        margin: 0;
+    }
+
+    .text-container, 
+    .what-awaits-header {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .text-container {
+        height: 150px;
+    }
+
+    .page {
+        text-align: justify;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 130%;
+        text-indent: 20px;
+    }
+
+    .review {
+        padding-right: 5px;
+        width: 500px;
+        height: 300px;
+        border-radius: 25px;
+    }
+
+    .user-info {
+        width: 30%;
+    }
+
+    .review-block {
+        width: 70%;
+    }
+
+    .review-text {
+        width: 100%;
+        padding-inline: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .quote img {
+        height: 25px;
+        width: 25px;
+    }
+
+    .slide-container,
+    .review-container {
+        width: 700px;
+    }
+
+    .main-buttons {
+        width: 60%;
+    }
+
+    .buttons-3 {
+        width: 20%;
+    }
+
+    .main-button {
+        width: 50%;
+    }
+
+    .to-main {
+        margin-left: 5px; 
+    }
+
+    .main-image-mobile {
+        margin-top: 20px;
+        display: block;
+    }
+
+    .main-image-mobile img {
+        border-radius: 30px;
+        width: 500px;
+        height: 334px;
+    }
 }
 
 @media (max-width: 978px) {
@@ -2189,6 +2275,10 @@ table {
 
     .hidden {
         display: none;
+    }
+
+    .text-container {
+        height: 189px;
     }
 }
 
