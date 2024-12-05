@@ -2936,6 +2936,43 @@ td {
         margin-left: 0;
         margin-right: 0;
     }
+    .text-container, 
+    .what-awaits-header {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .slide-container, .review-container {
+        max-width: 370px;
+    }
+
+    .slide-container .slide img {
+        width: 290px;
+        height: 200px;
+        border-radius: 25px;
+    }
+
+    .review {
+        padding-right: 5px;
+        width: 290px;
+        height: 180px;
+        border-radius: 25px;
+        padding: 10px;
+    }
+
+    .slide-container .prev,
+    .review-container .prev-reviews {
+        padding-left: 0;
+    }
+    
+    .slide-container .next,
+    .review-container .next-reviews {
+        padding-right: 0;
+    }
+
+    .mob-row {
+        width: 100vw;
+    }
 }
 
 
@@ -2983,6 +3020,12 @@ td {
         text-indent: 5px;
     }
 
+    .text-container, 
+    .what-awaits-header {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
 }
 
 
@@ -3019,6 +3062,12 @@ td {
 
     .hidden {
         display: none;
+    }
+
+    .text-container, 
+    .what-awaits-header {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
 }
