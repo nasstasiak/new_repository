@@ -2751,8 +2751,6 @@ td {
     
     .blocks {
         display: block;
-        /* height: 110px;
-        overflow-y: scroll; */
         padding-bottom: 5px;
     }
 
@@ -2820,6 +2818,73 @@ td {
         margin-top: 0px;
         margin-bottom: 10px;
         height: 25px;
+    }
+
+    .slide-container, .review-container {
+        max-width: 422px;
+    }
+
+    .slide-container .slide img {
+        width: 315px;
+        height: 212px;
+        border-radius: 25px;
+    }
+
+    .review {
+        padding-right: 5px;
+        width: 315px;
+        height: 200px;
+        border-radius: 25px;
+        padding: 10px;
+    }
+
+    .user-icon {
+        margin: 0;
+    }
+
+    .user-icon img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .username {
+        text-indent: 10px;
+        font-size: 16px;
+    }
+
+    .user-info {
+        padding-top: 10%;
+        text-align: center;
+    }
+
+    .quote img {
+        height: 15px;
+        width: 15px;
+    }
+
+    .buttons-3 {
+        width: 15%;
+    }
+
+    .main-buttons {
+        width: 315px;
+        padding-inline: 2px;
+        text-indent: 0;
+    }
+
+    .main-button {
+        text-align: left;
+        width: 50%;
+        text-indent: 0;
+    }
+
+    .main-button .btn {
+        margin-right: 5px;
+        height: 40px;
+    }
+
+    .prev {
+        width: 10px;
     }
 
 }
