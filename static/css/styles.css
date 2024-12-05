@@ -2883,8 +2883,15 @@ td {
         height: 40px;
     }
 
-    .prev {
-        width: 10px;
+    .slide-container .prev,
+    .slide-container .next,
+    .review-container .prev-reviews,
+    .review-container .next-reviews  {
+        padding-top: 0;
+    }
+
+    .review-text {
+        padding-top: 5px;
     }
 
 }
