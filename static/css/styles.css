@@ -3113,6 +3113,17 @@ td {
         font-size: 13px;
         line-height: 115%;
     }
+
+    .buttons-3 {
+        width: 10%;
+    }
+
+    .main-buttons {
+        width: 80%;
+        padding-left: 25px;
+    }
+
+    
 }
 
 
