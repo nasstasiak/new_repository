@@ -3079,11 +3079,13 @@ td {
 
     .slide-container, .review-container {
         width: 340px;
+        padding-left: 2px;
+
     }
 
     .slide-container .slide img, .review {
-        width: 250px;
-        height: 172px;
+        width: 320px;
+        height: 200px;
     }
 
     .review-container .slide-review{
@@ -3121,6 +3123,13 @@ td {
     .main-buttons {
         width: 80%;
         padding-left: 25px;
+    }
+
+    .review-container .prev-reviews,
+    .review-container .next-reviews,
+    .slide-container .prev,
+    .slide-container .next {
+        opacity: 0.5;
     }
 
     
