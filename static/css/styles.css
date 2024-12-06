@@ -3090,6 +3090,29 @@ td {
         margin-left: 20px;
     }
 
+    .user-info {
+        width: 25%;
+    }
+
+
+    .user-icon img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .username {
+        text-indent: 2px;
+        font-size: 14px;
+    }
+
+    .review-block {
+        width: 75%;
+    }
+
+    .review-text {
+        font-size: 13px;
+        line-height: 115%;
+    }
 }
 
 
