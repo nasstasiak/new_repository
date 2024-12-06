@@ -2607,6 +2607,10 @@ td {
     .filters-selected-row {
         max-height: 120px;
         overflow: auto;
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom-right-radius: 35px;
+        border-bottom-left-radius: 35px;
     }
 
     .admin-request {
@@ -3024,6 +3028,17 @@ td {
     .what-awaits-header {
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .to-main {
+        margin-left: 2px;
+    }
+
+    .to-main img {
+        top: 2px;
+        left: 0;
+        width: 83.5px;
+        height: 20.4px;
     }
 
 }
