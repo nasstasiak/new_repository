@@ -3072,7 +3072,18 @@ td {
     }
 
     .blocks {
+        /* height: 110px;
+        overflow: hidden; */
         margin-bottom: 20px;
+    }
+
+    .slide-container, .review-container {
+        width: 340px;
+    }
+
+    .slide-container .slide img, .review {
+        width: 250px;
+        height: 172px;
     }
 
 }
