@@ -2898,6 +2898,8 @@ td {
         padding-top: 5px;
     }
 
+    
+
 }
 
 
@@ -3026,8 +3028,8 @@ td {
 
     .text-container, 
     .what-awaits-header {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .to-main {
@@ -3040,9 +3042,14 @@ td {
         height: 21px;
     }
 
+    .main-image-mobile {
+        margin-top: 10px;
+    }
+
     .main-image-mobile img {
-        width: 320px;
-        height: 225px;
+        width: 290px;
+        height: 210px;
+        box-shadow: 0px 0px 4px 2px #77748689;
     }
 
     .about-event {
@@ -3050,7 +3057,8 @@ td {
     }
 
     .text-container {
-        height: 195px;
+        line-height: 110%;
+        height: 190px;
     }
   
 
@@ -3058,12 +3066,13 @@ td {
     .gallery, .comment-title {
         font-size: 18px;
         line-height: 110%;
+        text-shadow: 0px 1px 7px #686868ab;
     }
 
     .page {
-        font-size: 14px;
-        line-height: 115%;
-
+        font-size: 13px;
+        line-height: 110%;
+        text-shadow: 0px 1px 7px #686868ab;
     }
 
     
@@ -3078,13 +3087,13 @@ td {
     }
 
     .slide-container, .review-container {
-        width: 340px;
+        width: 345px;
         padding-left: 2px;
 
     }
 
     .slide-container .slide img, .review {
-        width: 320px;
+        width: 330px;
         height: 200px;
     }
 
@@ -3121,6 +3130,7 @@ td {
     }
 
     .main-buttons {
+        margin-bottom: 100px;
         width: 80%;
         padding-left: 25px;
     }
@@ -3132,6 +3142,20 @@ td {
         opacity: 0.5;
     }
 
+    .dots-container {
+        margin-bottom: 10px;
+    }
+
+    .dots-container-reviews {
+        margin-bottom: 0;
+    }
+
+    .button-container {
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        height: 20px;
+    }
     
 }
 
