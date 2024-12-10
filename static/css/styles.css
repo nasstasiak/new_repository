@@ -1060,6 +1060,10 @@ td {
     margin-top: 0;
 }
 
+.img-mobile {
+    display: none;
+}
+
 @media (max-width: 1705px) {
     .page-header {
         font-size: 46px;
@@ -2899,7 +2903,7 @@ td {
     }
 
     
-
+    
 }
 
 
