@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 0;
+    padding-right: 0;
+    margin: 0;
+    height: 100%;
+    font-family: "Onest", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.calendar-container {
+	height: calc(100vh - 56px);
+	display: flex;
+	flex-direction: column;
+}
+
+#calendar {
+	flex-grow: 1;
+}
+
+.fc-day-grid-event .fc-time,
+.fc-day-grid-event .fc-title {
+	white-space: normal;
+}
+
+.fc-today {
+	background-color: rgb(112, 176, 255) !important;
+}
+
+.fc-event {
+	color: white !important;
+	/* Цвет текста */
+}
+
+.fc-toolbar h2 {
+	text-transform: capitalize;
+}
+
+/* Новые классы для событий */
+
+.event-online {
+	background-color: rgb(48, 121, 209);
+	/* Зеленый для онлайн событий */
+}
+
+.event-offline {
+	background-color: rgb(48, 121, 209);
+	/* Зеленый для оффлайн событий */
+}
+
+.event-attractions {
+	background-color: rgb(48, 121, 209);
+	/* Зеленый для достопримечательностей */
+}
+
+.event-visiting {
+	background-color: rgb(48, 121, 209);
+	/* Зеленый для событий для посещения */
+}
+
+.event-registered {
+	background-color: rgb(22, 0, 146) !important;
+	/* Желтый для зарегистрированных */
+}
+
+.event-favorite {
+	background-color: rgb(236, 40, 73) !important;
+	/* Розовый для избранных */
+}
