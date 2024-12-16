@@ -1254,5 +1254,15 @@ a.fc-more:hover {
 }
 
 
-
+.months {
+    width: fit-content;
+    min-height: fit-content;
+    padding-right: 20px;
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-weight: 400;
+    border-radius: 15px;
+    position: absolute;
+    right: 15%;
+}
 

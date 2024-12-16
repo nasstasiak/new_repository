@@ -25,6 +25,19 @@
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/moment.min.js"></script>
     <script src="static/js/ru.js"></script>
+
+    <style>
+        .months {
+            width: fit-content;
+            min-height: fit-content;
+            color: rgb(39, 66, 106);
+            font-family: 'Onest';
+            font-weight: 400;
+            border-radius: 15px;
+            position: absolute;
+            left: 15%;
+        }
+    </style>
 </head>
 
 <body>
@@ -122,6 +135,40 @@
             <div class="fc-toolbar fc-header-toolbar">
                 <div class="fc-left">
                     <h2>декабрь 2024</h2>
+                    <div class="dropdown dropdown-button">
+                    <a class="btn-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #27426A;">
+                        <img src="static/general/icons/dropdown-arrow.png" alt="" style="max-height: 35px;">
+                        </a>
+                    <form action="" method="get" class="dropdown-menu dropdown-filter months" id="dateDropdown" style="overflow-y: auto; text-align: center; padding-inline: 20px;">
+                        <div class="mb-2">
+                            <label for="yearSelect">Год:</label>
+                            <select id="yearSelect" name="year" class="form-select">
+                                </select>
+                        </div>
+                        <div class="mb-2">
+                            <label for="monthSelect">Месяц:</label>
+                            <select id="monthSelect" name="month" class="form-select">
+                                <option value="">Выберите месяц</option>
+                                <option value="01">Январь</option>
+                                <option value="02">Февраль</option>
+                                <option value="03">Март</option>
+                                <option value="04">Апрель</option>
+                                <option value="05">Май</option>
+                                <option value="06">Июнь</option>
+                                <option value="07">Июль</option>
+                                <option value="08">Август</option>
+                                <option value="09">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="text-center" style="text-indent: 0;">
+                            <button type="submit" class="btn btn-outline-success mt-3" id="apply-date-button">Применить</button>
+                        </div>
+                    </form>
+                </div>                    
+                    
                 </div>
                 <div class="fc-right"><button type="button"
                         class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled"
@@ -591,6 +638,19 @@
             });
         });
     </script>
+
+<script>
+    const yearSelect = document.getElementById('yearSelect');
+    const currentYear = new Date().getFullYear();
+
+    // Важно!  Теперь мы добавляем options в select
+    for (let year = currentYear - 5; year <= currentYear + 5; year++) {
+        let option = document.createElement('option');
+        option.value = year;
+        option.text = year;
+        yearSelect.appendChild(option); //  Добавляем option в select
+    }
+</script>
 
 
 
