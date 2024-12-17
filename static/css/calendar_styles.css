@@ -1,5 +1,6 @@
 body{
     background-attachment: scroll;
+    background-color: #63738acb;
     background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
     background-repeat: no-repeat;
     background-attachment: fixed;
