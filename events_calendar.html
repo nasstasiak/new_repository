@@ -28,14 +28,20 @@
 
     <style>
         .months {
+            position: absolute;
             width: fit-content;
             min-height: fit-content;
             color: rgb(39, 66, 106);
             font-family: 'Onest';
             font-weight: 400;
             border-radius: 15px;
-            position: absolute;
             left: 15%;
+        }
+
+
+
+        .actual-month:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -134,7 +140,7 @@
         <div id="calendar" class="fc fc-unthemed fc-ltr">
             <div class="fc-toolbar fc-header-toolbar">
                 <div class="fc-left">
-                    <h2>декабрь 2024</h2>
+                    <h2 class="actual-month" data-bs-toggle="dropdown">декабрь 2024</h2>
                     <div class="dropdown dropdown-button">
                         <a class="btn-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                             style="color: #27426A;">
@@ -177,10 +183,12 @@
                         class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled"
                         disabled="" id="fc-today-button">Сегодня</button>
                     <div class="fc-button-group">
-                        <button type="button" class="btn-primary fc-prev-button fc-button fc-state-default fc-corner-left"
+                        <button type="button"
+                            class="btn-primary fc-prev-button fc-button fc-state-default fc-corner-left"
                             aria-label="prev"><img src="static/general/icons/arrow-left(1).png" alt="" srcset="">
                         </button>
-                        <button type="button" class="btn-primary fc-next-button fc-button fc-state-default fc-corner-right"
+                        <button type="button"
+                            class="btn-primary fc-next-button fc-button fc-state-default fc-corner-right"
                             aria-label="next"><img src="static/general/icons/arrow-right(1).png" alt="" srcset="">
                         </button>
                     </div>
@@ -193,12 +201,13 @@
                     <table class="" style="border-radius: 25px;">
                         <thead class="fc-head">
                             <tr>
-                                <td class="fc-head-container fc-widget-header" >
+                                <td class="fc-head-container fc-widget-header">
                                     <div class="fc-row fc-widget-header">
                                         <table class="">
                                             <thead>
                                                 <tr>
-                                                    <th class="fc-day-header fc-widget-header fc-mon" style="border-radius: 25px;"><span>пн</span>
+                                                    <th class="fc-day-header fc-widget-header fc-mon"
+                                                        style="border-radius: 25px;"><span>пн</span>
                                                     </th>
                                                     <th class="fc-day-header fc-widget-header fc-tue"><span>вт</span>
                                                     </th>
@@ -649,12 +658,12 @@
         const yearSelect = document.getElementById('yearSelect');
         const currentYear = new Date().getFullYear();
 
-        // Важно!  Теперь мы добавляем options в select
+
         for (let year = currentYear - 5; year <= currentYear + 5; year++) {
             let option = document.createElement('option');
             option.value = year;
             option.text = year;
-            yearSelect.appendChild(option); //  Добавляем option в select
+            yearSelect.appendChild(option);
         }
     </script>
 
