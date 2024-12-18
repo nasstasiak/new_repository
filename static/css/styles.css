@@ -2079,7 +2079,8 @@ td {
     }
 
     .main-image-mobile img {
-        border-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
         width: 500px;
         height: 334px;
     }
