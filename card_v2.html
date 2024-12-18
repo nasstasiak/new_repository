@@ -409,9 +409,34 @@
                 </div>
         </div>
         </section>
+        <div class="modal" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-modal="true"
+            role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="commentModalLabel">Оставить отзыв</h5>
+                        <button type="button" class="button-close" data-bs-dismiss="modal" aria-label="Close">
+                            <img src="static/general/icons/close-button.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="commentForm">
+                            <input type="hidden" id="eventId" name="event_id" value="7">
+                            <input type="hidden" id="modelType" name="model_type" value="online">
+                            <div class="mb-3">
+                                <label for="commentText" class="form-label">Ваш отзыв</label>
+                                <textarea class="form-control" id="commentText" name="comment" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success">Отправить</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    
+    <script src="static/js/create_comment.js"></script>
 
     <script src="static/js/sent_remove_script.js"></script>
 

@@ -122,7 +122,7 @@
 
                     <div class="col-lg-3 selection text-end d-flex justify-content-end">
                         <!-- Кнопка сброса фильтров, которая будет скрыта по умолчанию -->
-                        <div id="reset-filters-container" class="me-2 hidden" >
+                        <div id="reset-filters-container" class="me-2 hidden">
                             <form action="#" method="get">
                                 <button class="btn btn-primary" type="submit">Сбросить</button>
                             </form>
@@ -410,8 +410,8 @@
 
 
                         <!-- Кнопка для применения сортировки -->
-                        <div class="text-center"><button type="submit"
-                                class="btn btn-outline-success mt-3" id="apply-sort-button">Применить</button></div>
+                        <div class="text-center"><button type="submit" class="btn btn-outline-success mt-3"
+                                id="apply-sort-button">Применить</button></div>
 
                     </form>
                 </div>
@@ -419,14 +419,16 @@
                 <div class="row">
                     <div class="col-lg-1 feed-left-column"></div>
                     <div class="col-lg-10">
-                      <div id="filter-sort-message" class="filter-message hidden">
-                        Сортировка: <span id="filter-sort-value"></span>
-                        <button class="delete-filter delete-sort-filter" id="delete-sort-filter" style="border: none; background: none; box-shadow: none;">
-                          <img src="static/general/icons/cancel-close.svg" style="height: 20px; width: 20px; margin-top: 0;">
-                        </button>
-                      </div>
+                        <div id="filter-sort-message" class="filter-message hidden">
+                            Сортировка: <span id="filter-sort-value"></span>
+                            <button class="delete-filter delete-sort-filter" id="delete-sort-filter"
+                                style="border: none; background: none; box-shadow: none;">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
                     </div>
-                  </div>
+                </div>
 
                 <div class="row filters-selected-row">
                     <div class="col-lg-1 feed-left-column"></div>
@@ -483,8 +485,8 @@
                     <div class="col-lg-10">
                         <div id="filter-tags-message" class="filter-message">
                             Выбранные теги: <span id="filter-tags-value"></span>
-                            <button class="delete-filter delete-tags-filter" type="submit"
-                                id="delete-tags-filter" style="border: none; background: none; box-shadow: none;">
+                            <button class="delete-filter delete-tags-filter" type="submit" id="delete-tags-filter"
+                                style="border: none; background: none; box-shadow: none;">
                                 <img src="static/general/icons/cancel-close.svg"
                                     style="height: 20px; width: 20px; margin-top: 0;">
                             </button>
@@ -500,7 +502,8 @@
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
                                     <a href="#" class="add-to-cart" data-event-slug="">
-                                        <img class="mx-1 heart-icon" src="static/general/icons/heart.svg" alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
+                                            alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/finopolis_preview.jpg" alt="" class="preview-photo">
                                     <div class="type-substrate">
@@ -531,7 +534,8 @@
                                             Форум инновационных финансовых технологий FINOPOLIS в этом году вернется
                                             в Сочи.
                                             Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
-                                            FINOPOLIS традиционно... <a href="card_v2.html" class="show-more">Подробнее</a>
+                                            FINOPOLIS традиционно... <a href="card_v2.html"
+                                                class="show-more">Подробнее</a>
                                         </p>
                                     </div>
                                     <div class="preview-event-id">
@@ -545,7 +549,8 @@
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
                                     <a href="#" class="remove-from-favorites" data-event-slug="">
-                                        <img class="mx-1 heart-icon" src="static/general/icons/heart_red.png" alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-icon" src="static/general/icons/heart_red.png"
+                                            alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/lending_pace.jpeg" alt="" class="preview-photo">
                                     <div class="type-substrate">
@@ -588,7 +593,8 @@
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
                                     <a href="#" class="add-to-cart" data-event-slug="">
-                                        <img class="mx-1 heart-icon" src="static/general/icons/heart.svg" alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
+                                            alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/monetary_conditions.jpg" alt="" class="preview-photo">
                                     <div class="type-substrate">
@@ -657,7 +663,35 @@
             </pagination>
         </div>
         <div class="col-lg-1 right-column" style="padding: 0;"></div>
+
+        <div class="modal" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-modal="true"
+            role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="commentModalLabel">Оставить отзыв</h5>
+                        <button type="button" class="button-close" data-bs-dismiss="modal" aria-label="Close">
+                            <img src="static/general/icons/close-button.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="commentForm">
+                            <input type="hidden" id="eventId" name="event_id" value="7">
+                            <input type="hidden" id="modelType" name="model_type" value="online">
+                            <div class="mb-3" style="text-indent: 0;">
+                                <label for="commentText" class="form-label">Ваш отзыв:</label>
+                                <textarea class="form-control" id="commentText" name="comment" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success">Отправить</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script src="static/js/create_comment.js"></script>
 
     <script src="static/js/filters_script.js"></script>
 
@@ -666,7 +700,7 @@
     <script src="static/js/filters_selected_script.js"></script>
 
     <script src="static/js/sort_selected_script.js"></script>
-    
+
     <script src="static/js/content_load_script.js"></script>
 </body>
 
