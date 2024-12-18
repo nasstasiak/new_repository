@@ -1062,7 +1062,7 @@ td {
 }
 
 
-.review-text {
+.review-text, .hashtags {
     /* border: 1px solid #ccc; */
     padding: 10px;
     padding-top: 0%;
