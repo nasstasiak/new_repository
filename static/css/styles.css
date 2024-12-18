@@ -1221,7 +1221,7 @@ td {
         border-radius: 25px;
     }
 
-    .review-text {
+    .review-text, .hashtags {
         font-size: 18px;
     }
 
@@ -1399,6 +1399,10 @@ td {
     .review-text {
         float: right;
         width: 90%;
+        font-size: 16px;
+    }
+
+    .hashtags {
         font-size: 16px;
     }
 
@@ -1671,6 +1675,10 @@ td {
         padding-left: 10px;
         float: right;
         width: 80%;
+        font-size: 14px;
+    }
+
+    .hashtags {
         font-size: 14px;
     }
 
