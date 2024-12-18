@@ -534,7 +534,7 @@ button {
 }
 
 
-.e-id {
+.event-tags {
     display: inline;
 }
 
@@ -1142,7 +1142,7 @@ td {
 
 @media(max-width: 1566px) {
     .event-preview-time, .event-preview-speaker,
-    .preview-description, .e-id,
+    .preview-description, .event-tags,
     .event-type {
         font-size: 18px;
     }
@@ -1303,7 +1303,7 @@ td {
     }
 
     .event-preview-time, .event-preview-speaker,
-    .preview-description, .e-id,
+    .preview-description, .event-tags,
     .event-id, .event-type {
         font-size: 16px;
     }
@@ -1505,7 +1505,7 @@ td {
     }
 
     .event-preview-time, .event-preview-speaker,
-    .preview-description, .e-id,
+    .preview-description, .event-tags,
     .event-id, .event-type {
         font-size: 14px;
     }
