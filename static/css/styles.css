@@ -3047,6 +3047,14 @@ td {
         width: auto;
     }
 
+    .user-info-existent-review {
+        width: 50%;
+    }
+
+    .review-block-existent-review{
+        width: 50%;
+    }
+
     .user-icon-existent-review img {
         height: 20px; 
         width: auto;
