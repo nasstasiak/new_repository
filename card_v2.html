@@ -88,7 +88,7 @@
 
 
 
-        a {
+        /* a {
             display: block;
             color: lighten(skyblue, 15%);
             text-decoration: underline;
@@ -97,7 +97,7 @@
             &:hover {
                 cursor: pointer;
             }
-        }
+        } */
 
         p {
             text-align: left;
@@ -354,10 +354,10 @@
                         name_page=='Доступные к посещению' %}{% url "events_cultural:search_events_for_visiting" %}{%
                         elif name_page=='Достопримечательности' %}{% url "events_cultural:search_attractions" %}{% elif
                         name_page=='Все мероприятия' %}{% url "main:search_all" %}{% endif %}" method="get">
-                        <input class="form-control me-2" type="search" name="q" id="search" placeholder="Поиск"
-                            aria-label="Search">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Поиск" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">
-                            <img src="static/general/icons/search.svg">
+                            <img src="static/general/icons/search.svg"
+                                style="height: 20px; width: 20px; margin-top: 0;">
                         </button>
                     </form>
                 </div>
