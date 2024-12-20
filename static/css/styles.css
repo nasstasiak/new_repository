@@ -1052,6 +1052,10 @@ td {
     display: block;
 }
 
+.slide-container .slide {
+    text-indent: 10px;
+}
+
 .slide-container .slide img {
     width: 690px;
     height: 460px;
