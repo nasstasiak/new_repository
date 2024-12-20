@@ -228,6 +228,10 @@
             color: skyblue;
         }
 
+        .review-container-small {
+            display: none;
+        }
+
         @media (max-width: 480px) {
             .blocks {
                 display: none;
@@ -282,6 +286,20 @@
             .large-to-main-arrow {
                 display: none;
             }
+
+            .review-container-large {
+                display: none;
+            }
+
+            .review-container-small {
+                display: block;
+            }
+
+            .items-small {
+                overflow-y: auto;
+                height: 200px;
+            }
+
 
         }
     </style>
@@ -573,7 +591,7 @@
                             <span class="dot-reviews"></span>
                             <span class="dot-reviews"></span>
                         </div> -->
-                        <div class="review-container" style="text-indent: 0;">
+                        <div class="review-container review-container-large" style="text-indent: 0;">
                             <div class="items">
                                 <div class="item item1">
                                     <div class="review">
@@ -603,7 +621,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">второй отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -619,7 +637,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">третий отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -635,7 +653,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">четвертый отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -651,7 +669,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">пятый отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -667,7 +685,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">шестой отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -683,7 +701,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">седьмой отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -699,7 +717,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">восьмой отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -715,7 +733,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">девятый отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -731,7 +749,7 @@
                                             <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
                                                     alt="">
                                             </div>
-                                            <div class="col-lg-11 review-text">первый отзыв</div>
+                                            <div class="col-lg-11 review-text">десятый отзыв</div>
                                         </div>
                                     </div>
                                 </div>
@@ -742,7 +760,170 @@
                                     alt=""></div>
                         </div>
 
-
+                        <div class="review-container review-container-small" style="text-indent: 0;">
+                            <div class="items items-small">
+                                <div class="item item--small item1">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">первый отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item2">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">второй отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item3">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">третий отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item4">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">четвертый отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item5">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">пятый отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item6">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">шестой отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item7">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">седьмой отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item8">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">восьмой отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item9">
+                                    <div class="review">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">девятый отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-small item10">
+                                    <div class="review review-small">
+                                        <div class="col-lg-4 user-info">
+                                            <div class="user-icon">
+                                                <img src="static/general/icons/profile-image-default.png" alt="">
+                                            </div>
+                                            <div class="username">username</div>
+                                        </div>
+                                        <div class="col-lg-8 review-block review-block-small">
+                                            <div class="col-lg-1 quote"><img src="static/general/icons/quotes.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-lg-11 review-text review-text-small">десятый отзыв</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="event-hashtags">
                             <div class="hashtags"
@@ -794,19 +975,20 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <script>
-        const slider = document.querySelector('.items');
+        const slider = document.querySelector('.items-small');
         let isDown = false;
-        let startX;
-        let scrollLeft;
+        let startY;
+        let scrollTop;
 
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
+            startY = e.pageY - slider.offsetTop;
+            scrollTop = slider.scrollTop;
         });
         slider.addEventListener('mouseleave', () => {
             isDown = false;
@@ -819,12 +1001,14 @@
         slider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 3; //scroll-fast
-            slider.scrollLeft = scrollLeft - walk;
-            console.log(walk);
+            const y = e.pageY - slider.offsetTop;
+            const walk = (y - startY) * 3; //scroll-fast
+            slider.scrollTop = scrollTop - walk;
         });
+
     </script>
+
+    <script src="static/js/comment_slide_script.js"></script>
 
     <script src="static/js/create_comment.js"></script>
 
