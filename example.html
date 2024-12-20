@@ -534,12 +534,14 @@
                                             Форум инновационных финансовых технологий FINOPOLIS в этом году вернется
                                             в Сочи.
                                             Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
-                                            FINOPOLIS традиционно... <a href="card_v2.html" class="show-more">Подробнее</a>
+                                            FINOPOLIS традиционно... <a href="card_v2.html"
+                                                class="show-more">Подробнее</a>
                                         </p>
                                     </div>
                                     <div class="preview-event-id">
                                         <div class="event-reviews-link">
-                                            <a href="#" class="reviews-link">Посмотреть отзывы</a>
+                                            <a href="#" class="reviews-link" type="button" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">Посмотреть отзывы</a>
                                         </div>
                                         <label for="event-id" class="event-id"></label>
                                         <div class="event-tags">#САДД</div>
@@ -586,7 +588,8 @@
                                     </div>
                                     <div class="preview-event-id">
                                         <div class="event-reviews-link">
-                                            <a href="#" class="reviews-link">Посмотреть отзывы</a>
+                                            <a href="#" class="reviews-link" type="button" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">Посмотреть отзывы</a>
                                         </div>
                                         <label for="event-id" class="event-id"></label>
                                         <div class="event-tags">#Пму</div>
@@ -636,7 +639,8 @@
                                     </div>
                                     <div class="preview-event-id">
                                         <div class="event-reviews-link">
-                                            <a href="#" class="reviews-link">Посмотреть отзывы</a>
+                                            <a href="#" class="reviews-link" type="button" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">Посмотреть отзывы</a>
                                         </div>
                                         <label for="event-id" class="event-id"></label>
                                         <div class="event-tags">#СОУ ИТС</div>
@@ -697,6 +701,49 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Отзывы</h1>
+                        <button type="button" class="button-close" data-bs-dismiss="modal" aria-label="Close">
+                            <img src="static/general/icons/close-button.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="existent-comment">
+                            <div class="row existent-review">
+                                <div class="col-lg-4 user-info">
+                                    <div class="row">
+                                        <div class="col-lg-3 user-icon-existent-review">
+                                            <img src="static/general/icons/profile-image-default.png" alt=""
+                                                style="height: 25px; width: auto;">
+                                        </div>
+                                        <div class="col-lg-9 username-existent-review " style="text-indent: 10px;">username
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-8 review-block review-block-existent-review">
+                                    <div class="col-lg-1 quote quote-existent-review"><img src="static/general/icons/quotes.png" alt="" style="width: 25px; height: auto;">
+                                    </div>
+                                    <div class="col-lg-11 review-text review-text-existent-review" style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Aliquid minus quis aliquam? Velit ab a, asperiores molestias
+                                        in ipsum voluptas, deleniti quis fugit, unde itaque delectus officiis veritatis
+                                        vel ea?</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <script src="static/js/create_comment.js"></script>
