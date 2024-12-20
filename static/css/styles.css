@@ -2583,6 +2583,11 @@ td {
         vertical-align: bottom;
     }
 
+    .event-reviews-link {
+        text-indent: 0;
+        font-size: 14px;
+    }
+
     p {
         margin-bottom: 0;
     }
@@ -2612,6 +2617,7 @@ td {
     }
 
     .preview-event-id {
+        width: 100%;
         display: block;
         position: relative;
         bottom: 0;
