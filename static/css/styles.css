@@ -3047,23 +3047,33 @@ td {
         width: auto;
     }
 
+    .user-icon-existent-review {
+        text-indent: 0;
+        width: fit-content;
+        padding-right: 0;
+    }
+
     .user-icon-existent-review img {
         height: 20px; 
         width: auto;
     }
     
     .username-existent-review  {
-        text-indent: 10px;
+        text-indent: 0;
+        padding: 5px;
+        padding-top: 0;
+        width: fit-content;
     }
     
     .quote-existent-review {
-        width: 20px; 
         height: auto;
     }
     
     .review-text-existent-review {
         font-size: 16px;
+        padding: 0;
     }
+
 }
 
 
