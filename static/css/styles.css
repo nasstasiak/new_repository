@@ -2079,7 +2079,7 @@ td {
         display: none;
     }
 
-    .main-image {
+    .main-image, .to-cart-big-1 {
         display: none;
         margin: 0;
     }
