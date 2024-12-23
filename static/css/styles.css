@@ -286,6 +286,10 @@ button {
  background: rgb(39, 66, 106);
 }
 
+.btn-none_sent_app{
+    background: #8a8363c7;
+}
+
 .button-close {
     background: none;
     border: none;
