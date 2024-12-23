@@ -742,9 +742,9 @@ td {
 
 .add-to-cart-big {
     position: absolute;
-    width: 219px;
-    height: 32px;
-    right: 10px;
+    width: auto;
+    height: 45px;
+    right: 300px;
     margin-top: 15px;
     display: flex;
     flex-direction: row;
