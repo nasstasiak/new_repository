@@ -207,14 +207,14 @@
                                     data-bs-theme="dark" style="max-height: 220px; overflow-y: auto;" id="timeDropdown">
                                     <div class="form-check ">
                                         Время начала <br>
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            <input type="time" id="time_to_start" name="time_to_start" value="">
+                                        <label class="form-check-label" for="flexCheckDefault" style="width: 100%;">
+                                            <input type="time" id="time_to_start" name="time_to_start" value="" style="width: 100%;">
                                         </label>
                                     </div>
                                     <div class="form-check ">
                                         Время окончания <br>
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            <input type="time" id="time_to_end" name="time_to_end" value="">
+                                        <label class="form-check-label" for="flexCheckDefault" style="width: 100%;">
+                                            <input type="time" id="time_to_end" name="time_to_end" value="" style="width: 100%;">
                                         </label>
                                     </div>
 
@@ -517,7 +517,9 @@
 
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
-                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                                    <a href="card_v2.html" class="show-more">
+                                        <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                                    </a>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
                                             <p class="preview-date">8 января 2025 г.</p>
@@ -561,14 +563,18 @@
                                         <div class="event-type online">online</div>
                                     </div>
                                     <div class="button-substrate">
-                                        <button class="btn btn-none_sent_app">Регистрация недоступна</button>
+                                        <button class="btn btn-none_sent_app" onclick="showAlert()">Регистрация
+                                            недоступна</button>
                                         <button class="btn btn-comment"> Оставить отзыв</button>
                                     </div>
 
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
-                                    <h4 class="event-title-preview">В феврале темп кредитования в целом был сдержанным,
-                                        хотя потребительские кредиты растут выше ожиданий</h4>
+                                    <a href="#" class="show-more">
+                                        <h4 class="event-title-preview">В феврале темп кредитования в целом
+                                            был сдержанным, хотя потребительские кредиты растут выше ожиданий</h4>
+                                    </a>
+
                                     <div class="row">
                                         <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
                                             <p class="preview-date">1 января 2024 г.</p>
@@ -617,8 +623,12 @@
 
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
-                                    <h4 class="event-title-preview">Денежно-кредитные условия продолжили ужесточаться
-                                    </h4>
+                                    <a href="#" class="show-more">
+                                        <h4 class="event-title-preview">Денежно-кредитные условия продолжили
+                                            ужесточаться
+                                        </h4>
+                                    </a>
+
                                     <div class="row">
                                         <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
                                             <p class="preview-date">9 апреля 2025 г.</p>
@@ -715,19 +725,23 @@
                     <div class="modal-body">
                         <div class="existent-comment">
                             <div class="row existent-review">
-                                <div class="col-lg-4 user-info-existent-review">
-                                    <div class="row">
-                                        <div class="col-lg-3 user-icon-existent-review">
-                                            <img src="static/general/icons/profile-image-default.png" alt="">
+                                <div class="user-info-existent-review" style="width: fit-content; text-align: center;">
+                                    <div class="" style="width: fit-content;">
+                                        <div class="user-icon-existent-review"
+                                            style="margin: auto; height: fit-content; text-align: center;">
+                                            <img src="static/general/icons/profile-image-default.png" alt=""
+                                                style="height: 30px; width: auto;">
                                         </div>
-                                        <div class="col-lg-9 username-existent-review">username</div>
+                                        <div class="username-existent-review">username</div>
                                     </div>
 
                                 </div>
-                                <div class="col-lg-8 review-block review-block-existent-review">
-                                    <div class="col-lg-1 quote quote-existent-review"><img src="static/general/icons/quotes.png" alt="">
+                                <div class="review-block review-block-existent-review" style="max-width: 70%;">
+                                    <div class="quote quote-existent-review"><img src="static/general/icons/quotes.png"
+                                            alt="">
                                     </div>
-                                    <div class="col-lg-11 review-text review-text-existent-review">Lorem ipsum dolor sit amet consectetur
+                                    <div class="review-text review-text-existent-review" style="margin: 0;">Lorem ipsum
+                                        dolor sit amet consectetur
                                         adipisicing elit. Aliquid minus quis aliquam? Velit ab a, asperiores molestias
                                         in ipsum voluptas, deleniti quis fugit, unde itaque delectus officiis veritatis
                                         vel ea?</div>
@@ -736,14 +750,17 @@
                         </div>
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Закрыть</button>
-                    </div>
                 </div>
             </div>
         </div>
 
     </main>
+
+    <script>
+        function showAlert() {
+            alert('Извините, вы не можете зарегистрироваться на это мероприятие');
+        }
+    </script>
 
     <script src="static/js/create_comment.js"></script>
 

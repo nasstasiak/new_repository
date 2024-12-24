@@ -3078,6 +3078,10 @@ td {
         padding: 0;
     }
 
+    .review-block-existent-review {
+        max-width: 60%;
+    }
+
    
 }
 
