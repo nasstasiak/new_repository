@@ -2857,7 +2857,11 @@ td {
     }
 
     .text-container {
-        height: 190px;
+        height: 200px;
+    }
+    .about-event {
+        height: fit-content;
+
     }
     
     .what-awaits-header {
@@ -2865,6 +2869,7 @@ td {
     }
 
     .page {
+        height: 200px;
         font-size: 14px;
         font-weight: 400;
         line-height: 120%;
