@@ -232,6 +232,10 @@
             display: none;
         }
 
+        .review-container-mobile {
+            display: none;
+        }
+
         @media (max-width: 480px) {
             .blocks {
                 display: none;
@@ -299,6 +303,82 @@
                 overflow-y: auto;
                 height: 200px;
             }
+
+            .comments-mobile {
+                border-radius: 20px;
+                max-width: 350px;
+                text-align: center;
+                display: block;
+                height: 200px;
+                margin: auto;
+                overflow-y: scroll;
+            }
+
+            .review-container-mobile {
+                display: flex;
+                align-items: flex-start;
+                margin: auto;
+                margin-bottom: 5px;
+                background-color: #e0e0e0;
+                max-width: 330px;
+                border-radius: 20px;
+                padding: 10px;
+                gap: 10px;
+                font-family: sans-serif;
+            }
+
+            .user-info-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+            .user-icon-mobile {
+                width: 30px;
+                height: 30px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-bottom: 5px;
+                text-indent: 0;
+            }
+
+            .user-icon-mobile img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .username-mobile {
+                text-align: center;
+                font-weight: bold;
+                text-indent: 0;
+                color: rgb(39, 66, 106);
+                font-family: 'Onest';
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 130%;
+                letter-spacing: 0%;
+                text-align: center;
+            }
+
+            .review-content-mobile {
+                border-radius: 5px;
+
+            }
+
+            .quote-mark-mobile {
+                margin-right: 5px;
+                color: #777;
+            }
+
+            .review-text-mobile {
+                line-height: 110%;
+                width: 90%;
+                text-indent: 0;
+                font-size: 14px;
+
+            }
+
 
 
         }
@@ -771,6 +851,37 @@
                             <div class="next-reviews" title="Next"><img src="static/general/icons/arrow-right(1).png"
                                     alt=""></div>
                         </div>
+                         <div class="comments-mobile">
+                            <div class="review-container-mobile">
+                                <div class="user-info-mobile">
+                                    <div class="user-icon-mobile"><img src="static/general/icons/profile-image-default.png" alt=""></div>
+                                    <div class="username-mobile">username</div>
+                                </div>
+                                <div class="review-content-mobile">
+                                    <div class="review-text review-text-mobile">текст отзыва Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                </div>
+                            </div>
+
+                            <div class="review-container-mobile">
+                                <div class="user-info-mobile">
+                                    <div class="user-icon-mobile"><img src="static/general/icons/profile-image-default.png" alt=""></div>
+                                    <div class="username-mobile">username</div>
+                                </div>
+                                <div class="review-content-mobile">
+                                    <div class="review-text review-text-mobile">текст отзыва Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                </div>
+                            </div>
+
+                            <div class="review-container-mobile">
+                                <div class="user-info-mobile">
+                                    <div class="user-icon-mobile"><img src="static/general/icons/profile-image-default.png" alt=""></div>
+                                    <div class="username-mobile">username</div>
+                                </div>
+                                <div class="review-content-mobile">
+                                    <div class="review-text review-text-mobile">текст отзыва Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                </div>
+                            </div>
+                         </div>
 
                         <div class="row mob-row">
                             <div class="col-lg-3 buttons-3"></div>
