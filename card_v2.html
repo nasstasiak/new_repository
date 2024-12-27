@@ -109,6 +109,7 @@
 
         .review-container {
             display: flex;
+            min-width: 0;
             flex-direction: column;
             align-items: center;
             position: relative;
@@ -122,6 +123,7 @@
         }
 
         .review {
+            min-width: 0;
             background-color: #fff;
             border-radius: 25px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -184,6 +186,7 @@
         }
 
         .review-block {
+            min-width: 0;
             /* display: flex;
             flex-direction: column;
             align-items: center; */
@@ -192,6 +195,7 @@
         }
 
         .review-text {
+            min-width: 0;
             padding: 0%;
             border-radius: 4px;
             font-family: 'Onest';
@@ -200,6 +204,8 @@
             line-height: 130%;
             letter-spacing: 0%;
             color: rgb(39, 66, 106);
+            overflow-wrap: break-word !important;
+            word-break: break-all !important;
         }
 
         .quote {
