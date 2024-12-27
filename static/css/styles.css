@@ -97,10 +97,11 @@ div {
     src: url('DaysOne-Regular.ttf') format('truetype');
 }
 
-h2, h3 {
+h1, h2, h3 {
     font-family: 'Days One', sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: rgb(39, 66, 106);
 }
 
 .page-header {
@@ -3169,6 +3170,74 @@ td {
     }
 }
 
+@media (max-width: 428px) {
+    .slide-container {
+        padding-left: 0px;
+        margin-left: 8px;
+
+    }
+
+    .slide-container .slide img, .review {
+        width: 350px;
+        height: 240px;
+        }
+
+    .to-cart-big-2 {
+        right: 40px; 
+        top: 185px;
+    }
+}
+
+
+@media (max-width: 414px) {
+    .btn {
+        font-size: 13px;
+        padding: 0;
+        width: auto;
+        height: 25px;
+        padding-inline: 3px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25),-1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+  
+    }
+
+    .btn-primary {
+        background: none;
+        width: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+}
+
+
+@media (max-width: 390px) {
+    .slide-container, .review-container {
+        width: 345px;
+        padding-left: 2px;
+        margin-left: 3px;
+
+    }
+
+    .slide-container .slide img {
+        width: 330px;
+        height: 220px;
+    }
+
+    .main-buttons {
+        margin-left: 10px;
+        width: 70%;
+    }
+
+    .main-button {
+        text-indent: 0;
+        padding: 0;
+    }
+
+    .card-button {
+        margin-left: 0;
+    }
+}
 
 @media (max-width: 384px) {
     .btn {
@@ -3344,7 +3413,28 @@ td {
         margin-bottom: 10px;
         height: 20px;
     }
+
+    .to-cart-big-2 {
+        right: 60px; 
+        top: 170px;
+    }
     
+}
+
+
+
+
+@media (max-width: 375px) {
+    .slide-container {
+        width: 335px;
+        padding-left: 0px;
+        margin-left: 3px;
+
+    }
+    .slide-container .slide img {
+    width: 320px;
+    height: 220px;
+    }
 }
 
 
@@ -3389,6 +3479,31 @@ td {
         margin-right: 10px;
     }
 
+    .slide-container {
+        width: 325px;
+        padding-left: 0px;
+        margin-left: 3px;
+
+    }
+
+    .slide-container .slide img {
+        width: 310px;
+        height: 200px;
+    }
+
+    .review-container-mobile {
+        display: flex;
+        align-items: flex-start;
+        margin: auto;
+        margin-bottom: 5px;
+        background-color: #e0e0e0;
+        width: 300px;
+        border-radius: 20px;
+        padding: 10px;
+        gap: 10px;
+        font-family: sans-serif;
+        box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25), 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media (max-width: 320px) {
