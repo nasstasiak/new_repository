@@ -1404,6 +1404,11 @@ td {
     .hidden {
         display: none;
     }
+
+    .to-cart-big-1 {
+        right: 240px; 
+        top: 455px;
+    }
 }
 
 @media (max-width: 1392px) {
