@@ -1,17 +1,17 @@
 const commentButtons = document.querySelectorAll('.btn-comment');
 
-const modal = document.querySelector('.modal');
+const commentModal = document.querySelector('#commentModal');
 
-const closeButton = modal.querySelector('.button-close');
+const closeButton = commentModal.querySelector('.button-close');
 
 // Функция для открытия модального окна
 const openModal = () => {
-    modal.style.display = 'block';
+    commentModal.style.display = 'block';
 };
 
 // Функция для закрытия модального окна
 const closeModal = () => {
-    modal.style.display = 'none';
+    commentModal.style.display = 'none';
 };
 
 // Добавляем обработчик событий для каждой кнопки
@@ -26,7 +26,7 @@ if (closeButton) {
 
 // Закрытие модального окна при клике вне его содержимого
 window.addEventListener('click', (event) => {
-    if (event.target === modal) {
+    if (event.target === commentModal) {
         closeModal();
     }
 });

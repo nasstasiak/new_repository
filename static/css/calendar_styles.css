@@ -1289,3 +1289,19 @@ a.fc-more:hover {
     right: 15%;
 }
 
+.months {
+    position: absolute;
+    width: fit-content;
+    min-height: fit-content;
+    color: rgb(39, 66, 106);
+    font-family: 'Onest';
+    font-weight: 400;
+    border-radius: 15px;
+    left: 15%;
+}
+
+
+
+.actual-month:hover {
+    cursor: pointer;
+}

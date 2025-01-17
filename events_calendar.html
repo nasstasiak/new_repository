@@ -25,25 +25,7 @@
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/moment.min.js"></script>
     <script src="static/js/ru.js"></script>
-
-    <style>
-        .months {
-            position: absolute;
-            width: fit-content;
-            min-height: fit-content;
-            color: rgb(39, 66, 106);
-            font-family: 'Onest';
-            font-weight: 400;
-            border-radius: 15px;
-            left: 15%;
-        }
-
-
-
-        .actual-month:hover {
-            cursor: pointer;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -196,8 +178,8 @@
                 <div class="fc-center"></div>
                 <div class="fc-clear"></div>
             </div>
-            <div class="fc-view-container" style="">
-                <div class="fc-view fc-month-view fc-basic-view" style="">
+            <div class="fc-view-container">
+                <div class="fc-view fc-month-view fc-basic-view">
                     <table class="" style="border-radius: 25px;">
                         <thead class="fc-head">
                             <tr>
@@ -630,42 +612,9 @@
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var events = [];
-            console.log(events);
+    <script src="static/js/today_date_script.js"></script>
 
-            $('#calendar').fullCalendar({
-                locale: 'ru',
-                height: 'parent',
-                events: events,
-                eventRender: function (event, element) {
-                    element.addClass(event.css_class);
-
-                    element.find('.fc-title').html(event.time + '  ' + event.category + '<br/><b> <a href="' + event.url + '" style="color:white;">' + event.title + '</a>');
-
-                },
-                dayRender: function (date, cell) {
-                    if (date.isSame(new Date(), "day")) {
-                        cell.css("background-color", "yellow"); // Сегодняшняя дата выделена желтым
-                    }
-                }
-            });
-        });
-    </script>
-
-    <script>
-        const yearSelect = document.getElementById('yearSelect');
-        const currentYear = new Date().getFullYear();
-
-
-        for (let year = currentYear - 5; year <= currentYear + 5; year++) {
-            let option = document.createElement('option');
-            option.value = year;
-            option.text = year;
-            yearSelect.appendChild(option);
-        }
-    </script>
+    <script src="static/js/month_selector_script.js"></script>
 
 
 
