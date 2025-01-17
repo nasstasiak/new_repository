@@ -448,7 +448,7 @@ button {
     text-align: left;
 }
 
-.event-preview-time {
+.event-preview-time, .event-preview-adress {
     text-indent: 0;
     color: rgb(35, 62, 102);
     font-family: 'Onest';
@@ -458,6 +458,10 @@ button {
     letter-spacing: 0%;
     text-align: left;
     padding-right: 20%;
+}
+
+.event-preview-adress {
+    padding-right: 10%;
 }
 
 .preview-date {
@@ -1264,7 +1268,7 @@ td {
 @media(max-width: 1566px) {
     .event-preview-time, .event-preview-speaker,
     .preview-description, .event-tags,
-    .event-type {
+    .event-type, .event-preview-adress {
         font-size: 18px;
     }
 
@@ -1425,7 +1429,7 @@ td {
 
     .event-preview-time, .event-preview-speaker,
     .preview-description, .event-tags,
-    .event-id, .event-type {
+    .event-id, .event-type, .event-preview-adress {
         font-size: 16px;
     }
 
@@ -1636,7 +1640,7 @@ td {
 
     .event-preview-time, .event-preview-speaker,
     .preview-description, .event-tags,
-    .event-id, .event-type {
+    .event-id, .event-type, .event-preview-adress {
         font-size: 14px;
     }
 
@@ -1894,7 +1898,8 @@ td {
     .preview-date,
     .preview-time,
     .event-preview-time,
-    .event-preview-speaker {
+    .event-preview-speaker,
+    .event-preview-adress {
         font-size: 12px;
     }
 
@@ -2117,7 +2122,8 @@ td {
         box-shadow: none;
     }
 
-    .event-preview-time {
+    .event-preview-time,
+    .event-preview-adress {
         width: 45%;
     }
 
@@ -2247,7 +2253,8 @@ td {
         font-size: 14px;
     }
 
-    .event-preview-time {
+    .event-preview-time,
+    .event-preview-adress {
         width: 50%;
         padding-right: 0;
         margin-right: 0;
@@ -2351,7 +2358,8 @@ td {
     .preview-time,
     .event-preview-time,
     .event-preview-speaker,
-    .preview-event-id {
+    .preview-event-id,
+    .event-preview-adress {
         font-size: 12px;
     }
 
@@ -2603,7 +2611,8 @@ td {
     .preview-date,
     .preview-time,
     .event-preview-time,
-    .event-preview-speaker {
+    .event-preview-speaker,
+    .event-preview-adress {
         font-size: 12px;
     }
 
@@ -2668,7 +2677,8 @@ td {
     p {
         margin-bottom: 0;
     }
-    .event-preview-time {
+    .event-preview-time,
+    .event-preview-adress {
         width: 50%;
         padding-right: 0%;
     }
