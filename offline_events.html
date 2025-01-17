@@ -116,8 +116,24 @@
             <section>
                 <div class="row mt-3 mb-3 name-for-events">
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-7 main-header">
-                        <h2 style="color: white;" class="page-header"> Оффлайн </h2>
+                    <div class="col-lg-1 col-sm-1 col-1 d-flex justify-content-center arrow" style="width: fit-content;">
+                        <nav aria-label="Arrow navigation">
+                            <ul class="pagination justify-content-center" style="margin-top: 10px;">
+                                <li class="page-item ">
+                                    <a class="page-link-arrow" href="#">
+                                        <div class="arrow">
+
+                                            <img src="static/general/icons/arrow-left(1).png" class="arrow"
+                                                alt="Предыдущая">
+
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6 main-header">
+                        <h2 style="color: white; text-indent: 0;" class="page-header"> Оффлайн </h2>
                     </div>
 
                     <div class="col-lg-3 selection text-end d-flex justify-content-end">
@@ -139,7 +155,26 @@
                             <img src="static/sort.png" alt="Сортировка" class="selection-icon">
                         </button>
 
+                        <div class="col-lg-1 col-sm-1 col-1 d-flex justify-content-center">
 
+
+                            <nav aria-label="Arrow navigation">
+                                <ul class="pagination justify-content-center" style="margin-top: 10px;">
+                                    <li class="page-item ">
+                                        <a class="page-link-arrow" href="#">
+                                            <div class="arrow">
+
+                                                <img src="static/general/icons/arrow-right(1).png" class="arrow"
+                                                    alt="Следующая">
+
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+
+                        </div>
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
@@ -208,13 +243,15 @@
                                     <div class="form-check ">
                                         Время начала <br>
                                         <label class="form-check-label" for="flexCheckDefault" style="width: 100%;">
-                                            <input type="time" id="time_to_start" name="time_to_start" value="" style="width: 100%;">
+                                            <input type="time" id="time_to_start" name="time_to_start" value=""
+                                                style="width: 100%;">
                                         </label>
                                     </div>
                                     <div class="form-check ">
                                         Время окончания <br>
                                         <label class="form-check-label" for="flexCheckDefault" style="width: 100%;">
-                                            <input type="time" id="time_to_end" name="time_to_end" value="" style="width: 100%;">
+                                            <input type="time" id="time_to_end" name="time_to_end" value=""
+                                                style="width: 100%;">
                                         </label>
                                     </div>
 
@@ -844,6 +881,8 @@
     <script src="static/js/sort_selected_script.js"></script>
 
     <script src="static/js/content_load_script.js"></script>
+
+    <script src="static/js/events_pages_slider.js"></script>
 </body>
 
 </html>
