@@ -1218,6 +1218,10 @@ td {
     fill: #BFE2FF;
 }
 
+.arrow-nav-right {
+    right: 10%;
+}
+
 @media (max-width: 1705px) {
     .page-header {
         font-size: 46px;
@@ -3154,6 +3158,23 @@ td {
 
     .page-header {
         font-size: 22px;
+    }
+
+    .arrow-nav-left, .arrow-nav-right {
+        padding: 0;
+        text-indent: 0;
+        z-index: 1000;
+    }
+    .arrow-nav-left {
+        left: 0;
+    }
+
+    .arrow-nav-right {
+        right: 5%;
+    }
+
+    .arrow-nav-left img, .arrow-nav-right img{
+        height: 25px;
     }
    
 }
