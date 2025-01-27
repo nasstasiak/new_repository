@@ -2829,23 +2829,23 @@ td {
     }
 
     .main-header {
-        width: 50%;
+        width: fit-content;
        }
     
     .selection {
-    width: 50%;
+    width: fit-content;
     padding-top: 0;
     }
 
     .selection-icon {
         margin: 0;
-        height: 44px;
-        width: 44px;
+        height: 34px;
+        width: 34px;
     }
 
     .selection-icon:hover {
-        height: 44px;
-        width: 44px;
+        height: 34px;
+        width: 34px;
         box-shadow: none;
     }
     /* либо оставить так, либо заменить свойство hover на focus */
@@ -3150,6 +3150,9 @@ td {
         max-width: 60%;
     }
 
+    .page-header {
+        font-size: 22px;
+    }
    
 }
 
@@ -3165,11 +3168,11 @@ td {
     }
 
     .main-header {
-        width: 50%;
+        width: fit-content;
        }
     
     .selection {
-    width: 50%;
+        width: fit-content;
     
     }
 
@@ -3339,12 +3342,12 @@ td {
     }
 
     .main-header {
-        width: 50%;
+        width: fit-content;
        }
     
-       .selection {
-        width: 50%;
-       }
+    .selection {
+        width: min-content;
+        }
 
     .account-title {
         font-size: 24px;
