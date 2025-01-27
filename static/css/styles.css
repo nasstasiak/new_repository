@@ -55,6 +55,12 @@ main {
     display: none;
 }
 
+.disabled {
+    pointer-events: none; /* Запрещает клики */
+    opacity: 0.5; /* Делает кнопку полупрозрачной */
+    cursor: not-allowed; /* Меняет курсор на "недоступно" */
+}
+
 .feed {
     background: linear-gradient(#63738acb, #b3bfd1cb 15%, #63738acb 105%);
     box-shadow: 1px 10px 27px 2px #000000;

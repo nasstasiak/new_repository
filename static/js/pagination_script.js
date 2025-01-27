@@ -67,3 +67,79 @@ document.querySelector('.arrow-nav-right').addEventListener('click', nextPage);
 
 // Инициализация при загрузке страницы
 window.addEventListener('load', initializeCards);
+
+//Функция для обновления пагинации
+// function updatePagination() {
+//     const pagination = document.getElementById('pagination');
+//     pagination.innerHTML = ''; // Очищаем пагинацию
+
+//     const totalPages = Math.ceil(allCards.length / cardsPerPage);
+// }
+
+function goToPage(page) {
+    if (page < 1 || page > Math.ceil(allCards.length / cardsPerPage)) return;
+    currentPage = page;
+    displayCards(currentPage);
+    updateArrows();
+    updatePagination(); // Обновляем состояние пагинации
+}
+
+// Функция обновления пагинации
+function updatePagination() {
+    const pagination = document.querySelector('pagination');
+    pagination.innerHTML = '';
+    
+    const totalPages = Math.ceil(allCards.length / cardsPerPage);
+    const ul = document.createElement('ul');
+    ul.className = 'pagination';
+
+    // Кнопка "Назад"
+    const prevLi = document.createElement('li');
+    prevLi.className = `pagination__item pagination__item--prev ${currentPage === 1 ? 'disabled' : ''}`;
+    prevLi.innerHTML = '<a href="#" class="pagination__link">Назад</a>';
+    prevLi.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage > 1) goToPage(currentPage - 1);
+    });
+    ul.appendChild(prevLi);
+
+    // Номера страниц
+    for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement('li');
+        li.className = `pagination__item ${currentPage === i ? 'pagination__item--active' : ''}`;
+        li.innerHTML = `<a href="#" class="pagination__link">${i}</a>`;
+        li.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToPage(i);
+        });
+        ul.appendChild(li);
+    }
+
+    // Кнопка "Следующая"
+    const nextLi = document.createElement('li');
+    nextLi.className = `pagination__item pagination__item--next ${currentPage === totalPages ? 'disabled' : ''}`;
+    nextLi.innerHTML = '<a href="#" class="pagination__link">Следующая</a>';
+    nextLi.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) goToPage(currentPage + 1);
+    });
+    ul.appendChild(nextLi);
+
+    pagination.appendChild(ul);
+}
+
+function prevPage() {
+    goToPage(currentPage - 1);
+}
+
+function nextPage() {
+    goToPage(currentPage + 1);
+}
+
+
+function initializeCards() {
+    allCards = document.querySelectorAll('.card');
+    updateArrows();
+    updatePagination();
+    displayCards(currentPage);
+}
