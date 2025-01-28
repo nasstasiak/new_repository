@@ -5,7 +5,7 @@ const dotsReviews = document.querySelectorAll('.dot-reviews');
 const initReviews = (n) => {
     slidesReviews.forEach((slide, index) => {
         slide.style.display = "none";
-        dotsReviews.forEach((dot) => dot.classList.remove("active")); // Убрал index из второго forEach
+        dotsReviews.forEach((dot) => dot.classList.remove("active")); 
     });
     slidesReviews[n].style.display = "block";
     dotsReviews[n].classList.add("active");
