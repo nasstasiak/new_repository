@@ -856,26 +856,7 @@
 
     </main>
 
-    <script>
-        // Получаем средний рейтинг из контекста Django
-        const averageRating = parseFloat("{{ average_rating|default:0 }}"); 
-        // получение рейтинга в файле README.md
-
-        // Функция для установки рейтинга
-        function setRating(rating) {
-            const ratingInputs = document.querySelectorAll('.half-stars input[type="radio"]');
-            ratingInputs.forEach(input => {
-                if (parseFloat(input.value) === rating) {
-                    input.checked = true;
-                }
-            });
-        }
-
-        // Устанавливаем рейтинг при загрузке страницы
-        document.addEventListener('DOMContentLoaded', () => {
-            setRating(averageRating);
-        });
-    </script>
+    <script src="static/js/rating_script.js"></script>
 
     <script src="static/js/create_comment.js"></script>
 
