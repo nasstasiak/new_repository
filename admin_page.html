@@ -20,6 +20,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <style>
+        .admin-button {
+            text-indent: 0;
+        }
+
+        @media (max-width: 480px) {
+            .admin-button {
+                text-indent: 10px;
+            }
+
+            .page-header {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body style="background-image: url(background2.jpg);">
@@ -34,10 +49,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="login.html">Войти</a>
-                        </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
@@ -136,42 +147,50 @@
                     </div>
 
                     <div class="row">
-        
-                        <div class="col-md-6 mb-2">
-                            <a href="/admin/events_available/events_online/add/" class="btn btn-secondary w-100" role="button" target="_blank">
+                        <div class="col-lg-1 feed-left-column"></div>
+
+                        <div class="col-md-5 mb-2 admin-button">
+                            <a href="/admin/events_available/events_online/add/" class="btn btn-secondary w-100"
+                                role="button" target="_blank">
                                 Добавить онлайн мероприятие
                             </a>
                         </div>
-                    
-                    
-                    
-                        <div class="col-md-6 mb-2">
-                            <a href="/admin/events_available/events_offline/add/" class="btn btn-secondary w-100" role="button" target="_blank">
+
+
+
+                        <div class="col-md-5 mb-2 admin-button">
+                            <a href="/admin/events_available/events_offline/add/" class="btn btn-secondary w-100"
+                                role="button" target="_blank">
                                 Добавить оффлайн мероприятие
                             </a>
                         </div>
-                    
-                    
-                    
-                        <div class="col-md-6 mb-2">
-                            <a href="/admin/events_cultural/attractions/add/" class="btn btn-secondary w-100" role="button" target="_blank">
+
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-1 feed-left-column"></div>
+
+                        <div class="col-md-5 mb-2 admin-button">
+                            <a href="/admin/events_cultural/attractions/add/" class="btn btn-secondary w-100"
+                                role="button" target="_blank">
                                 Добавить достопримечательность
                             </a>
                         </div>
-                    
-                    
-                    
-                        <div class="col-md-6 mb-2">
-                            <a href="/admin/events_cultural/events_for_visiting/add/" class="btn btn-secondary w-100" role="button" target="_blank">
+
+
+
+                        <div class="col-md-5 mb-2 admin-button">
+                            <a href="/admin/events_cultural/events_for_visiting/add/" class="btn btn-secondary w-100"
+                                role="button" target="_blank">
                                 Добавить доступное к посещению
                             </a>
                         </div>
-                    
+
                     </div>
 
                     <div class="row">
                         <div class="col-lg-1 feed-left-column"></div>
-                        <div class="col-lg-10"><h2 class="mb-lg-0">Ваши мероприятия</h2></div>
+                        <div class="col-lg-10">
+                            <h2 class="mb-lg-0">Ваши мероприятия</h2>
+                        </div>
                         <div class="col-lg-1"></div>
                     </div>
                     <nav class="arrow-nav-right" aria-label="Arrow navigation"
@@ -499,8 +518,7 @@
                                         <p class="preview-description">
                                             Планировочную структуру отличает глубокая сена с арьерсценой, двумя
                                             карманами далеко выдвинутая в зал авансцена с развитым просцениумом. Планшет
-                                            сцены снабжен двумя пово... <a href="#"
-                                                class="show-more">Подробнее</a>
+                                            сцены снабжен двумя пово... <a href="#" class="show-more">Подробнее</a>
                                         </p>
                                     </div>
                                     <div class="preview-event-id">
@@ -666,7 +684,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
 
                     </div>
                 </div>
