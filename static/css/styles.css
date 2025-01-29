@@ -1094,7 +1094,7 @@ td {
 
 .user-info {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .user-icon {
@@ -1339,6 +1339,44 @@ td {
 .half-stars input:checked ~ label svg {
     fill: #BFE2FF;
 }
+
+
+.full-stars-com {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    text-indent: 0;
+    margin-bottom: 0;
+}
+
+.full-stars-com .rating-group-com {
+    display: inline-flex;
+}
+
+.full-stars-com input {
+    position: absolute;
+    left: -9999px;
+}
+
+.full-stars-com label {
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    text-indent: 0;
+}
+
+.full-stars-com label svg {
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    fill: #BFE2FF;
+    float: right;
+}
+
+.user-info-existent-review .full-stars-com  {
+    text-indent: 5px;
+}
+
 
 @media (max-width: 1705px) {
     .page-header {
@@ -2294,6 +2332,7 @@ td {
 
     .user-info {
         width: 30%;
+        margin-bottom: 0;
     }
 
     .review-block {
@@ -3294,6 +3333,55 @@ td {
     .arrow-nav-left img, .arrow-nav-right img{
         height: 25px;
     }
+
+    .full-stars-com label svg {
+        height: 15px;
+        width: 15px;
+    }
+
+    .review-container-mobile {
+        text-indent: 0;
+    }
+
+    .comment-title {
+        margin-bottom: 0;
+    }
+
+    .half-stars {
+        text-align: center;
+        text-indent: 0;
+        margin-bottom: 5px;
+    }
+    
+    .half-stars .rating-group {
+        display: inline-flex;
+        text-indent: 0;
+    }
+    
+    .half-stars input {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .half-stars label {
+        margin: 0;
+        cursor: default;
+    }
+    
+    .half-stars label svg {
+        margin: 2px;
+        height: 25px;
+        width: 25px;
+        fill: rgb(39, 66, 106);
+    }
+    
+    .half-stars .hsr {
+        padding-right: 0;
+        margin-right: -22px;
+        width: 22px;
+        overflow: hidden;
+        z-index: 2;
+    }
    
 }
 
@@ -3391,6 +3479,13 @@ td {
     .to-cart-big-2 {
         right: 30px; 
         top: 70px;
+    }
+    
+    .half-stars label svg {
+        margin: 2px;
+        height: 25px;
+        width: 25px;
+        fill: rgb(39, 66, 106);
     }
 
 }
