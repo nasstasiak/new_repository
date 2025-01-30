@@ -205,7 +205,7 @@ h1 {
     display: none;
 }
 
-.docs-link {
+.docs-link, .telegram-link {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
@@ -522,7 +522,7 @@ h1 {
         display: block;
     }
 
-    .docs-link {
+    .docs-link, .telegram-link {
         text-align: center;
         margin-top: 0;
         margin-bottom: 20px;
