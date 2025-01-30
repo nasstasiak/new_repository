@@ -3372,7 +3372,7 @@ td {
         margin: 2px;
         height: 25px;
         width: 25px;
-        fill: rgb(39, 66, 106);
+        fill: #BFE2FF;
     }
     
     .half-stars .hsr {
@@ -3382,6 +3382,7 @@ td {
         overflow: hidden;
         z-index: 2;
     }
+
    
 }
 
@@ -3485,7 +3486,7 @@ td {
         margin: 2px;
         height: 25px;
         width: 25px;
-        fill: rgb(39, 66, 106);
+        fill: #BFE2FF;
     }
 
 }
@@ -3770,8 +3771,8 @@ td {
     }
 
     .to-cart-big-2 {
-        right: 55px; 
-        top: 235px;
+        right: 30px; 
+        top: 70px;
     }
 
     .review-container-mobile {

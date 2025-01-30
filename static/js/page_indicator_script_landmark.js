@@ -5,7 +5,7 @@ const indicatorsContainer = document.querySelector('.indicators');
 let currentPageIndex = 0;
 let pages = [];
 
-
+// Полный текст пока написан просто текстом, потом заменится на подгружаемый
 const fullText = `Памятник деревянного зодчества, построен М. Н. Куликовым. Деревянный одноэтажный дом с мезонином — 
 пример рядовой жилой застройки Новониколаевска начала 20 века. Прямоугольный в плане, рубленный «в обло» основной объем 
 с двумя пристроенными холодными сенями имеет полуподвальное помещение под частью сруба. Стены из сосновых бревен, нижний 
@@ -14,26 +14,36 @@ const fullText = `Памятник деревянного зодчества, п
 окна. Им соответствуют два щипцовых фронтона, разрезающих карниз на боковых фасадах. Декоративное убранство дома выполнено 
 в народных традициях.`;
 
-// Максимальное количество слов на странице
-const maxWordsPerPage = 60;
+// Максимальное количество символов на странице
+const maxCharsPerPage = 490;
 
-// Функция для разбиения текста на страницы
-function splitTextIntoPages(text, maxWords) {
+// Функция для разбиения текста на страницы по количеству символов
+function splitTextIntoPages(text, maxChars) {
     const words = text.split(' ');
     const pages = [];
-    let currentPage = [];
+    let currentPage = '';
+    let currentPageLength = 0;
 
     words.forEach((word) => {
-        if (currentPage.length < maxWords) {
-            currentPage.push(word);
+        // Если добавление текущего слова не превышает лимит символов
+        if (currentPageLength + word.length + (currentPageLength > 0 ? 1 : 0) <= maxChars) {
+            if (currentPageLength > 0) {
+                currentPage += ' ';
+                currentPageLength += 1;
+            }
+            currentPage += word;
+            currentPageLength += word.length;
         } else {
-            pages.push(currentPage.join(' '));
-            currentPage = [word];
+            // Если превышает, сохраняем текущую страницу и начинаем новую
+            pages.push(currentPage);
+            currentPage = word;
+            currentPageLength = word.length;
         }
     });
 
-    if (currentPage.length > 0) {
-        pages.push(currentPage.join(' '));
+    // Добавляем последнюю страницу, если она не пустая
+    if (currentPageLength > 0) {
+        pages.push(currentPage);
     }
 
     return pages;
@@ -41,7 +51,7 @@ function splitTextIntoPages(text, maxWords) {
 
 // Создаем страницы на основе текста
 function createPages() {
-    pages = splitTextIntoPages(fullText, maxWordsPerPage);
+    pages = splitTextIntoPages(fullText, maxCharsPerPage);
 
     pages.forEach((pageText) => {
         const page = document.createElement('div');

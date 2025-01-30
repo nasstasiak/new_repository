@@ -25,7 +25,12 @@
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/moment.min.js"></script>
     <script src="static/js/ru.js"></script>
-    
+    <style>
+        .prev, .next {
+            background: none;
+            box-shadow: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -161,11 +166,11 @@
                         disabled="" id="fc-today-button">Сегодня</button>
                     <div class="fc-button-group">
                         <button type="button"
-                            class="btn-primary fc-prev-button fc-button fc-state-default fc-corner-left"
+                            class="prev fc-prev-button fc-button fc-state-default fc-corner-left"
                             aria-label="prev"><img src="static/general/icons/arrow-left(1).png" alt="" srcset="">
                         </button>
                         <button type="button"
-                            class="btn-primary fc-next-button fc-button fc-state-default fc-corner-right"
+                            class="next fc-next-button fc-button fc-state-default fc-corner-right"
                             aria-label="next"><img src="static/general/icons/arrow-right(1).png" alt="" srcset="">
                         </button>
                     </div>
