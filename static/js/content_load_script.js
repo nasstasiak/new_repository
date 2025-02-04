@@ -115,29 +115,28 @@ document.addEventListener("DOMContentLoaded", function() {
       filterSortMessageDiv.classList.remove('hidden');
     }
 
-    const elements = document.querySelectorAll('[data-item-id]');
+    const elements = document.querySelectorAll('[data-event-slug]');
 
-     elements.forEach(element => {
-            const itemId = element.dataset.itemId;
-            const heartIcon = element.querySelector('.heart-icon');
-            const heartRedIcon = element.querySelector('.heart-red-icon');
-            const isLiked = localStorage.getItem(`item-${itemId}`) === 'liked';
+    elements.forEach(element => {
+        const eventSlug = element.dataset.eventSlug; // Уникальный идентификатор
+        const heartIcon = element.querySelector('.heart-icon');
+        const heartRedIcon = element.querySelector('.heart-red-icon');
+        const isLiked = localStorage.getItem(`event-${eventSlug}`) === 'liked';
 
-          if (element.classList.contains('add-to-cart') && isLiked) {
-               // Если элемент изначально имеет класс 'add-to-cart' и сохранен в localStorage как 'liked', переводим его в 'remove-from-favorites'
-                    heartIcon.classList.add('hidden');
-                    heartRedIcon.classList.remove('hidden');
-                     element.classList.remove('add-to-cart');
-                     element.classList.add('remove-from-favorites');
-          }
-            else if (element.classList.contains('remove-from-favorites') && !isLiked) {
-              // Если элемент изначально имеет класс 'remove-from-favorites'  и НЕ сохранен в localStorage как 'liked', переводим его в 'add-to-cart'
-                    heartIcon.classList.remove('hidden');
-                    heartRedIcon.classList.add('hidden');
-                    element.classList.remove('remove-from-favorites');
-                    element.classList.add('add-to-cart');
-            }
-      });
+        if (isLiked) {
+            // Если элемент был "лайкнут", применяем соответствующие изменения
+            heartIcon.classList.add('hidden');
+            heartRedIcon.classList.remove('hidden');
+            element.classList.remove('add-to-cart');
+            element.classList.add('remove-from-favorites');
+        } else {
+            // Если элемент не был "лайкнут", сбрасываем состояние
+            heartIcon.classList.remove('hidden');
+            heartRedIcon.classList.add('hidden');
+            element.classList.remove('remove-from-favorites');
+            element.classList.add('add-to-cart');
+        }
+    });     
   
   
    // Отображение блока фильтров
