@@ -3600,6 +3600,17 @@ td {
 
     }
 
+    .arrow-nav-left {
+        left: 2px;
+    }
+
+}
+
+@media (max-width: 412px) {
+    .arrow-nav-left {
+        left: 5px;
+    }
+
 }
 
 
@@ -3960,6 +3971,14 @@ td {
 
     .img-mobile {
         display: block;
+    }
+
+    .arrow-nav-left, .arrow-nav-right {
+        margin-top: 10px;
+    }
+
+    .arrow-nav-left {
+        left: 0;
     }
 }
 
