@@ -182,8 +182,6 @@ function clearPlaceFilter() {
 // Обработчик события для кнопки удаления фильтра
 document.getElementById('delete-place-filter').addEventListener('click', clearPlaceFilter);
 
-
-
 function displaySelectedSpeakers() {
   const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');
   const filterSpeakersMessageDiv = document.getElementById('filter-speakers-message');
