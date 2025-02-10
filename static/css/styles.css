@@ -3372,6 +3372,7 @@ td {
         text-indent: 0;
         padding: 5px;
         padding-top: 0;
+        font-size: 14px;
         width: fit-content;
     }
     
@@ -3384,8 +3385,9 @@ td {
         padding: 0;
     }
 
-    .review-block-existent-review {
-        max-width: 60%;
+    .review-block.review-block-existent-review {
+        width: 60%;
+        padding-inline: 0;
     }
 
     .page-header {
