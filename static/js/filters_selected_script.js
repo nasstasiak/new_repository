@@ -147,6 +147,42 @@ function clearTimeFilter() {
 document.getElementById('delete-time-filter').addEventListener('click', clearTimeFilter); 
 
 
+function setPlaceFilter() {
+  const filterPlaceValueSpan = document.getElementById('filter-place-value');
+  const filterPlaceMessageDiv = document.getElementById('filter-place-message');
+  const searchPlaceValue = document.getElementById('event-place-search').value.trim();
+  // Устанавливаем значение в span
+  filterPlaceValueSpan.textContent = searchPlaceValue;
+  // Проверяем значение и отображаем или скрываем div с фильтром
+  if (searchPlaceValue !== "") {
+    filterPlaceMessageDiv.style.display = 'block'; // Показываем
+  } else {
+    filterPlaceMessageDiv.style.display = 'none'; // Скрываем
+  }
+  // Сохраняем значение в localStorage
+  localStorage.setItem('filterPlace', searchPlaceValue);
+}
+// Обработчик события для кнопки
+document.getElementById('apply-place-button').addEventListener('click', setPlaceFilter);
+
+
+function clearPlaceFilter() {
+  const inputPlaceField = document.getElementById('event-place-search');
+  const filterPlaceValueSpan = document.getElementById('filter-place-value');
+  const filterPlaceMessageDiv = document.getElementById('filter-place-message');
+  // Очищаем поле ввода
+  inputPlaceField.value = '';
+  filterPlaceValueSpan.textContent = ''; // Очищаем значение в span
+  filterPlaceMessageDiv.style.display = 'none'; // Скрываем сообщение
+  // Удаляем значение из localStorage
+  localStorage.removeItem('filterPlace');
+  // Отправляем форму
+  document.getElementById('place-form').submit();
+}
+// Обработчик события для кнопки удаления фильтра
+document.getElementById('delete-place-filter').addEventListener('click', clearPlaceFilter);
+
+
 
 function displaySelectedSpeakers() {
   const filterSpeakersValueSpan = document.getElementById('filter-speakers-value');

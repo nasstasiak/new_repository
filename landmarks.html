@@ -524,6 +524,18 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-1 feed-left-column"></div>
                     <div class="col-lg-10">
+                        <div id="filter-place-message" class="filter-message hidden">
+                            Фильтр по адресу: <span id="filter-place-value"></span>
+                            <button class="delete-filter delete-place-filter" type="submit"
+                                style="border: none; background: none; box-shadow: none;" id="delete-place-filter">
+                                <img src="static/general/icons/cancel-close.svg"
+                                    style="height: 20px; width: 20px; margin-top: 0;">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1 feed-left-column"></div>
+                    <div class="col-lg-10">
                         <div id="filter-speakers-message" class="filter-message hidden">
                             Выбранные спикеры: <span id="filter-speakers-value"></span>
                             <button class="delete-filter delete-speakers-filter" type="submit"
@@ -554,8 +566,10 @@
                         <div class="card">
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
-                                    <a href="#" class="add-to-cart" data-event-slug="">
+                                    <a href="#" class="add-to-cart" data-event-slug="1">
                                         <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
+                                            alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-red-icon hidden" src="static/general/icons/heart_red.png"
                                             alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/muzey_sssr.jpg" alt="" class="preview-photo">
@@ -703,8 +717,10 @@
                         <div class="card">
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
-                                    <a href="#" class="remove-from-favorites" data-event-slug="">
-                                        <img class="mx-1 heart-icon" src="static/general/icons/heart_red.png"
+                                    <a href="#" class="add-to-cart" data-event-slug="1">
+                                        <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
+                                            alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-red-icon hidden" src="static/general/icons/heart_red.png"
                                             alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/lending_pace.jpeg" alt="" class="preview-photo">
@@ -853,8 +869,10 @@
                         <div class="card">
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
-                                    <a href="#" class="add-to-cart" data-event-slug="">
+                                    <a href="#" class="add-to-cart" data-event-slug="1">
                                         <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
+                                            alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-red-icon hidden" src="static/general/icons/heart_red.png"
                                             alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/monetary_conditions.jpg" alt="" class="preview-photo">
@@ -1197,6 +1215,8 @@
         </div>
 
     </main>
+
+    <script src="static/js/like.js"></script>
 
     <script src="static/js/rating_script.js"></script>
 

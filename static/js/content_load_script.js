@@ -55,6 +55,19 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
     filterTimeMessageDiv.style.display = 'none';
     }
+
+  // Фильтр по месту проведения
+  const savedPlaceValue = localStorage.getItem('filterPlace');
+  const filterPlaceValueSpan = document.getElementById('filter-place-value');
+  const filterPlaceMessageDiv = document.getElementById('filter-place-message');
+  const inputPlaceField = document.getElementById('event-place-search');
+  if (savedPlaceValue) {
+    inputPlaceField.value = savedPlaceValue;
+    filterPlaceValueSpan.textContent = savedPlaceValue;
+    filterPlaceMessageDiv.style.display = savedPlaceValue ? 'block' : 'none';
+  } else {
+    filterPlaceMessageDiv.style.display = 'none';
+  }
   
    // Фильтр по спикерам
    const storedSpeakers = localStorage.getItem('selectedSpeakers');
@@ -140,5 +153,5 @@ document.addEventListener("DOMContentLoaded", function() {
   
   
    // Отображение блока фильтров
-   filterDiv.style.display = (savedNameValue !== null || savedStartValue !== null || savedEndValue !== null || savedStartTimeValue !== null || savedEndTimeValue !== null || storedSpeakers !== null && JSON.parse(storedSpeakers).length > 0 || storedTags !== null && JSON.parse(storedTags).length > 0 || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
+   filterDiv.style.display = (savedNameValue !== null || savedStartValue !== null || savedEndValue !== null || savedStartTimeValue !== null || savedEndTimeValue !== null || savedPlaceValue !== null || storedSpeakers !== null && JSON.parse(storedSpeakers).length > 0 || storedTags !== null && JSON.parse(storedTags).length > 0 || localStorage.getItem('rools-visible') === 'true') ? 'block' : 'none';
   });
