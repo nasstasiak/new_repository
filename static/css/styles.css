@@ -51,6 +51,7 @@ main {
     width: 100%;
 }
 
+
 .hidden {
     display: none;
 }
@@ -227,12 +228,12 @@ button {
     margin: 0;
     margin-right: 5px;
     border-radius: 25px;
-    padding-inline: 15px;
+    padding-inline: 10px;
     left: 0;
     opacity: 100%;
     color: rgb(255, 255, 255);
     font-family: 'Onest';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0%;
@@ -763,7 +764,7 @@ td {
     align-items: center;
 }
 
-.add-to-cart-big {
+.add-to-cart-big, .remove-from-favorites-big {
     position: absolute;
     width: auto;
     height: 45px;
@@ -774,7 +775,8 @@ td {
     align-items: center;
 }
 
-.add-to-cart-big img {
+.add-to-cart-big img,
+.remove-from-favorites-big img {
     height: 40px;
     width: auto;
 }
@@ -1634,7 +1636,7 @@ td {
     }
 
     .to-cart-big-1 {
-        right: 240px; 
+        right: 20px; 
         top: 455px;
     }
 }
@@ -3336,7 +3338,7 @@ td {
         width: auto;
     }
 
-    .add-to-cart-big {
+    .add-to-cart-big, .remove-from-favorites-big {
         position: absolute;
         width: 25px;
         height: 25px;
@@ -3344,12 +3346,15 @@ td {
         margin-top: 0;
         flex-direction: row;
         align-items: center;
+        
     }
     
-    .add-to-cart-big img {
+    .add-to-cart-big img,
+    .remove-from-favorites-big img {
         margin-top: 4px;
         height: 20px;
         width: auto;
+        border-radius: 0;
     }
 
     .user-icon-existent-review {
