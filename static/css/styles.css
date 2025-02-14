@@ -191,6 +191,7 @@ button {
     padding: 10px;
     border-radius: 25px;
     background-color: rgba(217, 217, 217, 0.8);
+    max-height: fit-content;
     box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.25),1px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -473,10 +474,10 @@ button {
     font-family: 'Onest';
     font-size: 20px;
     font-weight: 600;
-    line-height: 130%;
+    line-height: 120%;
     letter-spacing: 0%;
     text-align: left;
-    padding-right: 20%;
+    padding-right: 5%;
 }
 
 .event-preview-adress {
@@ -496,10 +497,10 @@ button {
     font-family: 'Onest';
     font-size: 20px;
     font-weight: 600;
-    line-height: 130%;
+    line-height: 120%;
     letter-spacing: 0%;
     text-align: right;
-    padding-left: 10%;
+    padding-left: 5%;
     /* padding-right: 40px; */
     
 }
@@ -510,7 +511,7 @@ button {
     text-indent: 0;
     color: rgb(35, 62, 102);
     font-family: 'Onest';
-    line-height: 130%;
+    line-height: 120%;
 }
 
 .preview-about {
@@ -531,6 +532,7 @@ button {
     line-height: 130%;
     letter-spacing: 0%;
     text-align: left;
+    max-height: max-content;
 }
 
 .event-preview-photo {
@@ -590,10 +592,25 @@ button {
     letter-spacing: 0%;
 }
 
+.event-tags {
+    display: block;
+    position: absolute;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    color: rgb(39, 66, 106);
+    font-family: 'Days One';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0%;
+}
+
 .event-reviews-link {
     display: block;
     position: absolute;
     text-align: right;
+    bottom: 0;
     left: 0;
     color: rgb(39, 66, 106);
     font-family: 'Days One';
