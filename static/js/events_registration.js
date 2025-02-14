@@ -73,22 +73,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const heartElement = card.querySelector('[data-event-slug]');
-        const heartIcon = heartElement.querySelector('.heart-icon');
-        const heartRedIcon = heartElement.querySelector('.heart-red-icon');
-        const isLiked = localStorage.getItem(`event-${eventSlug}`) === 'liked';
+        if (heartElement) {
+            const heartIcon = heartElement.querySelector('.heart-icon');
+            const heartRedIcon = heartElement.querySelector('.heart-red-icon');
+            const isLiked = localStorage.getItem(`event-${eventSlug}`) === 'liked';
 
-        if (isLiked) {
-            // Если элемент был "лайкнут", применяем соответствующие изменения
-            heartIcon.classList.add('hidden');
-            heartRedIcon.classList.remove('hidden');
-            heartElement.classList.remove('add-to-cart');
-            heartElement.classList.add('remove-from-favorites');
-        } else {
-            // Если элемент не был "лайкнут", сбрасываем состояние
-            heartIcon.classList.remove('hidden');
-            heartRedIcon.classList.add('hidden');
-            heartElement.classList.remove('remove-from-favorites');
-            heartElement.classList.add('add-to-cart');
+            if (isLiked) {
+                // Если элемент был "лайкнут", применяем соответствующие изменения
+                heartIcon.classList.add('hidden');
+                heartRedIcon.classList.remove('hidden');
+                heartElement.classList.remove('add-to-cart');
+                heartElement.classList.add('remove-from-favorites');
+            } else {
+                // Если элемент не был "лайкнут", сбрасываем состояние
+                heartIcon.classList.remove('hidden');
+                heartRedIcon.classList.add('hidden');
+                heartElement.classList.remove('remove-from-favorites');
+                heartElement.classList.add('add-to-cart');
+            }
         }
     });
 });
