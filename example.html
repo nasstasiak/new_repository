@@ -20,6 +20,110 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <style>
+        /* Основные стили карточки */
+.card {
+   transition: all 0.3s ease;
+}
+
+/* Стили для спикеров и тегов */
+.preview-speakers, .preview-tags {
+    cursor: pointer;
+    color: #2a5ea9;
+}
+
+.more-speakers, .more-tags {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Описание мероприятия */
+.event-preview-description {
+    margin-top: 15px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Кнопки */
+.event-actions {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.btn-sent_app {
+    background-color: #2a5ea9;
+    color: white;
+}
+
+.btn-comment {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Попапы */
+.overlay-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Анимация при открытии */
+.popup-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+
+    </style>
 </head>
 
 <body style="background-image: url(background2.jpg);">
@@ -537,6 +641,198 @@
                 <div class="row mb-3 events">
                     <div class="col-lg-1 feed-left-column"></div>
                     <div class="col-lg-10 cards">
+                        <div class="card">
+                            <div class="row event">
+                                <!-- Левая часть с изображением -->
+                                <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
+                                    <a href="#" class="add-to-cart" data-event-slug="1">
+                                        <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
+                                            alt="Catalog Icon" width="32" height="32">
+                                        <img class="mx-1 heart-red-icon hidden" src="static/general/icons/heart_red.png"
+                                            alt="Catalog Icon" width="32" height="32">
+                                    </a>
+                                    <img src="static/finopolis_preview.jpg" alt="" class="preview-photo">
+                                    <div class="rating-overlay">
+                                        <div class="half-stars">
+                                            <div class="rating-group">
+                                                <!-- по умолчанию 0 -->
+                                                <input disabled checked name="hsr" value="0" type="radio">
+
+                                                <!-- рейтинг 0.5 -->
+                                                <label class="hsr" for="hsr1-05">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M288 0c-11.4 0-22.8 5.9-28.7 17.8L194 150.2 47.9 171.4c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.1 23 46 46.4 33.7L288 439.6V0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-05" value="0.5" type="radio">
+
+                                                <!-- рейтинг 1 -->
+                                                <label for="hsr1-10">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-10" value="1" type="radio">
+
+                                                <!-- рейтинг 1.5 -->
+                                                <label class="hsr" for="hsr1-15">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M288 0c-11.4 0-22.8 5.9-28.7 17.8L194 150.2 47.9 171.4c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.1 23 46 46.4 33.7L288 439.6V0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-15" value="1.5" type="radio">
+
+                                                <!-- рейтинг 2 -->
+                                                <label for="hsr1-20">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-20" value="2" type="radio">
+
+                                                <!-- рейтинг 2.5 -->
+                                                <label class="hsr" for="hsr1-25">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M288 0c-11.4 0-22.8 5.9-28.7 17.8L194 150.2 47.9 171.4c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.1 23 46 46.4 33.7L288 439.6V0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-25" value="2.5" type="radio">
+
+                                                <!-- рейтинг 3 -->
+                                                <label for="hsr1-30">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-30" value="3" type="radio">
+
+                                                <!-- рейтинг 3.5 -->
+                                                <label class="hsr" for="hsr1-35">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M288 0c-11.4 0-22.8 5.9-28.7 17.8L194 150.2 47.9 171.4c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.1 23 46 46.4 33.7L288 439.6V0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-35" value="3.5" type="radio">
+
+                                                <!-- рейтинг 4 -->
+                                                <label for="hsr1-40">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-40" value="4" type="radio">
+
+                                                <!-- рейтинг 4.5 -->
+                                                <label class="hsr" for="hsr1-45">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M288 0c-11.4 0-22.8 5.9-28.7 17.8L194 150.2 47.9 171.4c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.1 23 46 46.4 33.7L288 439.6V0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-45" value="4.5" type="radio">
+
+                                                <!-- рейтинг 5 -->
+                                                <label for="hsr1-50">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+                                                    </svg>
+                                                </label>
+                                                <input disabled name="hsr" id="hsr1-50" value="5" type="radio">
+                                            </div>
+                                            <div class="total-raiting">0</div>
+                                        </div>
+                                    </div>
+                                    <div class="type-substrate">
+                                        <div class="event-type online">online</div>
+                                    </div>
+                                    <div class="button-substrate">
+                                        <button class="btn btn-remove_app"> Отмена регистрации</button>
+                                        <button class="btn btn-sent_app hidden"> Отправить заявку</button>
+                                        <button class="btn btn-comment"> Оставить отзыв</button>
+                                    </div>
+
+                                </div>
+                        
+                                <!-- Правая часть с текстом -->
+                                <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
+                                    <!-- Заголовок -->
+                                    <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
+                        
+                                    <!-- Блок с датой и временем -->
+                                    <div class="preview-time-block">
+                                        <p class="preview-date">8 января 2025 г.</p>
+                                        <p class="preview-time">11:00-16:00</p>
+                                    </div>
+                        
+                                    <!-- Блок со спикерами -->
+                                    <div class="preview-speakers">
+                                        <span class="meta-label">Спикеры:</span>
+                                        <div class="speakers-short" onclick="toggleSpeakers()">
+                                            <span>Лобанова С.Д.</span>
+                                            <span class="more-speakers">...</span>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Блок с тегами -->
+                                    <div class="preview-tags">
+                                        <span class="meta-label">Теги:</span>
+                                        <div class="tags-short" onclick="toggleTags()">
+                                            <span class="event-tag">#САДД</span>
+                                            <span class="more-tags">...</span>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Описание мероприятия -->
+                                    <div class="event-preview-description">
+                                        <p class="preview-description">
+                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус». FINOPOLIS традиционно...
+                                            <a href="#" class="show-more">Подробнее</a>
+                                        </p>
+                                    </div>
+                        
+                                    <!-- Кнопки -->
+                                    <div class="event-actions">
+                                        <button class="btn btn-sent_app">Отправить заявку</button>
+                                        <button class="btn btn-comment">Оставить отзыв</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Попап для спикеров -->
+                            <div class="overlay-popup speaker-popup hidden">
+                                <div class="popup-content">
+                                    <h5>Все спикеры</h5>
+                                    <ul class="full-list">
+                                        <li>Лобанова Стефания Данииловна</li>
+                                        <li>Иванов Иван Иванович</li>
+                                        <li>Петров Петр Петрович</li>
+                                    </ul>
+                                    <button class="close-popup" onclick="closePopup()">×</button>
+                                </div>
+                            </div>
+                        
+                            <!-- Попап для тегов -->
+                            <div class="overlay-popup tag-popup hidden">
+                                <div class="popup-content">
+                                    <h5>Все теги</h5>
+                                    <div class="full-tags">
+                                        <span class="event-tag">#САДД</span>
+                                        <span class="event-tag">#Финансы</span>
+                                        <span class="event-tag">#Технологии</span>
+                                    </div>
+                                    <button class="close-popup" onclick="closePopup()">×</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="row event">
                                 <div class="col-lg-5 col-md-5 col-sm-5 event-preview-photo">
@@ -1212,6 +1508,40 @@
         </div>
 
     </main>
+
+    <script>
+        function toggleSpeakers() {
+    const popup = document.querySelector('.speaker-popup');
+    const card = document.querySelector('.card');
+    popup.classList.toggle('active');
+    card.classList.toggle('blur');
+}
+
+function toggleTags() {
+    const popup = document.querySelector('.tag-popup');
+    const card = document.querySelector('.card');
+    popup.classList.toggle('active');
+    card.classList.toggle('blur');
+}
+
+function closePopup() {
+    const popups = document.querySelectorAll('.overlay-popup');
+    const card = document.querySelector('.card');
+    popups.forEach(popup => popup.classList.remove('active'));
+    card.classList.remove('blur');
+}
+
+// Закрытие попапа по клику вне его области
+document.addEventListener('click', function(e) {
+    const popups = document.querySelectorAll('.overlay-popup');
+    const card = document.querySelector('.card');
+    if (!e.target.closest('.popup-content') && !e.target.closest('.preview-speakers') && !e.target.closest('.preview-tags')) {
+        popups.forEach(popup => popup.classList.remove('active'));
+        card.classList.remove('blur');
+    }
+});
+    </script>
+
     <script src="static/js/events_registration.js"></script>
 
     <script src="static/js/like.js"></script>
