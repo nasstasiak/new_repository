@@ -20,92 +20,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-    <style>
-        /* Основные стили карточки */
-        .card {
-            transition: all 0.3s ease;
-        }
-
-        /* Стили для спикеров и тегов */
-        .preview-speakers,
-        .preview-tags {
-            cursor: pointer;
-        }
-
-        .speakers-short {
-            text-align: right;
-            line-height: 100%;
-        }
-
-        .more-speakers,
-        .more-tags {
-            font-size: 14px;
-            margin-left: 5px;
-        }
-
-
-        /* Попапы */
-        .overlay-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .overlay-popup.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .reviews-link {
-            text-indent: 0;
-        }
-
-        .popup-content {
-            background-color: rgba(217, 217, 217, 0.885);
-            color: rgb(39, 66, 106);
-            padding: 25px;
-            border-radius: 25px;
-            max-width: 400px;
-            position: relative;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Анимация при открытии */
-        .popup-content {
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 
 <body style="background-image: url(background2.jpg);">
@@ -1497,7 +1411,7 @@
 
     </main>
 
-    <script></script>
+    <script src="static/js/card_popup_script.js"></script>
 
     <script src="static/js/events_registration.js"></script>
 
