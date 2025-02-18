@@ -22,76 +22,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
     <style>
         /* Основные стили карточки */
-.card {
-   transition: all 0.3s ease;
-}
+        .card {
+            transition: all 0.3s ease;
+        }
 
-/* Стили для спикеров и тегов */
-.preview-speakers, .preview-tags {
-    cursor: pointer;
-    color: #2a5ea9;
-}
+        /* Стили для спикеров и тегов */
+        .preview-speakers,
+        .preview-tags {
+            cursor: pointer;
+        }
 
-.more-speakers, .more-tags {
-    font-size: 14px;
-    margin-left: 5px;
-}
+        .speakers-short {
+            text-align: right;
+            line-height: 100%;
+        }
 
-
-/* Попапы */
-.overlay-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.overlay-popup.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup-content {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 400px;
-    position: relative;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-}
-
-.close-popup {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #666;
-}
-
-/* Анимация при открытии */
-.popup-content {
-    animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
+        .more-speakers,
+        .more-tags {
+            font-size: 14px;
+            margin-left: 5px;
+        }
 
 
+        /* Попапы */
+        .overlay-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
 
+        .overlay-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .reviews-link {
+            text-indent: 0;
+        }
+
+        .popup-content {
+            background-color: rgba(217, 217, 217, 0.885);
+            color: rgb(39, 66, 106);
+            padding: 25px;
+            border-radius: 25px;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Анимация при открытии */
+        .popup-content {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -730,48 +743,56 @@
                                     </div>
 
                                 </div>
-                        
+
                                 <!-- Правая часть с текстом -->
                                 <div class="col-lg-7 col-md-7 col-sm-7 event-preview-text">
                                     <!-- Заголовок -->
                                     <h4 class="event-title-preview">FINOPOLIS 2024 пройдет в Сочи</h4>
-                        
-                                    <!-- Блок с датой и временем -->
-                                    <div class="preview-time-block">
-                                        <p class="preview-date">8 января 2025 г.</p>
-                                        <p class="preview-time">11:00-16:00</p>
-                                    </div>
-                        
-                                    <!-- Блок со спикерами -->
-                                    <div class="preview-speakers">
-                                        <span class="meta-label">Спикеры:</span>
-                                        <div class="speakers-short" onclick="toggleSpeakers()">
-                                            <span>Лобанова С.Д.</span>
-                                            <span class="more-speakers">...</span>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-time">
+                                            <p class="preview-date">8 января 2025 г.</p>
+                                            <p class="preview-time">11:00-16:00</p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-sm-5 event-preview-speaker preview-speakers">
+                                            <span class="meta-label">Спикеры:</span>
+                                            <div class="speakers-short" onclick="toggleSpeakers()">
+                                                <span>Лобанова Стефания Данииловна</span>
+                                                <span class="more-speakers">...</span>
+                                            </div>
                                         </div>
                                     </div>
-                        
-                                    <!-- Блок с тегами -->
-                                    <div class="preview-tags">
-                                        <span class="meta-label">Теги:</span>
-                                        <div class="tags-short" onclick="toggleTags()">
-                                            <span class="event-tag">#САДД</span>
-                                            <span class="more-tags">...</span>
-                                        </div>
-                                    </div>
-                        
-                                    <!-- Описание мероприятия -->
                                     <div class="event-preview-description">
+                                        <label for="" class="preview-about">О мероприятии:</label>
                                         <p class="preview-description">
-                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется в Сочи. Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус». FINOPOLIS традиционно...
-                                            <a href="#" class="show-more">Подробнее</a>
+                                            Форум инновационных финансовых технологий FINOPOLIS в этом году вернется
+                                            в Сочи.
+                                            Он пройдет с 6 по 8 ноября на территории Образовательного центра «Сириус».
+                                            FINOPOLIS традиционно... <a href="online_card_v2.html"
+                                                class="show-more">Подробнее</a>
                                         </p>
                                     </div>
-                        
-                                    
+
+                                    <div class="preview-event-id">
+                                        <div class="event-reviews-link">
+                                            <a href="#" class="reviews-link" type="button" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">Посмотреть отзывы</a>
+                                        </div>
+                                        <label for="event-id" class="event-id"></label>
+                                        <div class="event-tags">
+                                            <div class="preview-tags">
+                                                <div class="tags-short" onclick="toggleTags()">
+                                                    <span class="event-tag">#САДД</span>
+                                                    <span class="more-tags">...</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
-                        
+
                             <!-- Попап для спикеров -->
                             <div class="overlay-popup speaker-popup hidden">
                                 <div class="popup-content">
@@ -781,10 +802,11 @@
                                         <li>Иванов Иван Иванович</li>
                                         <li>Петров Петр Петрович</li>
                                     </ul>
-                                    <button class="close-popup" onclick="closePopup()">×</button>
+                                    <button class="button-close close-popup" onclick="closePopup()"><img
+                                            src="static/general/icons/close-button.png" alt=""></button>
                                 </div>
                             </div>
-                        
+
                             <!-- Попап для тегов -->
                             <div class="overlay-popup tag-popup hidden">
                                 <div class="popup-content">
@@ -794,7 +816,8 @@
                                         <span class="event-tag">#Финансы</span>
                                         <span class="event-tag">#Технологии</span>
                                     </div>
-                                    <button class="close-popup" onclick="closePopup()">×</button>
+                                    <button class="button-close close-popup" onclick="closePopup()"><img
+                                            src="static/general/icons/close-button.png" alt=""></button>
                                 </div>
                             </div>
                         </div>
@@ -1112,7 +1135,7 @@
                                     <a href="#" class="add-to-cart" data-event-slug="3">
                                         <img class="mx-1 heart-icon" src="static/general/icons/heart.svg"
                                             alt="Catalog Icon" width="32" height="32">
-                                            <img class="mx-1 heart-red-icon hidden" src="static/general/icons/heart_red.png"
+                                        <img class="mx-1 heart-red-icon hidden" src="static/general/icons/heart_red.png"
                                             alt="Catalog Icon" width="32" height="32">
                                     </a>
                                     <img src="static/monetary_conditions.jpg" alt="" class="preview-photo">
@@ -1476,35 +1499,35 @@
 
     <script>
         function toggleSpeakers() {
-    const popup = document.querySelector('.speaker-popup');
-    const card = document.querySelector('.card');
-    popup.classList.toggle('active');
-    card.classList.toggle('blur');
-}
+            const popup = document.querySelector('.speaker-popup');
+            const card = document.querySelector('.card');
+            popup.classList.toggle('active');
+            card.classList.toggle('blur');
+        }
 
-function toggleTags() {
-    const popup = document.querySelector('.tag-popup');
-    const card = document.querySelector('.card');
-    popup.classList.toggle('active');
-    card.classList.toggle('blur');
-}
+        function toggleTags() {
+            const popup = document.querySelector('.tag-popup');
+            const card = document.querySelector('.card');
+            popup.classList.toggle('active');
+            card.classList.toggle('blur');
+        }
 
-function closePopup() {
-    const popups = document.querySelectorAll('.overlay-popup');
-    const card = document.querySelector('.card');
-    popups.forEach(popup => popup.classList.remove('active'));
-    card.classList.remove('blur');
-}
+        function closePopup() {
+            const popups = document.querySelectorAll('.overlay-popup');
+            const card = document.querySelector('.card');
+            popups.forEach(popup => popup.classList.remove('active'));
+            card.classList.remove('blur');
+        }
 
-// Закрытие попапа по клику вне его области
-document.addEventListener('click', function(e) {
-    const popups = document.querySelectorAll('.overlay-popup');
-    const card = document.querySelector('.card');
-    if (!e.target.closest('.popup-content') && !e.target.closest('.preview-speakers') && !e.target.closest('.preview-tags')) {
-        popups.forEach(popup => popup.classList.remove('active'));
-        card.classList.remove('blur');
-    }
-});
+        // Закрытие попапа по клику вне его области
+        document.addEventListener('click', function (e) {
+            const popups = document.querySelectorAll('.overlay-popup');
+            const card = document.querySelector('.card');
+            if (!e.target.closest('.popup-content') && !e.target.closest('.preview-speakers') && !e.target.closest('.preview-tags')) {
+                popups.forEach(popup => popup.classList.remove('active'));
+                card.classList.remove('blur');
+            }
+        });
     </script>
 
     <script src="static/js/events_registration.js"></script>
