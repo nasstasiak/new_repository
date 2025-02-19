@@ -33,27 +33,3 @@ document.addEventListener('click', function(event) {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('[data-event-slug]');
-
-    elements.forEach(element => {
-        const eventSlug = element.dataset.eventSlug; // Уникальный идентификатор
-        const heartIcon = element.querySelector('.heart-icon');
-        const heartRedIcon = element.querySelector('.heart-red-icon');
-        const isLiked = localStorage.getItem(`event-${eventSlug}`) === 'liked';
-
-        if (isLiked) {
-            // Если элемент был "лайкнут", применяем соответствующие изменения
-            heartIcon.classList.add('hidden');
-            heartRedIcon.classList.remove('hidden');
-            element.classList.remove('add-to-cart');
-            element.classList.add('remove-from-favorites');
-        } else {
-            // Если элемент не был "лайкнут", сбрасываем состояние
-            heartIcon.classList.remove('hidden');
-            heartRedIcon.classList.add('hidden');
-            element.classList.remove('remove-from-favorites');
-            element.classList.add('add-to-cart');
-        }
-    });
-});
